@@ -1,0 +1,239 @@
+{
+  "id": "foxess",
+  "name": "FoxESS",
+  "replaces": "FoxCloud 2.0 (v2.2.28)",
+  "trademark_owner": "Fox ESS Co., Ltd.",
+  "version": "0.1.0",
+  "icon": "img/icon.svg",
+  "artwork": "required",
+  "fallback_locale": "pl",
+  "requires": [
+    {
+      "integration": "foxess_modbus",
+      "hint": "nathanmarlor/foxess_modbus (HACS)",
+      "probe": "entities.soc"
+    }
+  ],
+  "palette": {
+    "--primary-background-color": "#141414",
+    "--card-background-color": "#1c1c1e",
+    "--secondary-background-color": "#27282a",
+    "--primary-text-color": "#e9ebf0",
+    "--secondary-text-color": "#9fa2ac",
+    "--disabled-text-color": "#525254",
+    "--divider-color": "rgba(135,141,150,0.83)",
+    "--primary-color": "#4589ff",
+    "--error-color": "#fa4d56",
+    "--success-color": "#24a148",
+    "--info-color": "#78a9ff",
+    "--text-primary-color": "#ffffff"
+  },
+  "config": {
+    "devices": {
+      "shape": "objects",
+      "fields": {}
+    },
+    "options": {
+      "theme": {
+        "type": "select",
+        "options": [
+          "ha",
+          "app"
+        ],
+        "default": "ha"
+      },
+      "dry_run": {
+        "type": "boolean",
+        "default": false
+      },
+      "entities": {
+        "type": "entity_map",
+        "default": {
+          "pv": "sensor.foxess_pv_power_sum",
+          "grid": "sensor.grid_power_foxess_modbus",
+          "battery": "sensor.foxess_invbatpower",
+          "soc": "sensor.battery_soc_foxess_modbus",
+          "load": "sensor.house_load_power",
+          "status": "sensor.foxess_modbus_inverter_state",
+          "work_mode": "select.foxess_modbus_work_mode",
+          "weather": "weather.home",
+          "sun": "sun.sun",
+          "production_today": "sensor.foxess_modbus_solar_energy_today",
+          "consumption_today": "sensor.foxess_modbus_load_energy_today",
+          "production_total": "sensor.foxess_modbus_solar_energy_total",
+          "consumption_total": "sensor.foxess_modbus_load_energy_today",
+          "consumption_lifetime": "sensor.foxess_modbus_load_power_total",
+          "yield_total": "sensor.foxess_modbus_total_yield_total",
+          "eps": "sensor.eps_power_foxess_modbus",
+          "ac_power": "sensor.load_power_foxess_modbus",
+          "pv1_voltage": "sensor.foxess_modbus_pv1_voltage",
+          "pv1_current": "sensor.foxess_modbus_pv1_current",
+          "pv1_power": "sensor.foxess_modbus_pv1_power",
+          "pv2_voltage": null,
+          "pv2_current": null,
+          "pv2_power": null,
+          "voltage_r": "sensor.foxess_modbus_grid_voltage_r",
+          "voltage_s": null,
+          "voltage_t": null,
+          "current_r": "sensor.foxess_modbus_inv_current_r",
+          "current_s": "sensor.foxess_modbus_inv_current_s",
+          "current_t": "sensor.foxess_modbus_inv_current_t",
+          "power_r": "sensor.foxess_modbus_inv_power_r",
+          "power_s": "sensor.foxess_modbus_inv_power_s",
+          "power_t": "sensor.foxess_modbus_inv_power_t",
+          "frequency": null,
+          "grid_import": "sensor.grid_import_power_foxess_modbus",
+          "grid_export": "sensor.grid_export_power_foxess_modbus",
+          "feed_in_today": "sensor.foxess_modbus_feed_in_energy_today",
+          "feed_in_total": "sensor.foxess_modbus_feed_in_energy_total",
+          "purchased_today": "sensor.foxess_modbus_grid_consumption_energy_today",
+          "purchased_total": "sensor.foxess_modbus_grid_consumption_energy_total",
+          "battery_voltage": "sensor.foxess_modbus_batvolt",
+          "battery_current": "sensor.foxess_modbus_bat_current",
+          "battery_temp": "sensor.battery_temperature_foxess_modbus",
+          "battery_soh": "sensor.battery_soh_foxess_modbus",
+          "battery_remaining": "sensor.foxess_soc_kwh",
+          "battery_nominal": "sensor.foxess_bms_kwh",
+          "battery_cycles": null,
+          "battery_charge_today": "sensor.foxess_modbus_battery_charge_today",
+          "battery_charge_total": "sensor.foxess_modbus_battery_charge_total",
+          "battery_discharge_today": "sensor.foxess_modbus_battery_discharge_today",
+          "battery_discharge_total": "sensor.foxess_modbus_battery_discharge_total",
+          "yield_today": "sensor.foxess_modbus_total_yield_today",
+          "fault": "sensor.foxess_modbus_inverter_fault_code",
+          "min_soc_on_grid": "number.foxess_modbus_min_soc_on_grid",
+          "max_soc": "number.foxess_modbus_max_soc",
+          "min_soc": "number.foxess_modbus_min_soc",
+          "storm_safe": null,
+          "export_limit": null,
+          "import_limit": null,
+          "meter_compensation": null,
+          "price_now": "sensor.energy_price_now",
+          "logger_block": "switch.inverter_logger_internet"
+        }
+      },
+      "inverter_sn": {
+        "type": "text",
+        "default": ""
+      },
+      "battery_sn": {
+        "type": "text",
+        "default": ""
+      },
+      "inverter_model": {
+        "type": "text",
+        "default": "H3"
+      },
+      "battery_model": {
+        "type": "text",
+        "default": "EP"
+      },
+      "logger": {
+        "type": "object",
+        "default": {
+          "sn": "",
+          "model": "L3",
+          "network": "LAN",
+          "version": ""
+        }
+      },
+      "alarm_days": {
+        "type": "number",
+        "default": 30
+      },
+      "pv_capacity_kw": {
+        "type": "number",
+        "default": 10
+      },
+      "soc_hours": {
+        "type": "number",
+        "default": 48
+      },
+      "grid_export_positive": {
+        "type": "boolean",
+        "default": true
+      },
+      "battery_discharge_positive": {
+        "type": "boolean",
+        "default": true
+      },
+      "deadband": {
+        "type": "number",
+        "default": 0.02
+      },
+      "revenue_price": {
+        "type": "number",
+        "default": 0.4316
+      },
+      "currency": {
+        "type": "text",
+        "default": "PLN"
+      },
+      "buy_price": {
+        "type": "number",
+        "default": 0.53
+      },
+      "sell_price": {
+        "type": "number",
+        "default": 0.53
+      },
+      "revenue_since": {
+        "type": "text",
+        "default": ""
+      },
+      "co2_factor": {
+        "type": "number",
+        "default": 0.997
+      },
+      "tree_factor": {
+        "type": "number",
+        "default": 1.0
+      },
+      "oil_factor": {
+        "type": "number",
+        "default": 0.123
+      },
+      "stale_seconds": {
+        "type": "number",
+        "default": 60
+      },
+      "quick_settings_action": {
+        "type": "object",
+        "default": null
+      }
+    }
+  },
+  "screens": [
+    "home",
+    "inverter",
+    "battery",
+    "inv_params",
+    "bat_params",
+    "inv_analysis",
+    "bat_analysis",
+    "plant_analysis",
+    "revenue",
+    "revenue_cal",
+    "tariff",
+    "quick",
+    "workmode",
+    "alarm",
+    "devices",
+    "logger"
+  ],
+  "sheets": [
+    "info",
+    "confirm"
+  ],
+  "locales": [
+    "pl",
+    "en"
+  ],
+  "blueprints": [],
+  "not_covered": [
+    "harmonogram trybow pracy, integracja Modbus nie oddaje go jako encji",
+    "ustawienia tylko w chmurze: limit eksportu i importu, kompensacja licznika, ladowanie prewencyjne",
+    "aktualizacja oprogramowania falownika i rejestratora",
+    "zgloszenia serwisowe i konto FoxCloud"
+  ]
+}

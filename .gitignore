@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.env
+.secrets
+*.local.json
+
+# private test-dashboard config: device ids and producer serials, never published
+tools/vm103_apps.local.json
+.pytest_cache/
+.ruff_cache/

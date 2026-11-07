@@ -1,0 +1,647 @@
+{
+ "ui": {
+  "go": "GO",
+  "start_clean": "Rozpocznij czyszczenie",
+  "cleaning_now": "Sprzątanie trwa",
+  "start_charge": "Rozpocznij ładowanie",
+  "charging": "Ładowanie",
+  "fan_running": "Nawiew trwa",
+  "fan_off": "Wyłączony",
+  "temperature": "Temperatura",
+  "cold": "Chłodno",
+  "comfort": "Komfortowo",
+  "hot": "Gorąco",
+  "settings": "Ustawienia",
+  "pause": "Pauza",
+  "dock": "Dokuj",
+  "resume": "Kontynuuj",
+  "stop": "Zakończ",
+  "clean": "Czyść",
+  "clean_now": "Czyść teraz",
+  "tab_room": "Pomieszczenie",
+  "tab_all": "Wszystkie",
+  "tab_zone": "Strefa",
+  "hint_room": "Robot będzie czyścić pomieszczenia w ustalonej kolejności.",
+  "hint_zone": "Dodaj strefę i przeciągnij ją na mapie.",
+  "add": "Dodaj",
+  "cycles": "Cykle",
+  "no_map": "Brak mapy",
+  "no_calibration": "Ta mapa nie ma punktów kalibracji, strefy nie da się zaznaczyć.",
+  "pick_rooms": "Wybierz pomieszczenia",
+  "add_zone": "Dodaj strefę",
+  "no_calib_short": "Brak kalibracji mapy",
+  "messages": "Komunikaty",
+  "notifications": "Powiadomienia: {n}",
+  "needs_replacement": "{what} wymaga wymiany",
+  "task_done": "Zadanie zakończone. Sprawdź historię czyszczenia, aby zobaczyć szczegóły.",
+  "offline": "Offline",
+  "confirm": "Potwierdź",
+  "cancel": "Anuluj",
+  "confirm_body": "Wykonać teraz na urządzeniu?",
+  "cleangenius": "CleanGenius",
+  "custom": "Niestandardowe",
+  "cleaning_mode_h": "Tryb czyszczenia",
+  "suction_h": "Moc ssania",
+  "wetness": "Wilgotność nakładki mopującej",
+  "wet_low": "Lekko suche",
+  "wet_mid": "Wilgotne",
+  "wet_high": "Mokre",
+  "wash_freq": "Częstotliwość prania mopa",
+  "route": "Trasa",
+  "cg_mode": "Tryb CleanGenius",
+  "map_edit": "Edytowanie mapy",
+  "map_current": "Bieżąca",
+  "map_select": "Wybierz",
+  "map_switch_to": "Przełącz na mapę {name}",
+  "map_backup": "Utwórz kopię zapasową",
+  "map_backup_confirm": "Utwórz kopię zapasową mapy",
+  "multi_floor": "Mapy wielopiętrowe",
+  "map_rotation": "Obrót mapy",
+  "clean_sequence": "Sekwencja czyszczenia",
+  "history": "Historia sprzątania",
+  "last_clean": "Ostatnie sprzątanie",
+  "total_area": "Całkowita powierzchnia",
+  "duration": "Czas trwania",
+  "cycles_count": "Cykle",
+  "times": " razy",
+  "no_history": "Brak historii w integracji.",
+  "schedule": "Czyszczenie planowe",
+  "schedule_none": "Nieustawiono",
+  "schedule_active": "{n} aktywne",
+  "schedule_empty": "Brak harmonogramu",
+  "schedule_ro": "Harmonogram robota jest tylko do odczytu: integracja nie ma usługi zapisu planu.",
+  "once": "Jednorazowo",
+  "consumables": "Materiały eksploatacyjne i komponenty",
+  "cons_ok": "Gotowe do użycia",
+  "cons_bad": "Wymagają uwagi",
+  "cons_head": "Materiały eksploatacyjne",
+  "components": "Komponenty",
+  "reset": "Resetuj",
+  "reset_confirm": "Zresetuj: {what}",
+  "hours_left": "Pozostało {n} godz.",
+  "life_left": "Pozostała żywotność: ok. {n} godz.",
+  "common_settings": "Typowe ustawienia",
+  "smart_settings": "Ustawienia inteligentne",
+  "device_info": "Informacje o urządzeniu",
+  "no_settings": "To urządzenie nie ma tych ustawień w Home Assistant.",
+  "name": "Nazwa urządzenia",
+  "model": "Model",
+  "timezone": "Strefa czasowa robota",
+  "area_unit": "Jednostka powierzchni",
+  "area_unit_v": "Metr kwadratowy (m²)",
+  "firmware": "Wersja oprogramowania",
+  "wifi": "Sieć Wi-Fi",
+  "rssi": "Sygnał Wi-Fi",
+  "ip": "Adres IP",
+  "first_clean": "Pierwsze sprzątanie",
+  "fan_inside": "Wewnątrz",
+  "fan_outside": "Na zewnątrz",
+  "fan_on": "Uruchomione",
+  "fan_off_state": "Wyłączone",
+  "humidity_short": "Wilgotność",
+  "weather_note": "Dane z encji pogody ustawionej w karcie (weather).",
+  "mode": "Tryb",
+  "speed": "Prędkość",
+  "airflow": "Obieg powietrza",
+  "oscillation": "Oscylacja",
+  "blade_left": "Lewa łopatka",
+  "blade_right": "Prawa łopatka",
+  "child_lock": "Blokada dziecka",
+  "timer": "Wyłącznik czasowy",
+  "prefilter": "Filtr wstępny",
+  "days_left": "Pozostało {n} dni",
+  "low": "Niski",
+  "high": "Wysoki",
+  "fan_device_settings": "Ustawienia urządzenia",
+  "fan_cons": "Materiały eksploatacyjne i konserwacja",
+  "product_info": "Informacje o produkcie"
+ },
+ "days": [
+  "Niedz.",
+  "Pon.",
+  "Wt.",
+  "Śr.",
+  "Czw.",
+  "Pt.",
+  "Sob."
+ ],
+ "state": {
+  "waiting_for_task": "Oczekiwanie na zadania",
+  "charging_completed": "Zakończono ładowanie",
+  "charging": "Ładowanie",
+  "idle": "Oczekiwanie na zadania",
+  "sweeping": "Odkurzanie",
+  "mopping": "Mopowanie",
+  "sweeping_and_mopping": "Odkurzanie i mopowanie",
+  "paused": "Wstrzymano",
+  "returning": "Powrót do stacji",
+  "washing": "Mycie mopa",
+  "drying": "Suszenie",
+  "error": "Błąd",
+  "returning_to_wash": "Powrót na mycie mopa",
+  "building": "Tworzenie mapy",
+  "upgrading": "Aktualizacja",
+  "station_reset": "Reset stacji",
+  "docked": "Zakończono ładowanie",
+  "cleaning": "Sprzątanie",
+  "unavailable": "Offline"
+ },
+ "cleaning_mode": {
+  "sweeping": "Odkurzacz",
+  "mopping": "Mop",
+  "sweeping_and_mopping": "Odk. i Mop",
+  "mopping_after_sweeping": "Mop po odk.",
+  "custom": "Indywidualizuj"
+ },
+ "suction": {
+  "quiet": "Ciche",
+  "silent": "Ciche",
+  "standard": "Standard",
+  "strong": "Intensywne",
+  "turbo": "Max"
+ },
+ "carpet_cleaning": {
+  "avoidance": "Unikaj",
+  "adaptation": "Dostosuj",
+  "remove_mop": "Odkurzacz",
+  "ignore": "Ignoruj",
+  "cross": "Krzyżujące się dywany",
+  "vacuum_and_mop": "Odkurzaj i mopuj",
+  "adaptation_without_route": "Dostosuj bez trasy"
+ },
+ "auto_empty_mode": {
+  "off": "Wyłącz",
+  "standard": "Standard",
+  "high_frequency": "Wysoka częstotliwość",
+  "low_frequency": "Niska częstotliwość"
+ },
+ "drying_time": {
+  "2h": "2h",
+  "3h": "3h",
+  "4h": "4h"
+ },
+ "auto_lds_coverage": {
+  "off": "Wyłącz",
+  "security": "Bezpieczny zasięg",
+  "extreme": "Maksymalny zasięg"
+ },
+ "low_lying_area_frequency": {
+  "weekly": "Niska częstotliwość",
+  "daily": "Wysoka częstotliwość"
+ },
+ "mop_extend_frequency": {
+  "standard": "Standard",
+  "intelligent": "Inteligentna",
+  "high": "Wysoka częstotliwość"
+ },
+ "auto_recleaning": {
+  "off": "Wyłącz",
+  "in_deep_mode": "W trybie głębokim CleanGenius",
+  "in_all_modes": "Działa w obu trybach CleanGenius"
+ },
+ "auto_rewashing": {
+  "off": "Wyłącz",
+  "in_deep_mode": "W trybie głębokim CleanGenius",
+  "in_all_modes": "Działa w obu trybach CleanGenius"
+ },
+ "cleangenius": {
+  "off": "Wyłącz",
+  "routine_cleaning": "Rutynowe",
+  "deep_cleaning": "Głębokie"
+ },
+ "cleaning_route": {
+  "quick": "Szybko",
+  "standard": "Standard",
+  "intensive": "Intensywnie",
+  "deep": "Głęboko"
+ },
+ "self_clean_frequency": {
+  "by_area": "Według obszaru",
+  "by_time": "Według czasu",
+  "by_room": "Według pomieszczenia"
+ },
+ "washing_mode": {
+  "light": "Lekkie",
+  "standard": "Standard",
+  "deep": "Głębokie"
+ },
+ "water_temperature": {
+  "normal": "Normalna",
+  "mild": "Letnia",
+  "warm": "Ciepłe",
+  "hot": "Gorąca"
+ },
+ "status": {
+  "installed": "Zainstalowano",
+  "not_installed": "Nie zainstalowano",
+  "idle": "Gotowe",
+  "available": "Dostępne",
+  "enabled": "Włączone"
+ },
+ "humidity": {
+  "Slightly dry": "Lekko suche",
+  "Moist": "Wilgotne",
+  "Wet": "Mokre"
+ },
+ "hist": {
+  "Room Cleaning": "Czyszczenie wybranego pomieszczenia",
+  "Zone Cleaning": "Sprzątanie wybranego obszaru",
+  "Cleaning": "Globalne sprzątanie",
+  "Spot Cleaning": "Sprzątanie punktowe",
+  "Cruise": "Wycieczka",
+  "interrupted": "przerwane"
+ },
+ "page": {
+  "station": "Ustawienia stacji dokującej",
+  "floor": "Sprzątanie podłóg",
+  "carpet": "Sprzątanie dywanów",
+  "crossing": "Ustawienia pokonywania przeszkód",
+  "more": "Więcej funkcji",
+  "pet": "Pielęgnacja zwierzęcia",
+  "voice": "Asystent głosowy",
+  "ai": "Inteligentne unikanie przeszkód",
+  "lab": "Funkcje laboratoryjne",
+  "camera": "Kamera w czasie rzeczywistym"
+ },
+ "group": {
+  "mop_wash": "Mycie mopa",
+  "detergent": "Detergent",
+  "dry": "Sucho",
+  "auto_empty": "Automatyczne opróżnianie",
+  "station_care": "Konserwacja stacji dokującej",
+  "direction": "Kierunek sprzątania",
+  "low_lying": "Sprzątanie niskich miejsc",
+  "edges": "Sprzątanie krawędzi i kątów",
+  "deep": "Dogłębne czyszczenie",
+  "hardware": "Wspomaganie sprzętowe",
+  "carpet_global": "Poniżej znajdują się globalne ustawienia czyszczenia dywanów.",
+  "more": "Więcej",
+  "battery": "Akumulator",
+  "device_care": "Konserwacja urządzenia",
+  "dva": "Dreame Voice Assistant"
+ },
+ "cons": {
+  "filter": "Filtr",
+  "side_brush": "Szczotka boczna",
+  "main_brush": "Szczotka główna",
+  "sensor_dirty": "Konserwacja czujników",
+  "wheel_dirty": "Kółko wielokierunkowe",
+  "scale_inhibitor": "Inhibitor kamienia"
+ },
+ "comp": {
+  "mop_pad": "Nakładka mopująca",
+  "dust_bag": "Jednorazowy worek na kurz",
+  "dirty_water": "Filtr zbiornika na zużytą wodę",
+  "detergent": "Detergent"
+ },
+ "row": {
+  "switch": {
+   "smart_mop_washing": {
+    "t": "Inteligentne czyszczenie mopa",
+    "d": "Ustaw ilość i temperaturę wody do czyszczenia mopa."
+   },
+   "mop_washing_with_detergent": {
+    "t": "Mycie mopa z użyciem detergentu",
+    "d": "Automatycznie dodawaj detergent podczas mycia mopa w celu poprawienia efektu czyszczenia."
+   },
+   "mopping_with_detergent": {
+    "t": "Mopowanie z użyciem detergentu",
+    "d": "Automatycznie dodawaj detergent w trybie mopowania, aby lepiej sprzątać podłogę."
+   },
+   "auto_add_detergent": {
+    "t": "Automatyczne dodawanie detergentu"
+   },
+   "auto_drying": {
+    "t": "Sucho",
+    "d": "Po wyłączeniu robot będzie wracać do bazy bez automatycznego suszenia nakładki mopującej."
+   },
+   "silent_drying": {
+    "t": "Ciche suszenie"
+   },
+   "uv_sterilization": {
+    "t": "Sterylizacja UV",
+    "d": "Po aktywowaniu mop zdezynfekuje się po suszeniu, a worek na kurz po jego opróżnieniu."
+   },
+   "hair_compression": {
+    "t": "Kompresowanie włosów",
+    "d": "Robot inteligentnie kompresuje włosy w pojemniku na kurz."
+   },
+   "auto_water_refilling": {
+    "t": "Automatyczne uzupełnianie wody"
+   },
+   "self_clean": {
+    "t": "Auto-pranie",
+    "d": "W razie dezaktywacji robot będzie mopować suchymi nakładkami, następnie powróci w celu prania po zakończeniu całego zadania."
+   },
+   "floor_direction_cleaning": {
+    "t": "Czyszczenie wzdłuż kierunku podłogi",
+    "d": "W trybach globalnym i strefowym robot podąża za teksturą podłogi, aby ograniczyć zarysowania."
+   },
+   "mop_extend": {
+    "t": "Funkcja MopExtend™ korzystająca z AI",
+    "d": "Robot będzie automatycznie wysuwał szczotkę boczną i mopa, aby skutecznie czyścić narożniki."
+   },
+   "side_reach": {
+    "t": "Funkcja SideReach™ korzystająca z AI"
+   },
+   "gap_cleaning_extension": {
+    "t": "Przedłużenie mopa do czyszczenia szczelin"
+   },
+   "mopping_under_furnitures": {
+    "t": "Intensywne czyszczenie nóg mebli"
+   },
+   "pressurized_cleaning": {
+    "t": "Czyszczenie z użyciem płytki dociskowej",
+    "d": "Robot użyje płyty ciśnieniowej w osłonie szczotki do zwiększenia skuteczności."
+   },
+   "dynamic_obstacle_cleaning": {
+    "t": "Ponowne sprzątanie w miejscach z przeszkodami",
+    "d": "Automatycznie wykrywa i omija ludzi oraz zwierzęta, a następnie sprząta pominięte miejsca."
+   },
+   "collision_avoidance": {
+    "t": "Tryb unikania zderzeń",
+    "d": "Po włączeniu liczba kolizji ze ścianami i meblami spadnie, a skuteczność czyszczenia nieco się zmniejszy."
+   },
+   "auto_mount_mop": {
+    "t": "Automatyczne zdejmowanie i montowanie nakładek mopujących",
+    "d": "Automatyczny demontaż i instalacja mopa w trybie samego odkurzania albo mopowania."
+   },
+   "carpet_boost": {
+    "t": "Zwiększenie mocy na dywanie"
+   },
+   "intensive_carpet_cleaning": {
+    "t": "Intensywne czyszczenie dywanów"
+   },
+   "clean_carpets_first": {
+    "t": "Najpierw dywany"
+   },
+   "side_brush_carpet_rotate": {
+    "t": "Obracanie szczotki bocznej na dywanie"
+   },
+   "lift_chassis_on_carpet": {
+    "t": "Podnoszenie podwozia na dywanie"
+   },
+   "obstacle_crossing": {
+    "t": "Noga chowana do pokonywania przeszkód",
+    "d": "Po wyłączeniu robot nie będzie używał nogi chowanej do pokonywania progów."
+   },
+   "streaming_voice_prompt": {
+    "t": "Minimum komunikatów głosowych"
+   },
+   "dnd": {
+    "t": "Tryb \"Nie przeszkadzać\""
+   },
+   "dnd_disable_resume_cleaning": {
+    "t": "Bez wznawiania sprzątania w trybie DND"
+   },
+   "dnd_disable_auto_empty": {
+    "t": "Bez opróżniania w trybie DND"
+   },
+   "dnd_reduce_volume": {
+    "t": "Ciszej w trybie DND"
+   },
+   "ring_light_always_on": {
+    "t": "Pierścień świetlny zawsze włączony",
+    "d": "Po włączeniu tej funkcji pierścień świetlny będzie świecił przez cały czas."
+   },
+   "resume_cleaning": {
+    "t": "Wznowienie trybu czyszczenia",
+    "d": "Przy niskim poziomie akumulatora robot wróci do stacji i wznowi pracę po naładowaniu."
+   },
+   "child_lock": {
+    "t": "Zabezpieczenie przed dziećmi",
+    "d": "Przyciski konsoli zostaną zablokowane po zatrzymaniu robota."
+   },
+   "off_peak_charging": {
+    "t": "Ładowanie poza godzinami szczytu",
+    "d": "Robot będzie ładowany do minimum w godzinach szczytu i do pełna poza nimi."
+   },
+   "ai_pet_detection": {
+    "t": "Rozpoznawanie zwierząt"
+   },
+   "pet_focused_detection": {
+    "t": "Pilnowanie zwierzęcia"
+   },
+   "pet_picture": {
+    "t": "Momenty zwierzęcia"
+   },
+   "voice_assistant": {
+    "t": "Asystent głosowy"
+   },
+   "ai_obstacle_detection": {
+    "t": "Inteligentne unikanie przeszkód",
+    "d": "Gdy jest aktywowana, robot włączy detekcję przedmiotów w oparciu o AI."
+   },
+   "ai_obstacle_picture": {
+    "t": "Zdjęcia",
+    "d": "Po włączeniu dostępne są zdjęcia przeszkód."
+   },
+   "ai_obstacle_image_upload": {
+    "t": "Wysyłanie zdjęć przeszkód"
+   },
+   "fill_light": {
+    "t": "Lampka wypełniająca",
+    "d": "Po włączeniu automatycznie rozświetli słabo oświetlone otoczenie."
+   },
+   "ai_furniture_detection": {
+    "t": "Rozpoznawanie mebli"
+   },
+   "fuzzy_obstacle_detection": {
+    "t": "Wykrywanie nieostrych przeszkód"
+   },
+   "stain_avoidance": {
+    "t": "Identyfikacja plam",
+    "d": "Gdy robot wykryje plamy, zastosuje inteligentną strategię intensywnego czyszczenia."
+   },
+   "ai_fluid_detection": {
+    "t": "Wykrywanie płynów"
+   },
+   "large_particles_boost": {
+    "t": "Wzmocnienie dla dużych cząstek",
+    "d": "W razie aktywowania robot zwiększy moc ssania, aby poprawić efekt czyszczenia."
+   },
+   "human_follow": {
+    "t": "Podążanie za człowiekiem"
+   },
+   "multi_floor_map": {
+    "t": "Mapy wielopiętrowe"
+   },
+   "dzwiek_klawisza": {
+    "t": "Dźwięk klawisza",
+    "d": "Gdy dźwięki przycisków są wyłączone, dotknięcie urządzenia nie wywoła dźwięku."
+   },
+   "wyswietlacz_led": {
+    "t": "Wyświetlacz LED",
+    "d": "Po wyłączeniu wyświetlacz LED zgaśnie."
+   },
+   "synchronizacja_kierunku_nawiewu": {
+    "t": "Synchronizacja kierunku nawiewu"
+   },
+   "naprzemienny_kierunek_nawiewu": {
+    "t": "Naprzemienny kierunek nawiewu"
+   }
+  },
+  "select": {
+   "washing_mode": {
+    "t": "Ustawienia prania"
+   },
+   "water_temperature": {
+    "t": "Temperatura wody"
+   },
+   "self_clean_frequency": {
+    "t": "Częstotliwość prania mopa"
+   },
+   "auto_rewashing": {
+    "t": "Automatyczna ponowna przepierka",
+    "d": "W trybie CleanGenius robot umyje nakładkę ponownie, jeśli wykryje, że jest zbyt brudna."
+   },
+   "drying_time": {
+    "t": "Tryb suszenia",
+    "d": "Robot będzie wykonywać zadanie suszenia według wybranego czasu trwania."
+   },
+   "auto_empty_mode": {
+    "t": "Automatyczne opróżnianie",
+    "d": "Po zakończeniu sprzątania robot wraca do stacji dokującej w celu automatycznego opróżnienia."
+   },
+   "auto_lds_coverage": {
+    "t": "Automatyczne podnoszenie laserowego czujnika odległości",
+    "d": "Po wykryciu niskich obszarów robot automatycznie obniża laserowy czujnik."
+   },
+   "low_lying_area_frequency": {
+    "t": "Częstotliwość sprzątania",
+    "d": "Ustaw częstotliwość sprzątania niskich obszarów."
+   },
+   "mop_extend_frequency": {
+    "t": "Częstotliwość",
+    "d": "Ustaw częstotliwość rozszerzania szczotek bocznych i mopa podczas zadań czyszczenia."
+   },
+   "auto_recleaning": {
+    "t": "Automatyczne czyszczenie powtórne"
+   },
+   "carpet_cleaning": {
+    "t": "Tryb dywanów"
+   },
+   "battery_charge_level": {
+    "t": "Limit ładowania"
+   },
+   "voice_assistant_language": {
+    "t": "Język"
+   },
+   "map_rotation": {
+    "t": "Obrót mapy"
+   },
+   "cleangenius_mode": {
+    "t": "Tryb CleanGenius"
+   },
+   "predkosc_lopatek": {
+    "t": "Prędkość łopatek"
+   }
+  },
+  "number": {
+   "self_clean_area": {
+    "t": "Pranie co (m²)"
+   },
+   "self_clean_time": {
+    "t": "Pranie co (min)"
+   },
+   "volume": {
+    "t": "Głośność"
+   }
+  },
+  "time": {
+   "dnd_start": {
+    "t": "Początek"
+   },
+   "dnd_end": {
+    "t": "Koniec"
+   },
+   "off_peak_charging_start": {
+    "t": "Początek"
+   },
+   "off_peak_charging_end": {
+    "t": "Koniec"
+   }
+  },
+  "button": {
+   "base_station_cleaning": {
+    "t": "Samoczyszczenie podstawy płyty myjącej"
+   },
+   "self_clean": {
+    "t": "Umyj mopa teraz"
+   },
+   "manual_drying": {
+    "t": "Susz mopa teraz"
+   },
+   "start_auto_empty": {
+    "t": "Opróżnij teraz"
+   },
+   "water_tank_draining": {
+    "t": "Opróżnij zbiornik wody"
+   },
+   "empty_water_tank": {
+    "t": "Spuść wodę ze stacji"
+   },
+   "base_station_self_repair": {
+    "t": "Autonaprawa stacji"
+   },
+   "reload_shortcuts": {
+    "t": "Odśwież skróty"
+   }
+  },
+  "sensor": {
+   "detergent_status": {
+    "t": "Detergent"
+   },
+   "dust_bag_status": {
+    "t": "Worek na kurz"
+   },
+   "clean_water_tank_status": {
+    "t": "Zbiornik czystej wody"
+   },
+   "dirty_water_tank_status": {
+    "t": "Zbiornik brudnej wody"
+   },
+   "stream_status": {
+    "t": "Transmisja wideo"
+   },
+   "zywotnosc_filtra_wstepnego": {
+    "t": "Filtr wstępny"
+   },
+   "filtr_wstepny_pozostalo": {
+    "t": "Filtr wstępny, pozostało"
+   },
+   "filtr_kompozytowy_zywotnosc": {
+    "t": "Filtr kompozytowy"
+   },
+   "filtr_kompozytowy_pozostalo": {
+    "t": "Filtr kompozytowy, pozostało"
+   }
+  },
+  "binary_sensor": {
+   "ciagle_monitorowanie": {
+    "t": "Ciągłe monitorowanie"
+   }
+  },
+  "@locate": {
+   "t": "Zlokalizuj robota"
+  }
+ },
+ "rowdesc": {
+  "select": {
+   "carpet_cleaning": {
+    "remove_mop": "Robot jedynie odkurzy dywan bez mopowania.",
+    "avoidance": "Robot będzie unikać dywanu podczas czyszczenia.",
+    "ignore": "Nadaje się do otoczenia, gdzie nie ma dywanów lub gdzie maty mogą być mopowane (np. gumowe).",
+    "cross": "Robot będzie przejeżdżał przez dywany bez ich czyszczenia, jeśli zajdzie taka potrzeba.",
+    "adaptation": "Robot podniesie mopa i odkurzy dywan."
+   }
+  }
+ },
+ "preset": {
+  "auto": "Auto",
+  "night": "Nocny",
+  "natural": "Naturalny",
+  "strong": "Mocny",
+  "custom": "Tryb niestandardowy"
+ }
+}

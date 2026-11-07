@@ -1,0 +1,91 @@
+{
+  "hc": {
+    "brandline": "Sprzęt gospodarstwa domowego",
+    "devices": "Urządzenia",
+    "offline": "Odłączone",
+    "quick": "Szybki wybór",
+    "advanced": "Zaawansowane",
+    "favourites": "Ulubione",
+    "program": "Program",
+    "pick_program": "Wybierz program",
+    "pick_drink": "Wybierz napój",
+    "drink": "Napój",
+    "drinks": "Napoje",
+    "no_programs": "Brak listy programów.",
+    "remaining": "Pozostało",
+    "duration": "Czas trwania",
+    "duration_caps": "CZAS TRWANIA",
+    "energy": "ENERGIA",
+    "water": "WODA",
+    "options": "Opcje",
+    "time": "Czas",
+    "start_time": "Godzina rozpoczęcia",
+    "in_time": "za {t}",
+    "now": "Teraz",
+    "start": "Start",
+    "abort": "Anuluj program",
+    "cancel": "Anuluj",
+    "pause": "Wstrzymaj",
+    "resume": "Wznów",
+    "brewing": "Przygotowywanie",
+    "amount": "Ilość",
+    "amount_ml": "Ilość (ml)",
+    "all_good": "Wszystko jest w porządku",
+    "full": "Pełny",
+    "empty": "Pusty",
+    "low": "Niski poziom",
+    "tray_full_empty_it": "Pełna, opróżnij",
+    "cleaning_programs": "Programy czyszczenia",
+    "device_state": "Stan urządzenia",
+    "works_fine": "Twoje urządzenie działa poprawnie",
+    "needs_attention": "Urządzenie wymaga uwagi",
+    "care_blurb": "Regularna konserwacja i czyszczenie urządzeń domowych zapewnia ich długą żywotność, wydajność i lepsze funkcjonowanie.",
+    "general": "Ogólne",
+    "device_name": "Nazwa urządzenia",
+    "no_settings": "Brak włączonych encji ustawień dla tego urządzenia.",
+    "greet": { "morning": "Dzień dobry", "day": "Dobry dzień", "evening": "Dobry wieczór" },
+    "dev": { "coffeemaker": "Ekspres do kawy", "dishwasher": "Zmywarka do naczyń" },
+    "screen": { "ctl": "Sterowanie", "care": "Obsługa i pielęgnacja", "info": "Informacje o urządzeniu", "set": "Ustawienia" },
+    "op": {
+      "inactive": "Wyłączony", "ready": "Gotowy", "delayedstart": "Opóźniony start", "run": "Program w toku",
+      "pause": "Wstrzymany", "actionrequired": "Wymagana akcja", "finished": "Zakończono", "error": "Błąd",
+      "aborting": "Przerywanie", "on": "Włączony", "off": "Wyłączony", "enabled": "Włączone", "disabled": "Wyłączone"
+    },
+    "q": {
+      "power": "Stan zasilania", "silence": "Wyciszenie", "variospeed": "VarioSpeed teraz",
+      "cup_warmer": "Podgrzewacz filiżanek", "child_lock": "Blokada rodzicielska"
+    },
+    "opt": {
+      "variospeedplus": "VarioSpeedPlus", "silence": "Wyciszenie", "hygiene": "HigienaPlus",
+      "intensiv_zone": "Strefa intensywna", "brilliance_dry": "Suszenie nabłyszczające"
+    },
+    "note": {
+      "offline": "Urządzenie offline", "no_salt": "Brak soli regenerującej", "no_rinse_aid": "Brak nabłyszczacza",
+      "door_open": "Drzwiczki otwarte", "aborted": "Program został przerwany", "finished": "Program zakończony",
+      "machine_care": "Wymagane czyszczenie zmywarki", "calcified": "Podgrzewacz wody pokryty kamieniem",
+      "filter": "Wyczyść inteligentny filtr", "tank_empty": "Zbiornik na wodę jest pusty",
+      "beans_empty": "Pojemnik na ziarna jest pusty", "tray_full": "Opróżnij tacę ociekową",
+      "descale": "Wymagane odkamienianie"
+    },
+    "care": {
+      "tank": "Zbiornik na wodę", "tray": "Taca ociekowa", "beans": "Pojemnik na ziarna",
+      "cleaning": "Czyszczenie", "smart_filter": "Inteligentny filtr", "rinse_aid": "Nabłyszczacz", "salt": "Sól",
+      "service_after": "Serwis po {n} uruchomieniach programu", "needs_cleaning": "Wymaga czyszczenia"
+    },
+    "cm": {
+      "strength": "Moc kawy", "bean_amount": "Ilość ziaren", "temperature": "Temperatura kawy", "size": "Rozmiar",
+      "flow": "Przepływ", "coarsness": "Stopień zmielenia", "aroma": "Aromat", "shots": "Liczba shotów",
+      "ratio": "Proporcja kawa/mleko", "container": "Pojemnik na ziarna", "water_temp": "Temperatura wody",
+      "multiple": "Kilka napojów"
+    },
+    "info": {
+      "model": "Model", "manufacturer": "Producent", "serial": "Numer seryjny",
+      "sw": "Wersja oprogramowania", "hw": "Wersja sprzętu", "ip": "Adres IP",
+      "no_registry": "Brak danych urządzenia w rejestrze HA."
+    },
+    "err": {
+      "offline": "Urządzenie jest offline",
+      "remote_start": "Włącz zdalne uruchomienie na urządzeniu"
+    }
+  }
+}

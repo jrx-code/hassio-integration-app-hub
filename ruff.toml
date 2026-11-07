@@ -1,0 +1,15 @@
+# Pinned so a new Ruff release cannot turn a green lint red on its own: the default rule
+# set grows between versions, and this repo is touched rarely enough that a surprise CI
+# failure costs more than the rule.
+target-version = "py313"
+
+[lint]
+select = ["E4", "E7", "E9", "F", "UP", "I", "B", "SIM"]
+
+[lint.isort]
+known-first-party = ["custom_components"]
+
+[lint.per-file-ignores]
+# The tests reach into the flow's helpers on purpose: the error codes and the schema are
+# what they assert, and a public wrapper for them would exist only for the tests.
+"tests/*" = ["SLF001"]

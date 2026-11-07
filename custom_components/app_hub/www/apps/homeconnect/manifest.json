@@ -1,0 +1,90 @@
+{
+  "id": "homeconnect",
+  "name": "Home Connect",
+  "replaces": "Home Connect (Siemens)",
+  "trademark_owner": "BSH Hausgeräte GmbH",
+  "version": "0.1.0",
+  "icon": "img/icon.svg",
+  "artwork": "required",
+  "requires": [
+    {
+      "integration": "homeconnect_ws",
+      "hint": "chris-mc1/homeconnect_local_hass (HACS)"
+    }
+  ],
+  "palette": {
+    "--primary-background-color": "#fafbfe",
+    "--card-background-color": "#ffffff",
+    "--primary-text-color": "#2e3845",
+    "--secondary-text-color": "#6b7482",
+    "--disabled-text-color": "#9aa3b0",
+    "--divider-color": "#dfe3ea",
+    "--secondary-background-color": "#eceef2",
+    "--primary-color": "#4a82e8",
+    "--warning-color": "#c4561d",
+    "--success-color": "#5dcf8a",
+    "--error-color": "#e8384f",
+    "--info-color": "#5b8fc4"
+  },
+  "config": {
+    "devices": {
+      "shape": "objects",
+      "anchor": "switch.{prefix}_power",
+      "fields": {
+        "type": {
+          "type": "select",
+          "options": [
+            "coffeemaker",
+            "dishwasher"
+          ],
+          "required": true
+        },
+        "prefix": {
+          "type": "entity_prefix",
+          "required": true
+        },
+        "name": {
+          "type": "text",
+          "required": false
+        }
+      }
+    },
+    "options": {
+      "theme": {
+        "type": "select",
+        "options": [
+          "ha",
+          "app"
+        ],
+        "default": "ha"
+      },
+      "dry_run": {
+        "type": "boolean",
+        "default": false
+      },
+      "user_name": {
+        "type": "text",
+        "default": ""
+      }
+    }
+  },
+  "screens": [
+    "start",
+    "dev",
+    "ctl",
+    "progs",
+    "care",
+    "info",
+    "set"
+  ],
+  "locales": [
+    "pl",
+    "en"
+  ],
+  "blueprints": [],
+  "not_covered": [
+    "zdalny start bez wlaczonego zdalnego uruchomienia na urzadzeniu, blokada po stronie producenta",
+    "Home Connect Store i zamawianie srodkow",
+    "harmonogram programow z chmury producenta"
+  ]
+}

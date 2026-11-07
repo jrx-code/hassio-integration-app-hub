@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="LinkTap">
+  <rect width="64" height="64" rx="16" fill="#009688"/>
+  <path d="M32 14c0 0 11 12.4 11 19.4A11 11 0 0 1 21 33.4C21 26.4 32 14 32 14z" fill="#ffffff" opacity="0.95"/>
+  <path d="M27 33.6a5 5 0 0 0 5 5" fill="none" stroke="#009688" stroke-width="2.4" stroke-linecap="round"/>
+  <rect x="24" y="47" width="16" height="4" rx="2" fill="#00635a"/>
+</svg>

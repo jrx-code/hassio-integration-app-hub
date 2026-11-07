@@ -1,0 +1,9 @@
+# Both versions are pinned together: pytest-homeassistant-custom-component decides which
+# Home Assistant core the tests run against, and the core pins the compiled frontend it
+# needs. Without home-assistant-frontend the `frontend` component refuses to set up
+# (ModuleNotFoundError: hass_frontend), and this integration depends on it, so every
+# config-entry test fails. Raise the first pin, then read the second from
+# homeassistant/components/frontend/manifest.json of the version it pulls in.
+pytest-homeassistant-custom-component==0.13.316
+home-assistant-frontend==20260128.6
+ruff==0.17.3

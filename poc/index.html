@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>App Hub PoC</title>
+<style>
+  :root { color-scheme: light; }
+  body { margin:0; background:#e9eaee; color:#2e3845; font-family:Roboto, system-ui, sans-serif; }
+  main { display:flex; flex-wrap:wrap; gap:24px; padding:16px; align-items:flex-start; justify-content:center; }
+  .stage { width:min(700px, 100%); }
+  aside { width:min(360px, 100%); background:#fff; border-radius:12px; padding:16px; box-sizing:border-box; }
+  aside h2 { margin:0 0 10px; font-size:15px; }
+  aside .btns { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:14px; }
+  aside button, aside select { background:#f3f3f5; border:1px solid #ddd; border-radius:8px; padding:7px 10px; font:inherit; font-size:13px; cursor:pointer; min-height:36px; }
+  aside button.on { background:#4a82e8; border-color:#4a82e8; color:#fff; }
+  #log { font:12px/1.45 ui-monospace, monospace; white-space:pre-wrap; max-height:360px; overflow:auto; background:#f6f6f8; padding:8px; border-radius:8px; }
+  .hint { font-size:12px; color:#6b7482; line-height:1.5; }
+</style>
+</head>
+<body>
+<main>
+  <div class="stage" id="stage"></div>
+  <aside>
+    <h2>Aplikacja</h2>
+    <div class="btns" id="apps"></div>
+
+    <h2>Szerokość</h2>
+    <div class="btns" id="widths">
+      <button data-w="360">360 telefon</button>
+      <button data-w="700" class="on">700 Fold</button>
+      <button data-w="1000">1000 desktop</button>
+    </div>
+
+    <h2>Opcje</h2>
+    <div class="btns" id="opts">
+      <button data-o="theme">theme: ha</button>
+      <button data-o="back">back_button: auto</button>
+      <button data-o="dry">dry_run: on</button>
+    </div>
+
+    <h2>Wywołania usług</h2>
+    <div id="log">(brak)</div>
+    <p class="hint">Harness podaje karcie udawany obiekt hass z pliku <code>fixture.json</code> wybranej aplikacji. Uruchom przez serwer HTTP, nie z file://, bo karta importuje moduły i czyta manifesty przez fetch.</p>
+  </aside>
+</main>
+
+<script type="module">
+// Where the built files live, relative to this page. Default is the repo layout; the copy
+// The bundle now ships inside the integration, so the default base is its www/ directory;
+// ?base= overrides it when the page is served from somewhere else.
+const DIST = new URL(new URLSearchParams(location.search).get("base") || "../custom_components/app_hub/www/", location.href).href;
+// The harness always loads the newest build: HA caches /local hard, and the card
+// propagates its own ?v= to every module and asset it then pulls.
+const CB = new URLSearchParams(location.search).get("cb") || Date.now();
+await import(`${DIST}app-hub-card.js?v=dev-${CB}`);
+
+const stage = document.getElementById("stage");
+const log = document.getElementById("log");
+const lines = [];
+
+const state = { app: "", width: 700, theme: "ha", back: "auto", dry: true };
+
+// The integrations every shipped app asks for, read from the manifests the bundle serves.
+const ALL_COMPONENTS = await (async () => {
+  try {
+    const index = await fetch(`${DIST}apps/index.json`).then((r) => r.json());
+    const out = ["lovelace"];
+    for (const id of index.apps || []) {
+      const m = await fetch(`${DIST}apps/${id}/manifest.json`).then((r) => r.json());
+      for (const req of m.requires || []) if (req.integration) out.push(req.integration);
+    }
+    return out;
+  } catch (e) {
+    return ["lovelace"];
+  }
+})();
+
+function note(text) {
+  lines.unshift(`${new Date().toLocaleTimeString()}  ${text}`);
+  log.textContent = lines.slice(0, 60).join("\n");
+}
+
+// A minimal stand-in for the frontend's hass object: what the core actually reads.
+function makeHass(fixture) {
+  return {
+    states: fixture.states || {},
+    entities: fixture.entities || {},
+    devices: fixture.devices || {},
+    // ?lang=en renders the English interface, which is what the screenshots in the
+    // readme are taken from.
+    language: new URLSearchParams(location.search).get("lang") || "pl",
+    user: { is_admin: true, name: "PoC" },
+    // Every app's required integration, not only the selected app's: the launcher is a
+    // screen of its own, and an app with no fixture loaded would otherwise draw as missing.
+    config: { components: ALL_COMPONENTS.concat(fixture.components || []) },
+    callService: (domain, service, data) => {
+      note(`callService ${domain}.${service} ${JSON.stringify(data)}`);
+      return Promise.resolve();
+    },
+    callWS: (msg) => {
+      note(`callWS ${JSON.stringify(msg).slice(0, 220)}`);
+      return Promise.resolve([]);
+    },
+  };
+}
+
+let card;
+async function build() {
+  stage.innerHTML = "";
+  const index = await fetch(DIST + "apps/index.json").then((r) => r.json());
+  const fixtureApp = state.app || index.apps[0];
+  let fixture = {};
+  try {
+    fixture = await fetch(`${DIST}apps/${fixtureApp}/fixture.json`).then((r) => r.json());
+  } catch (e) {
+    note(`brak fixture dla ${fixtureApp}`);
+  }
+  card = document.createElement("app-hub-card");
+  const cfg = { theme: state.theme, dry_run: state.dry, back_button: state.back, height: "860px" };
+  if (state.app) {
+    cfg.app = state.app;
+    // The fixture carries the card config it was captured with, the same one
+    // tools/render_check.mjs renders against; the manifest default is the fallback.
+    const manifest = await fetch(`${DIST}apps/${state.app}/manifest.json`).then((r) => r.json());
+    Object.assign(cfg, fixture.card_config || {});
+    if (!cfg.devices && manifest.config?.devices?.default) {
+      cfg.devices = manifest.config.devices.default;
+    }
+  }
+  if (!state.app) {
+    // Launcher: give every app the config its own fixture was captured with, so entering
+    // one from the launcher shows devices instead of an empty app.
+    cfg.apps = {};
+    for (const id of index.apps || []) {
+      try {
+        const f = await fetch(`${DIST}apps/${id}/fixture.json`).then((r) => r.json());
+        if (f.card_config) cfg.apps[id] = f.card_config;
+      } catch (e) { /* an app without a fixture still shows in the launcher */ }
+    }
+  }
+  card.setConfig(cfg);
+  stage.appendChild(card);
+  card.hass = makeHass(fixture);
+  card.addEventListener("hass-more-info", (ev) => note(`more-info ${ev.detail.entityId}`));
+  stage.style.width = state.width + "px";
+  stage.style.maxWidth = "100%";
+}
+
+async function appButtons() {
+  const index = await fetch(DIST + "apps/index.json").then((r) => r.json());
+  const host = document.getElementById("apps");
+  const mk = (id, label) => {
+    const b = document.createElement("button");
+    b.textContent = label;
+    b.dataset.app = id;
+    if (state.app === id) b.classList.add("on");
+    b.onclick = () => { state.app = id; [...host.children].forEach((c) => c.classList.toggle("on", c.dataset.app === id)); build(); };
+    host.appendChild(b);
+  };
+  mk("", "launcher");
+  for (const id of index.apps) mk(id, id);
+}
+
+document.getElementById("widths").onclick = (ev) => {
+  const b = ev.target.closest("button"); if (!b) return;
+  state.width = Number(b.dataset.w);
+  [...ev.currentTarget.children].forEach((c) => c.classList.toggle("on", c === b));
+  stage.style.width = state.width + "px";
+};
+
+document.getElementById("opts").onclick = (ev) => {
+  const b = ev.target.closest("button"); if (!b) return;
+  if (b.dataset.o === "theme") { state.theme = state.theme === "ha" ? "app" : "ha"; b.textContent = `theme: ${state.theme}`; }
+  if (b.dataset.o === "back") {
+    state.back = state.back === "auto" ? "always" : state.back === "always" ? "never" : "auto";
+    b.textContent = `back_button: ${state.back}`;
+  }
+  if (b.dataset.o === "dry") { state.dry = !state.dry; b.textContent = `dry_run: ${state.dry ? "on" : "off"}`; }
+  build();
+};
+
+await appButtons();
+await build();
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{
+  "prod_url": "https://home-assistant.example.com",
+  "test_host": "192.0.2.10",
+  "test_port": 8123,
+  "ssh_user": "root",
+  "bw_prod_item": "<vault item holding the long-lived token of the instance to copy from>",
+  "bw_test_item": "<vault item holding the test instance credentials>",
+  "cdp_host": "192.0.2.20",
+  "cdp_port": 9222,
+  "mirror_prefixes": [
+    "my_vacuum",
+    "my_dishwasher"
+  ],
+  "mirror_contains": [
+    "linktap"
+  ],
+  "map_pictures": {
+    "camera.my_vacuum_map": "/local/app-hub/sim/map.png"
+  },
+  "map_source_dir": "/path/to/your/map/snapshots"
+}

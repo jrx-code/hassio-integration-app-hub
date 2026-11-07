@@ -1,0 +1,1096 @@
+{
+ "states": {
+  "switch.zone_driveway_linktap_taplinker": {
+   "state": "off",
+   "attributes": {
+    "data": {
+     "dev_id": "DEMO-TAPLINKER",
+     "plan_mode": 4,
+     "plan_sn": 1001,
+     "is_rf_linked": true,
+     "is_flm_plugin": true,
+     "is_fall": false,
+     "is_broken": false,
+     "is_cutoff": false,
+     "is_leak": false,
+     "is_clog": false,
+     "signal": 79,
+     "battery": 53,
+     "child_lock": 0,
+     "is_manual_mode": false,
+     "is_watering": false,
+     "is_final": true,
+     "total_duration": 300,
+     "remain_duration": 0,
+     "speed": 0.0,
+     "volume": 57.88,
+     "volume_limit": 0.0,
+     "failsafe_duration": 0,
+     "is_paused": false
+    },
+    "Default Time": false,
+    "Watering Duration": 15.0,
+    "Watering by Volume": false,
+    "Watering Volume": 0.0,
+    "is_watering": false,
+    "duration_entity": "number.zone_driveway_linktap_taplinker_watering_duration",
+    "volume_entity": "number.zone_driveway_linktap_taplinker_watering_volume",
+    "icon": "mdi:water-pump",
+    "friendly_name": "Zone - Driveway"
+   }
+  },
+  "valve.zone_driveway_linktap_taplinker": {
+   "state": "closed",
+   "attributes": {
+    "is_closed": true,
+    "data": {
+     "dev_id": "DEMO-TAPLINKER",
+     "plan_mode": 4,
+     "plan_sn": 1001,
+     "is_rf_linked": true,
+     "is_flm_plugin": true,
+     "is_fall": false,
+     "is_broken": false,
+     "is_cutoff": false,
+     "is_leak": false,
+     "is_clog": false,
+     "signal": 79,
+     "battery": 53,
+     "child_lock": 0,
+     "is_manual_mode": false,
+     "is_watering": false,
+     "is_final": true,
+     "total_duration": 300,
+     "remain_duration": 0,
+     "speed": 0.0,
+     "volume": 57.88,
+     "volume_limit": 0.0,
+     "failsafe_duration": 0,
+     "is_paused": false
+    },
+    "is_watering": false,
+    "switch": "switch.zone_driveway_linktap_taplinker",
+    "friendly_name": "Zone - Driveway",
+    "supported_features": 3
+   }
+  },
+  "sensor.zone_driveway_linktap_taplinker_battery": {
+   "state": "53",
+   "attributes": {
+    "unit_of_measurement": "%",
+    "device_class": "battery",
+    "friendly_name": "Zone - Driveway Battery"
+   }
+  },
+  "sensor.zone_driveway_linktap_taplinker_failsafe_duration": {
+   "state": "0",
+   "attributes": {
+    "unit_of_measurement": "s",
+    "icon": "mdi:clock",
+    "friendly_name": "Zone - Driveway Failsafe Duration"
+   }
+  },
+  "binary_sensor.zone_driveway_linktap_taplinker_is_broken": {
+   "state": "off",
+   "attributes": {
+    "icon": "mdi:scissors-cutting",
+    "friendly_name": "Zone - Driveway Is Broken"
+   }
+  },
+  "binary_sensor.zone_driveway_linktap_taplinker_is_clogged": {
+   "state": "off",
+   "attributes": {
+    "icon": "mdi:leak-off",
+    "friendly_name": "Zone - Driveway Is Clogged"
+   }
+  },
+  "binary_sensor.zone_driveway_linktap_taplinker_is_cutoff": {
+   "state": "off",
+   "attributes": {
+    "icon": "mdi:scissors-cutting",
+    "friendly_name": "Zone - Driveway Is Cutoff"
+   }
+  },
+  "binary_sensor.zone_driveway_linktap_taplinker_is_fall": {
+   "state": "off",
+   "attributes": {
+    "device_class": "problem",
+    "icon": "mdi:meter-electric-outline",
+    "friendly_name": "Zone - Driveway Is Fall"
+   }
+  },
+  "binary_sensor.zone_driveway_linktap_taplinker_is_leaking": {
+   "state": "off",
+   "attributes": {
+    "icon": "mdi:leak",
+    "friendly_name": "Zone - Driveway Is Leaking"
+   }
+  },
+  "binary_sensor.zone_driveway_linktap_taplinker_is_linked": {
+   "state": "on",
+   "attributes": {
+    "friendly_name": "Zone - Driveway Is Linked"
+   }
+  },
+  "binary_sensor.zone_driveway_linktap_taplinker_is_manual_mode": {
+   "state": "off",
+   "attributes": {
+    "icon": "mdi:account-switch",
+    "friendly_name": "Zone - Driveway Is Manual Mode"
+   }
+  },
+  "binary_sensor.zone_driveway_linktap_taplinker_is_paused": {
+   "state": "off",
+   "attributes": {
+    "icon": "mdi:pause",
+    "friendly_name": "Zone - Driveway Is Paused"
+   }
+  },
+  "binary_sensor.zone_driveway_linktap_taplinker_is_watering": {
+   "state": "off",
+   "attributes": {
+    "icon": "mdi:water",
+    "friendly_name": "Zone - Driveway Is Watering"
+   }
+  },
+  "sensor.zone_driveway_linktap_taplinker_plan_mode": {
+   "state": "4",
+   "attributes": {
+    "unit_of_measurement": "mode",
+    "icon": "mdi:note",
+    "friendly_name": "Zone - Driveway Plan Mode"
+   }
+  },
+  "sensor.zone_driveway_linktap_taplinker_plan_mode_string": {
+   "state": "Odd-Even",
+   "attributes": {
+    "unit_of_measurement": "mode",
+    "icon": "mdi:note",
+    "friendly_name": "Zone - Driveway Plan Mode String"
+   }
+  },
+  "sensor.zone_driveway_linktap_taplinker_plan_sn": {
+   "state": "297711362",
+   "attributes": {
+    "unit_of_measurement": "sn",
+    "icon": "mdi:note",
+    "friendly_name": "Zone - Driveway Plan Sn"
+   }
+  },
+  "sensor.zone_driveway_linktap_taplinker_remain_duration": {
+   "state": "0",
+   "attributes": {
+    "unit_of_measurement": "s",
+    "icon": "mdi:clock",
+    "friendly_name": "Zone - Driveway Remain Duration"
+   }
+  },
+  "sensor.zone_driveway_linktap_taplinker_signal": {
+   "state": "79",
+   "attributes": {
+    "unit_of_measurement": "%",
+    "icon": "mdi:percent-circle",
+    "friendly_name": "Zone - Driveway Signal"
+   }
+  },
+  "sensor.zone_driveway_linktap_taplinker_speed": {
+   "state": "0.0",
+   "attributes": {
+    "state_class": "measurement",
+    "unit_of_measurement": "L/min",
+    "device_class": "volume_flow_rate",
+    "icon": "mdi:speedometer",
+    "friendly_name": "Zone - Driveway Speed"
+   }
+  },
+  "sensor.zone_driveway_linktap_taplinker_total_duration": {
+   "state": "300",
+   "attributes": {
+    "unit_of_measurement": "s",
+    "icon": "mdi:clock",
+    "friendly_name": "Zone - Driveway Total Duration"
+   }
+  },
+  "sensor.zone_driveway_linktap_taplinker_volume": {
+   "state": "57.88",
+   "attributes": {
+    "state_class": "measurement",
+    "unit_of_measurement": "L",
+    "device_class": "water",
+    "icon": "mdi:water-percent",
+    "friendly_name": "Zone - Driveway Volume"
+   }
+  },
+  "sensor.zone_driveway_linktap_taplinker_volume_limit": {
+   "state": "0.0",
+   "attributes": {
+    "unit_of_measurement": "L",
+    "icon": "mdi:water-percent",
+    "friendly_name": "Zone - Driveway Volume Limit"
+   }
+  },
+  "number.zone_driveway_linktap_taplinker_watering_duration": {
+   "state": "15.0",
+   "attributes": {
+    "min": 0,
+    "max": 120,
+    "step": 5,
+    "mode": "auto",
+    "unit_of_measurement": "m",
+    "icon": "mdi:clock",
+    "friendly_name": "Zone - Driveway Watering duration"
+   }
+  },
+  "number.zone_driveway_linktap_taplinker_watering_volume": {
+   "state": "0",
+   "attributes": {
+    "min": 0,
+    "max": 2000,
+    "step": 10,
+    "mode": "auto",
+    "unit_of_measurement": "L",
+    "icon": "mdi:water",
+    "friendly_name": "Zone - Driveway Watering volume"
+   }
+  },
+  "number.driveway_zone_driveway_linktap_front_beds_pause_duration": {
+   "state": "24",
+   "attributes": {
+    "min": 1,
+    "max": 240,
+    "step": 1,
+    "mode": "auto",
+    "unit_of_measurement": "h",
+    "icon": "mdi:timer-pause",
+    "friendly_name": "Zone - Driveway Pause Duration Water Plan"
+   }
+  },
+  "sensor.driveway_zone_driveway_linktap_front_beds_watering_time_total": {
+   "state": "24732.1",
+   "attributes": {
+    "state_class": "total_increasing",
+    "unit_of_measurement": "s",
+    "icon": "mdi:clock",
+    "friendly_name": "Zone - Driveway Watering Time Total"
+   }
+  },
+  "sensor.driveway_zone_driveway_linktap_front_beds_volume_total": {
+   "state": "4822.7",
+   "attributes": {
+    "state_class": "total_increasing",
+    "unit_of_measurement": "L",
+    "device_class": "water",
+    "icon": "mdi:water",
+    "friendly_name": "Zone - Driveway Volume Total"
+   }
+  },
+  "switch.driveway_zone_driveway_pause_front_beds": {
+   "state": "off",
+   "attributes": {
+    "pause_duration_entity": "number.driveway_zone_driveway_linktap_front_beds_pause_duration",
+    "icon": "mdi:pause-circle",
+    "friendly_name": "Zone - Driveway Pause Water Plan"
+   }
+  },
+  "switch.zone_patio_linktap_zone_patio": {
+   "state": "off",
+   "attributes": {
+    "data": {
+     "dev_id": "DEMO-TAPLINKER",
+     "plan_mode": 4,
+     "plan_sn": 1001,
+     "is_rf_linked": true,
+     "is_flm_plugin": true,
+     "is_fall": false,
+     "is_broken": false,
+     "is_cutoff": false,
+     "is_leak": false,
+     "is_clog": false,
+     "signal": 55,
+     "battery": 100,
+     "child_lock": 0,
+     "is_manual_mode": false,
+     "is_watering": true,
+     "is_final": true,
+     "total_duration": 900,
+     "remain_duration": 415,
+     "speed": 7.4,
+     "volume": 31.8,
+     "volume_limit": 0.0,
+     "failsafe_duration": 0,
+     "is_paused": false
+    },
+    "Default Time": false,
+    "Watering Duration": 15.0,
+    "Watering by Volume": false,
+    "Watering Volume": 0.0,
+    "is_watering": true,
+    "duration_entity": "number.zone_patio_linktap_zone_patio_watering_duration",
+    "volume_entity": "number.zone_patio_linktap_zone_patio_watering_volume",
+    "icon": "mdi:water-pump",
+    "friendly_name": "LinkTap Zone - Patio"
+   }
+  },
+  "valve.zone_patio_linktap_zone_patio": {
+   "state": "open",
+   "attributes": {
+    "is_closed": false,
+    "data": {
+     "dev_id": "DEMO-TAPLINKER",
+     "plan_mode": 4,
+     "plan_sn": 1001,
+     "is_rf_linked": true,
+     "is_flm_plugin": true,
+     "is_fall": false,
+     "is_broken": false,
+     "is_cutoff": false,
+     "is_leak": false,
+     "is_clog": false,
+     "signal": 55,
+     "battery": 100,
+     "child_lock": 0,
+     "is_manual_mode": false,
+     "is_watering": true,
+     "is_final": true,
+     "total_duration": 900,
+     "remain_duration": 415,
+     "speed": 7.4,
+     "volume": 31.8,
+     "volume_limit": 0.0,
+     "failsafe_duration": 0,
+     "is_paused": false
+    },
+    "is_watering": true,
+    "switch": "switch.zone_patio_linktap_zone_patio",
+    "friendly_name": "LinkTap Zone - Patio",
+    "supported_features": 3
+   }
+  },
+  "sensor.zone_patio_linktap_zone_patio_battery": {
+   "state": "100",
+   "attributes": {
+    "unit_of_measurement": "%",
+    "device_class": "battery",
+    "friendly_name": "LinkTap Zone - Patio Battery"
+   }
+  },
+  "sensor.zone_patio_linktap_zone_patio_failsafe_duration": {
+   "state": "0",
+   "attributes": {
+    "unit_of_measurement": "s",
+    "icon": "mdi:clock",
+    "friendly_name": "LinkTap Zone - Patio Failsafe Duration"
+   }
+  },
+  "binary_sensor.zone_patio_linktap_zone_patio_is_broken": {
+   "state": "off",
+   "attributes": {
+    "icon": "mdi:scissors-cutting",
+    "friendly_name": "LinkTap Zone - Patio Is Broken"
+   }
+  },
+  "binary_sensor.zone_patio_linktap_zone_patio_is_clogged": {
+   "state": "off",
+   "attributes": {
+    "icon": "mdi:leak-off",
+    "friendly_name": "LinkTap Zone - Patio Is Clogged"
+   }
+  },
+  "binary_sensor.zone_patio_linktap_zone_patio_is_cutoff": {
+   "state": "off",
+   "attributes": {
+    "icon": "mdi:scissors-cutting",
+    "friendly_name": "LinkTap Zone - Patio Is Cutoff"
+   }
+  },
+  "binary_sensor.zone_patio_linktap_zone_patio_is_fall": {
+   "state": "off",
+   "attributes": {
+    "icon": "mdi:meter-electric-outline",
+    "friendly_name": "LinkTap Zone - Patio Is Fall"
+   }
+  },
+  "binary_sensor.zone_patio_linktap_zone_patio_is_leaking": {
+   "state": "off",
+   "attributes": {
+    "icon": "mdi:leak",
+    "friendly_name": "LinkTap Zone - Patio Is Leaking"
+   }
+  },
+  "binary_sensor.zone_patio_linktap_zone_patio_is_linked": {
+   "state": "on",
+   "attributes": {
+    "friendly_name": "LinkTap Zone - Patio Is Linked"
+   }
+  },
+  "binary_sensor.zone_patio_linktap_zone_patio_is_manual_mode": {
+   "state": "off",
+   "attributes": {
+    "icon": "mdi:account-switch",
+    "friendly_name": "LinkTap Zone - Patio Is Manual Mode"
+   }
+  },
+  "binary_sensor.zone_patio_linktap_zone_patio_is_paused": {
+   "state": "off",
+   "attributes": {
+    "icon": "mdi:pause",
+    "friendly_name": "LinkTap Zone - Patio Is Paused"
+   }
+  },
+  "binary_sensor.zone_patio_linktap_zone_patio_is_watering": {
+   "state": "on",
+   "attributes": {
+    "icon": "mdi:water",
+    "friendly_name": "LinkTap Zone - Patio Is Watering"
+   }
+  },
+  "sensor.zone_patio_linktap_zone_patio_plan_mode": {
+   "state": "4",
+   "attributes": {
+    "unit_of_measurement": "mode",
+    "icon": "mdi:note",
+    "friendly_name": "LinkTap Zone - Patio Plan Mode"
+   }
+  },
+  "sensor.zone_patio_linktap_zone_patio_plan_mode_string": {
+   "state": "Odd-Even",
+   "attributes": {
+    "unit_of_measurement": "mode",
+    "icon": "mdi:note",
+    "friendly_name": "LinkTap Zone - Patio Plan Mode String"
+   }
+  },
+  "sensor.zone_patio_linktap_zone_patio_plan_sn": {
+   "state": "295911504",
+   "attributes": {
+    "unit_of_measurement": "sn",
+    "icon": "mdi:note",
+    "friendly_name": "LinkTap Zone - Patio Plan Sn"
+   }
+  },
+  "sensor.zone_patio_linktap_zone_patio_remain_duration": {
+   "state": "415",
+   "attributes": {
+    "unit_of_measurement": "s",
+    "icon": "mdi:clock",
+    "friendly_name": "LinkTap Zone - Patio Remain Duration"
+   }
+  },
+  "sensor.zone_patio_linktap_zone_patio_signal": {
+   "state": "55",
+   "attributes": {
+    "unit_of_measurement": "%",
+    "icon": "mdi:percent-circle",
+    "friendly_name": "LinkTap Zone - Patio Signal"
+   }
+  },
+  "sensor.zone_patio_linktap_zone_patio_speed": {
+   "state": "7.4",
+   "attributes": {
+    "state_class": "measurement",
+    "unit_of_measurement": "L/min",
+    "device_class": "volume_flow_rate",
+    "icon": "mdi:speedometer",
+    "friendly_name": "LinkTap Zone - Patio Speed"
+   }
+  },
+  "sensor.zone_patio_linktap_zone_patio_total_duration": {
+   "state": "900",
+   "attributes": {
+    "unit_of_measurement": "s",
+    "icon": "mdi:clock",
+    "friendly_name": "LinkTap Zone - Patio Total Duration"
+   }
+  },
+  "sensor.zone_patio_linktap_zone_patio_volume": {
+   "state": "31.8",
+   "attributes": {
+    "state_class": "measurement",
+    "unit_of_measurement": "L",
+    "device_class": "water",
+    "icon": "mdi:water-percent",
+    "friendly_name": "LinkTap Zone - Patio Volume"
+   }
+  },
+  "sensor.zone_patio_linktap_zone_patio_volume_limit": {
+   "state": "0.0",
+   "attributes": {
+    "unit_of_measurement": "L",
+    "icon": "mdi:water-percent",
+    "friendly_name": "LinkTap Zone - Patio Volume Limit"
+   }
+  },
+  "number.zone_patio_linktap_zone_patio_watering_duration": {
+   "state": "15.0",
+   "attributes": {
+    "min": 0,
+    "max": 120,
+    "step": 5,
+    "mode": "auto",
+    "unit_of_measurement": "m",
+    "icon": "mdi:clock",
+    "friendly_name": "LinkTap Zone - Patio Watering Duration"
+   }
+  },
+  "number.zone_patio_linktap_zone_patio_watering_volume": {
+   "state": "0",
+   "attributes": {
+    "min": 0,
+    "max": 2000,
+    "step": 10,
+    "mode": "auto",
+    "unit_of_measurement": "L",
+    "icon": "mdi:water",
+    "friendly_name": "LinkTap Zone - Patio Watering Volume"
+   }
+  },
+  "number.garden_zone_patio_linktap_patio_pause_duration": {
+   "state": "24",
+   "attributes": {
+    "min": 1,
+    "max": 240,
+    "step": 1,
+    "mode": "auto",
+    "unit_of_measurement": "h",
+    "icon": "mdi:timer-pause",
+    "friendly_name": "Zone - Patio Pause Duration Water Plan"
+   }
+  },
+  "sensor.garden_zone_patio_linktap_patio_watering_time_total": {
+   "state": "15777.7",
+   "attributes": {
+    "state_class": "total_increasing",
+    "unit_of_measurement": "s",
+    "icon": "mdi:clock",
+    "friendly_name": "Zone - Patio Watering Time Total"
+   }
+  },
+  "sensor.garden_zone_patio_linktap_patio_volume_total": {
+   "state": "2464.6",
+   "attributes": {
+    "state_class": "total_increasing",
+    "unit_of_measurement": "L",
+    "device_class": "water",
+    "icon": "mdi:water",
+    "friendly_name": "Zone - Patio Volume Total"
+   }
+  },
+  "switch.garden_zone_patio_pause_patio": {
+   "state": "off",
+   "attributes": {
+    "pause_duration_entity": "number.garden_zone_patio_linktap_patio_pause_duration",
+    "icon": "mdi:pause-circle",
+    "friendly_name": "Zone - Patio Pause Water Plan"
+   }
+  },
+  "switch.zone_front_main_linktap_zone_front_main": {
+   "state": "off",
+   "attributes": {
+    "data": {
+     "dev_id": "DEMO-TAPLINKER",
+     "plan_mode": 7,
+     "plan_sn": 1001,
+     "is_rf_linked": true,
+     "is_flm_plugin": true,
+     "is_fall": false,
+     "is_broken": false,
+     "is_cutoff": false,
+     "is_leak": false,
+     "is_clog": false,
+     "signal": 55,
+     "battery": 100,
+     "child_lock": 0,
+     "is_manual_mode": false,
+     "is_watering": false,
+     "is_final": true,
+     "total_duration": 140,
+     "remain_duration": 0,
+     "speed": 0.0,
+     "volume": 15.34,
+     "volume_limit": 0.0,
+     "failsafe_duration": 0,
+     "is_paused": false
+    },
+    "Default Time": false,
+    "Watering Duration": 15.0,
+    "Watering by Volume": false,
+    "Watering Volume": 0.0,
+    "is_watering": false,
+    "duration_entity": "number.zone_front_main_linktap_zone_front_main_watering_duration",
+    "volume_entity": "number.zone_front_main_linktap_zone_front_main_watering_volume",
+    "icon": "mdi:water-pump",
+    "friendly_name": "LinkTap Zone Main - Front Garden"
+   }
+  },
+  "valve.zone_front_main_linktap_zone_front_main": {
+   "state": "closed",
+   "attributes": {
+    "is_closed": true,
+    "data": {
+     "dev_id": "DEMO-TAPLINKER",
+     "plan_mode": 7,
+     "plan_sn": 1001,
+     "is_rf_linked": true,
+     "is_flm_plugin": true,
+     "is_fall": false,
+     "is_broken": false,
+     "is_cutoff": false,
+     "is_leak": false,
+     "is_clog": false,
+     "signal": 55,
+     "battery": 100,
+     "child_lock": 0,
+     "is_manual_mode": false,
+     "is_watering": false,
+     "is_final": true,
+     "total_duration": 140,
+     "remain_duration": 0,
+     "speed": 0.0,
+     "volume": 15.34,
+     "volume_limit": 0.0,
+     "failsafe_duration": 0,
+     "is_paused": false
+    },
+    "is_watering": false,
+    "switch": "switch.zone_front_main_linktap_zone_front_main",
+    "friendly_name": "LinkTap Zone Main - Front Garden",
+    "supported_features": 3
+   }
+  },
+  "sensor.zone_front_main_linktap_zone_front_main_bateria": {
+   "state": "100",
+   "attributes": {
+    "unit_of_measurement": "%",
+    "device_class": "battery",
+    "friendly_name": "LinkTap Zone Main - Front Garden Bateria"
+   }
+  },
+  "binary_sensor.zone_front_main_linktap_zone_front_main_is_watering": {
+   "state": "off",
+   "attributes": {
+    "icon": "mdi:water",
+    "friendly_name": "LinkTap Zone Main - Front Garden Is Watering"
+   }
+  },
+  "sensor.zone_front_main_linktap_zone_front_main_pozostaly_czas_podlewania": {
+   "state": "0",
+   "attributes": {
+    "unit_of_measurement": "s",
+    "icon": "mdi:clock",
+    "friendly_name": "LinkTap Zone Main - Front Garden Remaining watering time"
+   }
+  },
+  "sensor.zone_front_main_linktap_zone_front_main_speed": {
+   "state": "0.0",
+   "attributes": {
+    "state_class": "measurement",
+    "unit_of_measurement": "L/min",
+    "device_class": "volume_flow_rate",
+    "icon": "mdi:speedometer",
+    "friendly_name": "LinkTap Zone Main - Front Garden Speed"
+   }
+  },
+  "sensor.zone_front_main_linktap_zone_front_main_total_duration": {
+   "state": "140",
+   "attributes": {
+    "unit_of_measurement": "s",
+    "icon": "mdi:clock",
+    "friendly_name": "LinkTap Zone Main - Front Garden Total Duration"
+   }
+  },
+  "sensor.zone_front_main_linktap_zone_front_main_volume": {
+   "state": "15.34",
+   "attributes": {
+    "state_class": "measurement",
+    "unit_of_measurement": "L",
+    "device_class": "water",
+    "icon": "mdi:water-percent",
+    "friendly_name": "LinkTap Zone Main - Front Garden Volume"
+   }
+  },
+  "number.zone_front_main_linktap_zone_front_main_watering_duration": {
+   "state": "15.0",
+   "attributes": {
+    "min": 0,
+    "max": 120,
+    "step": 5,
+    "mode": "auto",
+    "unit_of_measurement": "m",
+    "icon": "mdi:clock",
+    "friendly_name": "LinkTap Zone Main - Front Garden Watering Duration"
+   }
+  },
+  "number.zone_front_main_linktap_zone_front_main_watering_volume": {
+   "state": "0",
+   "attributes": {
+    "min": 0,
+    "max": 2000,
+    "step": 10,
+    "mode": "auto",
+    "unit_of_measurement": "L",
+    "icon": "mdi:water",
+    "friendly_name": "LinkTap Zone Main - Front Garden Watering Volume"
+   }
+  },
+  "number.front_garden_zone_front_main_linktap_master_front_garden_pause_duration": {
+   "state": "24",
+   "attributes": {
+    "min": 1,
+    "max": 240,
+    "step": 1,
+    "mode": "auto",
+    "unit_of_measurement": "h",
+    "icon": "mdi:timer-pause",
+    "friendly_name": "Zone Main - Front Garden Pause Duration Water Plan"
+   }
+  },
+  "sensor.front_garden_zone_front_main_linktap_master_front_garden_watering_time_total": {
+   "state": "37505.8",
+   "attributes": {
+    "state_class": "total_increasing",
+    "unit_of_measurement": "s",
+    "icon": "mdi:clock",
+    "friendly_name": "Zone Main - Front Garden Watering Time Total"
+   }
+  },
+  "sensor.front_garden_zone_front_main_linktap_master_front_garden_volume_total": {
+   "state": "8102.0",
+   "attributes": {
+    "state_class": "total_increasing",
+    "unit_of_measurement": "L",
+    "device_class": "water",
+    "icon": "mdi:water",
+    "friendly_name": "Zone Main - Front Garden Volume Total"
+   }
+  },
+  "switch.front_garden_zone_front_main_pause_master_front_garden": {
+   "state": "off",
+   "attributes": {
+    "pause_duration_entity": "number.front_garden_zone_front_main_linktap_master_front_garden_pause_duration",
+    "icon": "mdi:pause-circle",
+    "friendly_name": "Zone Main - Front Garden Pause Water Plan"
+   }
+  }
+ },
+ "devices": {
+  "demo03": {
+   "name": "front-beds",
+   "name_by_user": "Zone - Driveway",
+   "manufacturer": "LinkTap",
+   "model": "TapLinker",
+   "sw_version": null
+  },
+  "demo02": {
+   "name": "patio",
+   "name_by_user": "Zone - Patio",
+   "manufacturer": "LinkTap",
+   "model": "TapLinker",
+   "sw_version": null
+  },
+  "demo01": {
+   "name": "main-front",
+   "name_by_user": "Zone Main - Front Garden",
+   "manufacturer": "LinkTap",
+   "model": "TapLinker",
+   "sw_version": null
+  }
+ },
+ "entities": {
+  "switch.zone_driveway_linktap_taplinker": {
+   "device_id": "demo03",
+   "platform": "linktap"
+  },
+  "valve.zone_driveway_linktap_taplinker": {
+   "device_id": "demo03",
+   "platform": "linktap"
+  },
+  "sensor.zone_driveway_linktap_taplinker_battery": {
+   "device_id": "demo03",
+   "platform": "linktap"
+  },
+  "sensor.zone_driveway_linktap_taplinker_failsafe_duration": {
+   "device_id": "demo03",
+   "platform": "linktap"
+  },
+  "binary_sensor.zone_driveway_linktap_taplinker_is_broken": {
+   "device_id": "demo03",
+   "platform": "linktap"
+  },
+  "binary_sensor.zone_driveway_linktap_taplinker_is_clogged": {
+   "device_id": "demo03",
+   "platform": "linktap"
+  },
+  "binary_sensor.zone_driveway_linktap_taplinker_is_cutoff": {
+   "device_id": "demo03",
+   "platform": "linktap"
+  },
+  "binary_sensor.zone_driveway_linktap_taplinker_is_fall": {
+   "device_id": "demo03",
+   "platform": "linktap"
+  },
+  "binary_sensor.zone_driveway_linktap_taplinker_is_leaking": {
+   "device_id": "demo03",
+   "platform": "linktap"
+  },
+  "binary_sensor.zone_driveway_linktap_taplinker_is_linked": {
+   "device_id": "demo03",
+   "platform": "linktap"
+  },
+  "binary_sensor.zone_driveway_linktap_taplinker_is_manual_mode": {
+   "device_id": "demo03",
+   "platform": "linktap"
+  },
+  "binary_sensor.zone_driveway_linktap_taplinker_is_paused": {
+   "device_id": "demo03",
+   "platform": "linktap"
+  },
+  "binary_sensor.zone_driveway_linktap_taplinker_is_watering": {
+   "device_id": "demo03",
+   "platform": "linktap"
+  },
+  "sensor.zone_driveway_linktap_taplinker_plan_mode": {
+   "device_id": "demo03",
+   "platform": "linktap"
+  },
+  "sensor.zone_driveway_linktap_taplinker_plan_mode_string": {
+   "device_id": "demo03",
+   "platform": "linktap"
+  },
+  "sensor.zone_driveway_linktap_taplinker_plan_sn": {
+   "device_id": "demo03",
+   "platform": "linktap"
+  },
+  "sensor.zone_driveway_linktap_taplinker_remain_duration": {
+   "device_id": "demo03",
+   "platform": "linktap"
+  },
+  "sensor.zone_driveway_linktap_taplinker_signal": {
+   "device_id": "demo03",
+   "platform": "linktap"
+  },
+  "sensor.zone_driveway_linktap_taplinker_speed": {
+   "device_id": "demo03",
+   "platform": "linktap"
+  },
+  "sensor.zone_driveway_linktap_taplinker_total_duration": {
+   "device_id": "demo03",
+   "platform": "linktap"
+  },
+  "sensor.zone_driveway_linktap_taplinker_volume": {
+   "device_id": "demo03",
+   "platform": "linktap"
+  },
+  "sensor.zone_driveway_linktap_taplinker_volume_limit": {
+   "device_id": "demo03",
+   "platform": "linktap"
+  },
+  "number.zone_driveway_linktap_taplinker_watering_duration": {
+   "device_id": "demo03",
+   "platform": "linktap"
+  },
+  "number.zone_driveway_linktap_taplinker_watering_volume": {
+   "device_id": "demo03",
+   "platform": "linktap"
+  },
+  "number.driveway_zone_driveway_linktap_front_beds_pause_duration": {
+   "device_id": "demo03",
+   "platform": "linktap"
+  },
+  "sensor.driveway_zone_driveway_linktap_front_beds_watering_time_total": {
+   "device_id": "demo03",
+   "platform": "linktap"
+  },
+  "sensor.driveway_zone_driveway_linktap_front_beds_volume_total": {
+   "device_id": "demo03",
+   "platform": "linktap"
+  },
+  "switch.driveway_zone_driveway_pause_front_beds": {
+   "device_id": "demo03",
+   "platform": "linktap"
+  },
+  "switch.zone_patio_linktap_zone_patio": {
+   "device_id": "demo02",
+   "platform": "linktap"
+  },
+  "valve.zone_patio_linktap_zone_patio": {
+   "device_id": "demo02",
+   "platform": "linktap"
+  },
+  "sensor.zone_patio_linktap_zone_patio_battery": {
+   "device_id": "demo02",
+   "platform": "linktap"
+  },
+  "sensor.zone_patio_linktap_zone_patio_failsafe_duration": {
+   "device_id": "demo02",
+   "platform": "linktap"
+  },
+  "binary_sensor.zone_patio_linktap_zone_patio_is_broken": {
+   "device_id": "demo02",
+   "platform": "linktap"
+  },
+  "binary_sensor.zone_patio_linktap_zone_patio_is_clogged": {
+   "device_id": "demo02",
+   "platform": "linktap"
+  },
+  "binary_sensor.zone_patio_linktap_zone_patio_is_cutoff": {
+   "device_id": "demo02",
+   "platform": "linktap"
+  },
+  "binary_sensor.zone_patio_linktap_zone_patio_is_fall": {
+   "device_id": "demo02",
+   "platform": "linktap"
+  },
+  "binary_sensor.zone_patio_linktap_zone_patio_is_leaking": {
+   "device_id": "demo02",
+   "platform": "linktap"
+  },
+  "binary_sensor.zone_patio_linktap_zone_patio_is_linked": {
+   "device_id": "demo02",
+   "platform": "linktap"
+  },
+  "binary_sensor.zone_patio_linktap_zone_patio_is_manual_mode": {
+   "device_id": "demo02",
+   "platform": "linktap"
+  },
+  "binary_sensor.zone_patio_linktap_zone_patio_is_paused": {
+   "device_id": "demo02",
+   "platform": "linktap"
+  },
+  "binary_sensor.zone_patio_linktap_zone_patio_is_watering": {
+   "device_id": "demo02",
+   "platform": "linktap"
+  },
+  "sensor.zone_patio_linktap_zone_patio_plan_mode": {
+   "device_id": "demo02",
+   "platform": "linktap"
+  },
+  "sensor.zone_patio_linktap_zone_patio_plan_mode_string": {
+   "device_id": "demo02",
+   "platform": "linktap"
+  },
+  "sensor.zone_patio_linktap_zone_patio_plan_sn": {
+   "device_id": "demo02",
+   "platform": "linktap"
+  },
+  "sensor.zone_patio_linktap_zone_patio_remain_duration": {
+   "device_id": "demo02",
+   "platform": "linktap"
+  },
+  "sensor.zone_patio_linktap_zone_patio_signal": {
+   "device_id": "demo02",
+   "platform": "linktap"
+  },
+  "sensor.zone_patio_linktap_zone_patio_speed": {
+   "device_id": "demo02",
+   "platform": "linktap"
+  },
+  "sensor.zone_patio_linktap_zone_patio_total_duration": {
+   "device_id": "demo02",
+   "platform": "linktap"
+  },
+  "sensor.zone_patio_linktap_zone_patio_volume": {
+   "device_id": "demo02",
+   "platform": "linktap"
+  },
+  "sensor.zone_patio_linktap_zone_patio_volume_limit": {
+   "device_id": "demo02",
+   "platform": "linktap"
+  },
+  "number.zone_patio_linktap_zone_patio_watering_duration": {
+   "device_id": "demo02",
+   "platform": "linktap"
+  },
+  "number.zone_patio_linktap_zone_patio_watering_volume": {
+   "device_id": "demo02",
+   "platform": "linktap"
+  },
+  "number.garden_zone_patio_linktap_patio_pause_duration": {
+   "device_id": "demo02",
+   "platform": "linktap"
+  },
+  "sensor.garden_zone_patio_linktap_patio_watering_time_total": {
+   "device_id": "demo02",
+   "platform": "linktap"
+  },
+  "sensor.garden_zone_patio_linktap_patio_volume_total": {
+   "device_id": "demo02",
+   "platform": "linktap"
+  },
+  "switch.garden_zone_patio_pause_patio": {
+   "device_id": "demo02",
+   "platform": "linktap"
+  },
+  "switch.zone_front_main_linktap_zone_front_main": {
+   "device_id": "demo01",
+   "platform": "linktap"
+  },
+  "valve.zone_front_main_linktap_zone_front_main": {
+   "device_id": "demo01",
+   "platform": "linktap"
+  },
+  "sensor.zone_front_main_linktap_zone_front_main_bateria": {
+   "device_id": "demo01",
+   "platform": "linktap"
+  },
+  "binary_sensor.zone_front_main_linktap_zone_front_main_is_watering": {
+   "device_id": "demo01",
+   "platform": "linktap"
+  },
+  "sensor.zone_front_main_linktap_zone_front_main_pozostaly_czas_podlewania": {
+   "device_id": "demo01",
+   "platform": "linktap"
+  },
+  "sensor.zone_front_main_linktap_zone_front_main_speed": {
+   "device_id": "demo01",
+   "platform": "linktap"
+  },
+  "sensor.zone_front_main_linktap_zone_front_main_total_duration": {
+   "device_id": "demo01",
+   "platform": "linktap"
+  },
+  "sensor.zone_front_main_linktap_zone_front_main_volume": {
+   "device_id": "demo01",
+   "platform": "linktap"
+  },
+  "number.zone_front_main_linktap_zone_front_main_watering_duration": {
+   "device_id": "demo01",
+   "platform": "linktap"
+  },
+  "number.zone_front_main_linktap_zone_front_main_watering_volume": {
+   "device_id": "demo01",
+   "platform": "linktap"
+  },
+  "number.front_garden_zone_front_main_linktap_master_front_garden_pause_duration": {
+   "device_id": "demo01",
+   "platform": "linktap"
+  },
+  "sensor.front_garden_zone_front_main_linktap_master_front_garden_watering_time_total": {
+   "device_id": "demo01",
+   "platform": "linktap"
+  },
+  "sensor.front_garden_zone_front_main_linktap_master_front_garden_volume_total": {
+   "device_id": "demo01",
+   "platform": "linktap"
+  },
+  "switch.front_garden_zone_front_main_pause_master_front_garden": {
+   "device_id": "demo01",
+   "platform": "linktap"
+  }
+ },
+ "card_config": {
+  "devices": [
+   {
+    "entity": "valve.zone_patio_linktap_zone_patio"
+   },
+   {
+    "entity": "valve.zone_front_main_linktap_zone_front_main"
+   },
+   {
+    "entity": "valve.zone_driveway_linktap_taplinker"
+   }
+  ]
+ },
+ "components": [
+  "linktap"
+ ]
+}

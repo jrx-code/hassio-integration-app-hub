@@ -1,0 +1,81 @@
+name: Tests
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# GitHub only: the Forgejo runner also picks up .github/workflows when a repo has no
+# .forgejo/workflows, and actions/setup-python does not work there.
+
+jobs:
+  lint:
+    name: Ruff
+    if: github.server_url == 'https://github.com'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - run: pip install -r requirements_test.txt
+      - run: ruff check custom_components tests tools
+
+  test:
+    name: Pytest
+    if: github.server_url == 'https://github.com'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - run: pip install -r requirements_test.txt
+      - run: pytest -q --tb=short
+
+  privacy:
+    name: No identifying data
+    if: github.server_url == 'https://github.com'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      # Fails on a captured room name, a hardware id, a serial, a private address or a
+      # host of the developer's own installation, in any tracked file.
+      - run: python3 tools/anonymise_fixtures.py --check
+
+  generated:
+    name: Generated files are current
+    if: github.server_url == 'https://github.com'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - run: python3 tools/notice.py
+      - run: python3 tools/gen_strings.py
+
+  node:
+    # tools/chart_check.mjs is deliberately not here: it feeds the chart code real
+    # recorder statistics pulled from a live instance, so it cannot run in CI.
+    name: Render checks
+    if: github.server_url == 'https://github.com'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Syntax of every bundle module
+        run: find custom_components/app_hub/www -name '*.js' -print0 | xargs -0 -n1 node --check
+      - name: Every screen and sheet renders from the fixture
+        run: |
+          for app in dreame foxess homeconnect linktap; do
+            node tools/render_check.mjs "$app"
+          done

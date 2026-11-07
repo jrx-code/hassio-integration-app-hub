@@ -1,0 +1,124 @@
+{
+  "id": "dreame",
+  "name": "Dreame",
+  "replaces": "Dreamehome 2.6.6.3",
+  "trademark_owner": "Dreame Innovation Technology (Suzhou) Co., Ltd.",
+  "version": "0.1.0",
+  "icon": "img/icon.svg",
+  "artwork": "required",
+  "fallback_locale": "pl",
+  "requires": [
+    {
+      "integration": "dreame_vacuum",
+      "hint": "Tasshack/dreame-vacuum (HACS)",
+      "probe": "devices.0.entity"
+    }
+  ],
+  "palette": {
+    "--primary-background-color": "#faf9f8",
+    "--card-background-color": "#ffffff",
+    "--secondary-background-color": "#eef0f8",
+    "--primary-text-color": "#171818",
+    "--secondary-text-color": "#6b6d72",
+    "--disabled-text-color": "#a3a5aa",
+    "--divider-color": "#ececee",
+    "--primary-color": "#c8b898",
+    "--dr-gold-text": "#a68d64",
+    "--info-color": "#a1baee",
+    "--error-color": "#db4c3b",
+    "--text-primary-color": "#ffffff"
+  },
+  "config": {
+    "devices": {
+      "shape": "objects",
+      "fields": {
+        "entity": {
+          "type": "entity",
+          "domains": [
+            "vacuum",
+            "fan"
+          ],
+          "required": true
+        },
+        "name": {
+          "type": "text",
+          "required": false
+        },
+        "image": {
+          "type": "select",
+          "options": [
+            "x60",
+            "x50",
+            "l50s",
+            "mf10"
+          ],
+          "required": false
+        },
+        "video": {
+          "type": "entity",
+          "domains": [
+            "camera"
+          ],
+          "required": false
+        },
+        "map_url": {
+          "type": "text",
+          "required": false
+        },
+        "weather": {
+          "type": "entity",
+          "domains": [
+            "weather"
+          ],
+          "required": false
+        }
+      }
+    },
+    "options": {
+      "theme": {
+        "type": "select",
+        "options": [
+          "ha",
+          "app"
+        ],
+        "default": "ha"
+      },
+      "dry_run": {
+        "type": "boolean",
+        "default": false
+      }
+    }
+  },
+  "screens": [
+    "home",
+    "vac",
+    "vset",
+    "vsub",
+    "vhist",
+    "vcons",
+    "vsched",
+    "vinfo",
+    "fan",
+    "fanset"
+  ],
+  "sheets": [
+    "mode",
+    "map",
+    "notes",
+    "opts",
+    "confirm",
+    "img"
+  ],
+  "locales": [
+    "pl",
+    "en"
+  ],
+  "blueprints": [],
+  "not_covered": [
+    "zapis harmonogramu sprzatania, integracja oddaje go tylko do odczytu",
+    "wybor strefy na mapie: integracja oddaje calibration_points jako null na wszystkich mapach, wiec nie ma przelicznika piksel-wspolrzedna robota; zaznaczanie pomieszczen dziala listą kafelkow",
+    "edycja mapy: dzielenie i scalanie pomieszczen, strefy zakazane, wirtualne sciany",
+    "podglad kamery na zywo i zdjecia przeszkod z chmury producenta",
+    "aktualizacja oprogramowania robota"
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "hc": {
+    "brandline": "Home appliances",
+    "devices": "Appliances",
+    "offline": "Disconnected",
+    "quick": "Quick picks",
+    "advanced": "Advanced",
+    "favourites": "Favourites",
+    "program": "Program",
+    "pick_program": "Select a program",
+    "pick_drink": "Select a drink",
+    "drink": "Drink",
+    "drinks": "Drinks",
+    "no_programs": "No program list available.",
+    "remaining": "Remaining",
+    "duration": "Duration",
+    "duration_caps": "DURATION",
+    "energy": "ENERGY",
+    "water": "WATER",
+    "options": "Options",
+    "time": "Time",
+    "start_time": "Start time",
+    "in_time": "in {t}",
+    "now": "Now",
+    "start": "Start",
+    "abort": "Cancel program",
+    "cancel": "Cancel",
+    "pause": "Pause",
+    "resume": "Resume",
+    "brewing": "Preparing",
+    "amount": "Amount",
+    "amount_ml": "Amount (ml)",
+    "all_good": "Everything is fine",
+    "full": "Full",
+    "empty": "Empty",
+    "low": "Low",
+    "tray_full_empty_it": "Full, empty it",
+    "cleaning_programs": "Cleaning programs",
+    "device_state": "Appliance status",
+    "works_fine": "Your appliance is working correctly",
+    "needs_attention": "The appliance needs attention",
+    "care_blurb": "Regular care and cleaning keeps home appliances working longer and better.",
+    "general": "General",
+    "device_name": "Appliance name",
+    "no_settings": "No settings entities are enabled for this appliance.",
+    "greet": { "morning": "Good morning", "day": "Good day", "evening": "Good evening" },
+    "dev": { "coffeemaker": "Coffee machine", "dishwasher": "Dishwasher" },
+    "screen": { "ctl": "Control", "care": "Care and cleaning", "info": "Appliance information", "set": "Settings" },
+    "op": {
+      "inactive": "Off", "ready": "Ready", "delayedstart": "Delayed start", "run": "Program running",
+      "pause": "Paused", "actionrequired": "Action required", "finished": "Finished", "error": "Error",
+      "aborting": "Aborting", "on": "On", "off": "Off", "enabled": "Enabled", "disabled": "Disabled"
+    },
+    "q": {
+      "power": "Power state", "silence": "Silence on demand", "variospeed": "VarioSpeed now",
+      "cup_warmer": "Cup warmer", "child_lock": "Child lock"
+    },
+    "opt": {
+      "variospeedplus": "VarioSpeedPlus", "silence": "Silence", "hygiene": "HygienePlus",
+      "intensiv_zone": "Intensive zone", "brilliance_dry": "Brilliance dry"
+    },
+    "note": {
+      "offline": "Appliance offline", "no_salt": "No regeneration salt", "no_rinse_aid": "No rinse aid",
+      "door_open": "Door open", "aborted": "Program was aborted", "finished": "Program finished",
+      "machine_care": "Dishwasher cleaning required", "calcified": "Water heater is calcified",
+      "filter": "Clean the smart filter", "tank_empty": "Water tank is empty",
+      "beans_empty": "Bean container is empty", "tray_full": "Empty the drip tray",
+      "descale": "Descaling required"
+    },
+    "care": {
+      "tank": "Water tank", "tray": "Drip tray", "beans": "Bean container",
+      "cleaning": "Cleaning", "smart_filter": "Smart filter", "rinse_aid": "Rinse aid", "salt": "Salt",
+      "service_after": "Service due after {n} program runs", "needs_cleaning": "Needs cleaning"
+    },
+    "cm": {
+      "strength": "Coffee strength", "bean_amount": "Bean amount", "temperature": "Coffee temperature", "size": "Size",
+      "flow": "Flow rate", "coarsness": "Grind level", "aroma": "Aroma", "shots": "Shot count",
+      "ratio": "Coffee to milk ratio", "container": "Bean container", "water_temp": "Water temperature",
+      "multiple": "Multiple beverages"
+    },
+    "info": {
+      "model": "Model", "manufacturer": "Manufacturer", "serial": "Serial number",
+      "sw": "Software version", "hw": "Hardware version", "ip": "IP address",
+      "no_registry": "No device data in the Home Assistant registry."
+    },
+    "err": {
+      "offline": "The appliance is offline",
+      "remote_start": "Enable remote start on the appliance"
+    }
+  }
+}

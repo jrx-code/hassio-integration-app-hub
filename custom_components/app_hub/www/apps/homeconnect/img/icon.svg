@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Home Connect">
+  <rect width="64" height="64" rx="16" fill="#00001e"/>
+  <rect x="16" y="13" width="32" height="38" rx="4" fill="none" stroke="#2f9a99" stroke-width="3"/>
+  <path d="M22 23h20M22 31h12" stroke="#2f9a99" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="32" cy="42" r="5" fill="none" stroke="#2f9a99" stroke-width="3"/>
+</svg>

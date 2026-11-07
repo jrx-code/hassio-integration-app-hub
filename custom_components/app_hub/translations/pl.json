@@ -1,0 +1,106 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "App Hub",
+        "description": "Dashboardy zastępujące aplikacje producentów. Karta i strategia dashboardu rejestrują się same; wpis w pasku bocznym otwiera launcher na pełnym ekranie.",
+        "data": {
+          "sidebar": "Pokaż w pasku bocznym",
+          "sidebar_title": "Nazwa w pasku bocznym",
+          "sidebar_icon": "Ikona w pasku bocznym",
+          "theme": "Paleta",
+          "dry_run": "Zapisuj wywołania usług w logu zamiast je wysyłać",
+          "apps": "Konfiguracja aplikacji (JSON)"
+        },
+        "data_description": {
+          "theme": "ha trzyma się motywu Home Assistanta, app używa palety producenta",
+          "apps": "Opcjonalnie. Jeden blok na aplikację, taki sam kształt jak w YAML karty."
+        }
+      }
+    },
+    "error": {
+      "invalid_json": "To nie jest poprawny JSON",
+      "not_an_object": "Na najwyższym poziomie musi być obiekt z identyfikatorami aplikacji"
+    },
+    "abort": {
+      "single_instance_allowed": "App Hub jest już skonfigurowany"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "App Hub",
+        "menu_options": {
+          "hub": "Ustawienia huba",
+          "apps": "Skonfiguruj aplikację",
+          "advanced": "Zaawansowane: edycja JSON"
+        }
+      },
+      "hub": {
+        "title": "App Hub",
+        "data": {
+          "sidebar": "Pokaż w pasku bocznym",
+          "sidebar_title": "Nazwa w pasku bocznym",
+          "sidebar_icon": "Ikona w pasku bocznym",
+          "theme": "Paleta",
+          "dry_run": "Zapisuj wywołania usług w logu zamiast je wysyłać"
+        },
+        "data_description": {
+          "theme": "ha trzyma się motywu Home Assistanta, app używa palety producenta"
+        }
+      },
+      "apps": {
+        "title": "Skonfiguruj aplikację",
+        "description": "Wybierz aplikację, którą chcesz wskazać na swoje urządzenia.",
+        "data": {
+          "app": "Aplikacja"
+        }
+      },
+      "app": {
+        "title": "{app}",
+        "description": "Znaleziono urządzenia: {found}. Zaznacz te, które ma pokazywać ta aplikacja; pozostałe pola są opcjonalne i bez zmian zostają przy wartościach domyślnych aplikacji.",
+        "data": {
+          "alarm_days": "Alarm days",
+          "battery_discharge_positive": "Battery discharge positive",
+          "battery_model": "Battery model",
+          "battery_sn": "Battery sn",
+          "buy_price": "Buy price",
+          "co2_factor": "Co2 factor",
+          "currency": "Currency",
+          "deadband": "Deadband",
+          "devices": "Urządzenia",
+          "entities": "Entities",
+          "grid_export_positive": "Grid export positive",
+          "history_days": "Dni historii podlewania",
+          "inverter_model": "Inverter model",
+          "inverter_sn": "Inverter sn",
+          "logger": "Logger",
+          "oil_factor": "Oil factor",
+          "pv_capacity_kw": "Pv capacity kw",
+          "quick_settings_action": "Quick settings action",
+          "revenue_price": "Revenue price",
+          "revenue_since": "Revenue since",
+          "sell_price": "Sell price",
+          "soc_hours": "Soc hours",
+          "stale_seconds": "Stale seconds",
+          "tree_factor": "Tree factor",
+          "user_name": "User name"
+        }
+      },
+      "advanced": {
+        "title": "Konfiguracja aplikacji (JSON)",
+        "description": "Wszystko, co dają formularze, plus to, czego nie dają: mapa encji, wiersz urządzenia z dodatkowymi kluczami. Jeden obiekt z identyfikatorami aplikacji.",
+        "data": {
+          "apps": "Konfiguracja aplikacji (JSON)"
+        },
+        "data_description": {
+          "apps": "Opcjonalnie. Jeden blok na aplikację, taki sam kształt jak w YAML karty."
+        }
+      }
+    },
+    "error": {
+      "invalid_json": "To nie jest poprawny JSON",
+      "not_an_object": "Na najwyższym poziomie musi być obiekt z identyfikatorami aplikacji"
+    }
+  }
+}

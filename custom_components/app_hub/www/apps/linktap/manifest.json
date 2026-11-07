@@ -1,0 +1,88 @@
+{
+  "id": "linktap",
+  "name": "LinkTap",
+  "replaces": "LinkTap 2.10.0",
+  "trademark_owner": "LinkTap",
+  "version": "0.1.0",
+  "icon": "img/icon.svg",
+  "artwork": "optional",
+  "requires": [
+    {
+      "integration": "linktap",
+      "hint": "LinkTap gateway integration (local)",
+      "probe": "devices.0.entity"
+    }
+  ],
+  "palette": {
+    "primary-background-color": "#f0f0f0",
+    "card-background-color": "#ffffff",
+    "primary-text-color": "#2b3034",
+    "secondary-text-color": "#71787d",
+    "divider-color": "#dfe1e3",
+    "primary-color": "#009688",
+    "error-color": "#d32f2f",
+    "warning-color": "#f0ad4e"
+  },
+  "config": {
+    "devices": {
+      "shape": "objects",
+      "fields": {
+        "entity": {
+          "type": "entity",
+          "domains": [
+            "valve"
+          ],
+          "required": true
+        },
+        "name": {
+          "type": "text",
+          "required": false
+        }
+      }
+    },
+    "options": {
+      "theme": {
+        "type": "select",
+        "options": [
+          "ha",
+          "app"
+        ],
+        "default": "ha"
+      },
+      "dry_run": {
+        "type": "boolean",
+        "default": false
+      },
+      "history_days": {
+        "type": "number",
+        "default": 7,
+        "min": 2,
+        "max": 30,
+        "label": {
+          "en": "Days of watering history",
+          "pl": "Dni historii podlewania"
+        }
+      }
+    }
+  },
+  "screens": [
+    "start",
+    "zone",
+    "plan",
+    "history",
+    "settings"
+  ],
+  "locales": [
+    "pl",
+    "en"
+  ],
+  "fallback_locale": "en",
+  "blueprints": [],
+  "not_covered": [
+    "tworzenie i edycja planow podlewania (kalendarz, parzyste/nieparzyste, interwal, miesiac): integracja wystawia tylko tryb i numer planu",
+    "pomijanie podlewania przy deszczu i mrozie (Rain Skip, Temperature Skip) oraz tryb ECO",
+    "dodawanie i usuwanie urzadzen, konfiguracja bramki, master valve i zone valve",
+    "powiadomienia e-mail i push o alarmach, ustawiane w chmurze LinkTap",
+    "historia podlewania sprzed okresu, ktory trzyma recorder Home Assistanta"
+  ]
+}

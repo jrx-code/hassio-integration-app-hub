@@ -1,0 +1,23 @@
+App Hub
+
+This project is not affiliated with, endorsed by or sponsored by any of the manufacturers
+whose applications it replaces. Product names, logos, brands and other trademarks are the
+property of their respective owners and are used here only to identify the device a
+dashboard serves, as the dashboards are built to match the applications they replace.
+
+Device imagery shipped with an app module was taken from publicly available sources.
+If you are a rights holder and object to any name or image in this repository, open an
+issue and it will be removed or replaced.
+
+Trademark owners of the app modules currently in this repository:
+
+  dreame        Dreamehome 2.6.6.3      Dreame Innovation Technology (Suzhou) Co., Ltd.
+  foxess        FoxCloud 2.0 (v2.2.28)  Fox ESS Co., Ltd.
+  homeconnect   Home Connect (Siemens)  BSH Hausgeräte GmbH
+  linktap       LinkTap 2.10.0          LinkTap
+
+This list is generated from the `trademark_owner` field of each app manifest
+(`tools/notice.py`), so it cannot fall behind the app list.
+
+The code in this repository is licensed under the MIT license. The trademarks and the
+imagery named above are not covered by that license.

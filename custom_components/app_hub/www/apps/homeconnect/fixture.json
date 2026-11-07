@@ -1,0 +1,1038 @@
+{
+ "states": {
+  "binary_sensor.siemens_dishwasher_machinecare_and_filter": {
+   "state": "off",
+   "attributes": {
+    "device_class": "problem",
+    "friendly_name": "Siemens Dishwasher MachineCare and Filter"
+   }
+  },
+  "binary_sensor.siemens_dishwasher_remote_start_allowed": {
+   "state": "on",
+   "attributes": {
+    "friendly_name": "Siemens Dishwasher Remote start allowed"
+   }
+  },
+  "binary_sensor.siemens_dishwasher_door": {
+   "state": "off",
+   "attributes": {
+    "device_class": "door",
+    "friendly_name": "Siemens Dishwasher Door"
+   }
+  },
+  "binary_sensor.siemens_dishwasher_program_aborted": {
+   "state": "off",
+   "attributes": {
+    "device_class": "problem",
+    "friendly_name": "Siemens Dishwasher Program Aborted"
+   }
+  },
+  "binary_sensor.siemens_dishwasher_intensive_zone_active": {
+   "state": "off",
+   "attributes": {
+    "friendly_name": "Siemens Dishwasher Intensive Zone Active"
+   }
+  },
+  "binary_sensor.siemens_dishwasher_program_finished": {
+   "state": "off",
+   "attributes": {
+    "friendly_name": "Siemens Dishwasher Program Finished"
+   }
+  },
+  "binary_sensor.siemens_dishwasher_hygiene_plus_active": {
+   "state": "off",
+   "attributes": {
+    "friendly_name": "Siemens Dishwasher Hygiene Plus Active"
+   }
+  },
+  "binary_sensor.siemens_dishwasher_machine_care": {
+   "state": "off",
+   "attributes": {
+    "device_class": "problem",
+    "friendly_name": "Siemens Dishwasher Machine Care"
+   }
+  },
+  "binary_sensor.siemens_dishwasher_water_heater_calcified": {
+   "state": "off",
+   "attributes": {
+    "device_class": "problem",
+    "friendly_name": "Siemens Dishwasher Water Heater Calcified"
+   }
+  },
+  "binary_sensor.siemens_dishwasher_smart_filter_cleaning": {
+   "state": "off",
+   "attributes": {
+    "device_class": "problem",
+    "friendly_name": "Siemens Dishwasher Smart Filter Cleaning"
+   }
+  },
+  "binary_sensor.siemens_dishwasher_interior_illumination": {
+   "state": "on",
+   "attributes": {
+    "friendly_name": "Siemens Dishwasher Interior Illumination"
+   }
+  },
+  "binary_sensor.siemens_dishwasher_connection": {
+   "state": "on",
+   "attributes": {
+    "device_class": "connectivity",
+    "friendly_name": "Siemens Dishwasher Connection"
+   }
+  },
+  "sensor.siemens_dishwasher_program_progress": {
+   "state": "0.0",
+   "attributes": {
+    "unit_of_measurement": "%",
+    "friendly_name": "Siemens Dishwasher Program Progress"
+   }
+  },
+  "sensor.siemens_dishwasher_power_state": {
+   "state": "off",
+   "attributes": {
+    "options": [
+     "off",
+     "on"
+    ],
+    "device_class": "enum",
+    "friendly_name": "Siemens Dishwasher Power state"
+   }
+  },
+  "sensor.siemens_dishwasher_program_phase": {
+   "state": "unknown",
+   "attributes": {
+    "options": [
+     "none",
+     "prerinse",
+     "mainwash",
+     "finalrinse",
+     "drying"
+    ],
+    "device_class": "enum",
+    "friendly_name": "Siemens Dishwasher Program phase"
+   }
+  },
+  "sensor.siemens_dishwasher_remaining_program_time": {
+   "state": "2.58333333333333",
+   "attributes": {
+    "Is Estimated": true,
+    "unit_of_measurement": "h",
+    "device_class": "duration",
+    "friendly_name": "Siemens Dishwasher Remaining Program Time"
+   }
+  },
+  "sensor.siemens_dishwasher_water_forecast": {
+   "state": "49.0",
+   "attributes": {
+    "unit_of_measurement": "%",
+    "friendly_name": "Siemens Dishwasher Water Forecast"
+   }
+  },
+  "sensor.siemens_dishwasher_active_program": {
+   "state": "unknown",
+   "attributes": {
+    "options": [
+     "favorite_001",
+     "dishcare_dishwasher_program_auto2",
+     "dishcare_dishwasher_program_eco50",
+     "dishcare_dishwasher_program_glassshine",
+     "dishcare_dishwasher_program_intensiv70",
+     "dishcare_dishwasher_program_kurz60",
+     "dishcare_dishwasher_program_learningdishwasher",
+     "dishcare_dishwasher_program_machinecare",
+     "dishcare_dishwasher_program_nightwash",
+     "dishcare_dishwasher_program_prerinse",
+     "dishcare_dishwasher_program_quickd"
+    ],
+    "device_class": "enum",
+    "friendly_name": "Siemens Dishwasher Active Program"
+   }
+  },
+  "sensor.siemens_dishwasher_start_in": {
+   "state": "0.0",
+   "attributes": {
+    "unit_of_measurement": "h",
+    "device_class": "duration",
+    "friendly_name": "Siemens Dishwasher Start in"
+   }
+  },
+  "sensor.siemens_dishwasher_operation_state": {
+   "state": "ready",
+   "attributes": {
+    "options": [
+     "inactive",
+     "ready",
+     "delayedstart",
+     "run",
+     "pause",
+     "actionrequired",
+     "finished",
+     "error",
+     "aborting"
+    ],
+    "device_class": "enum",
+    "friendly_name": "Siemens Dishwasher Operation State"
+   }
+  },
+  "sensor.siemens_dishwasher_machinecare_remaining_runs": {
+   "state": "18",
+   "attributes": {
+    "friendly_name": "Siemens Dishwasher MachineCare remaining runs"
+   }
+  },
+  "sensor.siemens_dishwasher_salt": {
+   "state": "full",
+   "attributes": {
+    "options": [
+     "empty",
+     "nearly_empty",
+     "full"
+    ],
+    "device_class": "enum",
+    "friendly_name": "Siemens Dishwasher Salt"
+   }
+  },
+  "sensor.siemens_dishwasher_rinse_aid": {
+   "state": "full",
+   "attributes": {
+    "options": [
+     "empty",
+     "nearly_empty",
+     "full"
+    ],
+    "device_class": "enum",
+    "friendly_name": "Siemens Dishwasher Rinse Aid"
+   }
+  },
+  "sensor.siemens_dishwasher_energy_forecast": {
+   "state": "61.0",
+   "attributes": {
+    "unit_of_measurement": "%",
+    "friendly_name": "Siemens Dishwasher Energy Forecast"
+   }
+  },
+  "switch.siemens_dishwasher_silence_on_demand": {
+   "state": "off",
+   "attributes": {
+    "device_class": "switch",
+    "friendly_name": "Siemens Dishwasher Silence On Demand"
+   }
+  },
+  "switch.siemens_dishwasher_power": {
+   "state": "off",
+   "attributes": {
+    "device_class": "switch",
+    "friendly_name": "Siemens Dishwasher Power"
+   }
+  },
+  "switch.siemens_dishwasher_intensiv_zone": {
+   "state": "off",
+   "attributes": {
+    "device_class": "switch",
+    "friendly_name": "Siemens Dishwasher Intensiv Zone"
+   }
+  },
+  "switch.siemens_dishwasher_variospeedplus": {
+   "state": "off",
+   "attributes": {
+    "device_class": "switch",
+    "friendly_name": "Siemens Dishwasher VariospeedPlus"
+   }
+  },
+  "switch.siemens_dishwasher_hygiene_plus": {
+   "state": "off",
+   "attributes": {
+    "device_class": "switch",
+    "friendly_name": "Siemens Dishwasher Hygiene Plus"
+   }
+  },
+  "switch.siemens_dishwasher_brilliance_dry": {
+   "state": "off",
+   "attributes": {
+    "device_class": "switch",
+    "friendly_name": "Siemens Dishwasher Brilliance Dry"
+   }
+  },
+  "select.siemens_dishwasher_selected_program": {
+   "state": "dishcare_dishwasher_program_auto2",
+   "attributes": {
+    "options": [
+     "favorite_001",
+     "dishcare_dishwasher_program_auto2",
+     "dishcare_dishwasher_program_eco50",
+     "dishcare_dishwasher_program_glassshine",
+     "dishcare_dishwasher_program_intensiv70",
+     "dishcare_dishwasher_program_kurz60",
+     "dishcare_dishwasher_program_learningdishwasher",
+     "dishcare_dishwasher_program_machinecare",
+     "dishcare_dishwasher_program_nightwash",
+     "dishcare_dishwasher_program_prerinse",
+     "dishcare_dishwasher_program_quickd"
+    ],
+    "friendly_name": "Siemens Dishwasher Selected Program"
+   }
+  },
+  "button.siemens_dishwasher_abort": {
+   "state": "unavailable",
+   "attributes": {
+    "friendly_name": "Siemens Dishwasher Abort"
+   }
+  },
+  "button.siemens_dishwasher_start": {
+   "state": "unknown",
+   "attributes": {
+    "friendly_name": "Siemens Dishwasher Start"
+   }
+  },
+  "binary_sensor.siemens_coffeemaker_remote_start_allowed": {
+   "state": "on",
+   "attributes": {
+    "friendly_name": "Siemens CoffeeMaker Remote start allowed"
+   }
+  },
+  "binary_sensor.siemens_coffeemaker_interior_illumination": {
+   "state": "off",
+   "attributes": {
+    "friendly_name": "Siemens CoffeeMaker Interior Illumination"
+   }
+  },
+  "binary_sensor.siemens_coffeemaker_program_finished": {
+   "state": "off",
+   "attributes": {
+    "friendly_name": "Siemens CoffeeMaker Program Finished"
+   }
+  },
+  "binary_sensor.siemens_coffeemaker_bean_container_empty": {
+   "state": "off",
+   "attributes": {
+    "device_class": "problem",
+    "friendly_name": "Siemens CoffeeMaker Bean Container Empty"
+   }
+  },
+  "binary_sensor.siemens_coffeemaker_connection": {
+   "state": "on",
+   "attributes": {
+    "device_class": "connectivity",
+    "friendly_name": "Siemens CoffeeMaker Connection"
+   }
+  },
+  "sensor.siemens_coffeemaker_program_progress": {
+   "state": "0.0",
+   "attributes": {
+    "unit_of_measurement": "%",
+    "friendly_name": "Siemens CoffeeMaker Program Progress"
+   }
+  },
+  "sensor.siemens_coffeemaker_power_state": {
+   "state": "standby",
+   "attributes": {
+    "options": [
+     "on",
+     "standby"
+    ],
+    "device_class": "enum",
+    "friendly_name": "Siemens CoffeeMaker Power state"
+   }
+  },
+  "sensor.siemens_coffeemaker_water_tank": {
+   "state": "full",
+   "attributes": {
+    "options": [
+     "empty",
+     "nearly_empty",
+     "not_inserted",
+     "full"
+    ],
+    "device_class": "enum",
+    "friendly_name": "Siemens CoffeeMaker Water Tank"
+   }
+  },
+  "sensor.siemens_coffeemaker_drip_tray": {
+   "state": "ok",
+   "attributes": {
+    "options": [
+     "full",
+     "not_inserted",
+     "ok"
+    ],
+    "device_class": "enum",
+    "friendly_name": "Siemens CoffeeMaker Drip tray"
+   }
+  },
+  "sensor.siemens_coffeemaker_estimated_total_program_time": {
+   "state": "unknown",
+   "attributes": {
+    "unit_of_measurement": "h",
+    "device_class": "duration",
+    "friendly_name": "Siemens CoffeeMaker Estimated total program time"
+   }
+  },
+  "sensor.siemens_coffeemaker_operation_state": {
+   "state": "inactive",
+   "attributes": {
+    "options": [
+     "inactive",
+     "ready",
+     "delayedstart",
+     "run",
+     "pause",
+     "finished",
+     "error",
+     "aborting"
+    ],
+    "device_class": "enum",
+    "friendly_name": "Siemens CoffeeMaker Operation State"
+   }
+  },
+  "sensor.siemens_coffeemaker_active_program": {
+   "state": "unknown",
+   "attributes": {
+    "options": [
+     "favorite_001",
+     "favorite_002",
+     "favorite_003",
+     "favorite_004",
+     "favorite_005",
+     "favorite_006",
+     "favorite_007",
+     "favorite_008",
+     "favorite_009",
+     "favorite_010",
+     "favorite_011",
+     "favorite_012",
+     "favorite_013",
+     "favorite_014",
+     "favorite_015",
+     "favorite_016",
+     "favorite_017",
+     "favorite_018",
+     "favorite_019",
+     "favorite_020",
+     "favorite_021",
+     "favorite_022",
+     "favorite_023",
+     "favorite_024",
+     "favorite_025",
+     "favorite_026",
+     "favorite_027",
+     "favorite_028",
+     "favorite_029",
+     "favorite_030",
+     "favorite_031",
+     "favorite_032",
+     "favorite_033",
+     "favorite_034",
+     "favorite_035",
+     "favorite_036",
+     "favorite_037",
+     "favorite_038",
+     "favorite_039",
+     "favorite_040",
+     "favorite_041",
+     "favorite_042",
+     "favorite_043",
+     "favorite_044",
+     "favorite_045",
+     "favorite_046",
+     "favorite_047",
+     "favorite_048",
+     "favorite_049",
+     "favorite_050",
+     "favorite_051",
+     "favorite_052",
+     "favorite_053",
+     "favorite_054",
+     "favorite_055",
+     "favorite_056",
+     "favorite_057",
+     "favorite_058",
+     "favorite_059",
+     "favorite_060",
+     "favorite_061",
+     "favorite_062",
+     "favorite_063",
+     "favorite_064",
+     "favorite_065",
+     "favorite_066",
+     "favorite_067",
+     "favorite_068",
+     "favorite_069",
+     "favorite_070",
+     "favorite_071",
+     "favorite_072",
+     "favorite_073",
+     "favorite_074",
+     "favorite_075",
+     "favorite_076",
+     "favorite_077",
+     "favorite_078",
+     "favorite_079",
+     "favorite_080",
+     "favorite_081",
+     "favorite_082",
+     "favorite_083",
+     "favorite_084",
+     "favorite_085",
+     "favorite_086",
+     "favorite_087",
+     "favorite_088",
+     "favorite_089",
+     "favorite_090",
+     "favorite_091",
+     "favorite_092",
+     "favorite_093",
+     "favorite_094",
+     "favorite_095",
+     "favorite_096",
+     "favorite_097",
+     "favorite_098",
+     "favorite_099",
+     "favorite_100",
+     "consumerproducts_coffeemaker_program_beverage_caffegrande",
+     "consumerproducts_coffeemaker_program_beverage_caffelatte",
+     "consumerproducts_coffeemaker_program_beverage_cappuccino",
+     "consumerproducts_coffeemaker_program_beverage_coffee",
+     "consumerproducts_coffeemaker_program_beverage_coffeepot",
+     "consumerproducts_coffeemaker_program_beverage_espresso",
+     "consumerproducts_coffeemaker_program_beverage_espressodoppio",
+     "consumerproducts_coffeemaker_program_beverage_espressomacchiato",
+     "consumerproducts_coffeemaker_program_beverage_hotwater",
+     "consumerproducts_coffeemaker_program_beverage_lattemacchiato",
+     "consumerproducts_coffeemaker_program_beverage_milkfroth",
+     "consumerproducts_coffeemaker_program_beverage_ristretto",
+     "consumerproducts_coffeemaker_program_beverage_warmmilk",
+     "consumerproducts_coffeemaker_program_beverage_xlcoffee",
+     "consumerproducts_coffeemaker_program_cleaningmodes_applianceoffrinsing",
+     "consumerproducts_coffeemaker_program_cleaningmodes_applianceonrinsing",
+     "consumerproducts_coffeemaker_program_cleaningmodes_calcnclean",
+     "consumerproducts_coffeemaker_program_cleaningmodes_clean",
+     "consumerproducts_coffeemaker_program_cleaningmodes_cleanbrewingunitmanually",
+     "consumerproducts_coffeemaker_program_cleaningmodes_cleanbrewingunitmanuallydetailed",
+     "consumerproducts_coffeemaker_program_cleaningmodes_cleanoutletmanually",
+     "consumerproducts_coffeemaker_program_cleaningmodes_descale",
+     "consumerproducts_coffeemaker_program_cleaningmodes_frostprotection",
+     "consumerproducts_coffeemaker_program_cleaningmodes_removewaterfilter",
+     "consumerproducts_coffeemaker_program_cleaningmodes_replacewaterfilter",
+     "consumerproducts_coffeemaker_program_cleaningmodes_rinsemilksystem",
+     "consumerproducts_coffeemaker_program_cleaningmodes_rinsewaterfilter",
+     "consumerproducts_coffeemaker_program_cleaningmodes_specialrinsing",
+     "consumerproducts_coffeemaker_program_coffeeworld_americano",
+     "consumerproducts_coffeemaker_program_coffeeworld_blackeye",
+     "consumerproducts_coffeemaker_program_coffeeworld_cafeaulait",
+     "consumerproducts_coffeemaker_program_coffeeworld_cafeconleche",
+     "consumerproducts_coffeemaker_program_coffeeworld_cafecortado",
+     "consumerproducts_coffeemaker_program_coffeeworld_coldbrew",
+     "consumerproducts_coffeemaker_program_coffeeworld_coldbrewmacchiato",
+     "consumerproducts_coffeemaker_program_coffeeworld_cortado",
+     "consumerproducts_coffeemaker_program_coffeeworld_deadeye",
+     "consumerproducts_coffeemaker_program_coffeeworld_doppio",
+     "consumerproducts_coffeemaker_program_coffeeworld_flatwhite",
+     "consumerproducts_coffeemaker_program_coffeeworld_galao",
+     "consumerproducts_coffeemaker_program_coffeeworld_garoto",
+     "consumerproducts_coffeemaker_program_coffeeworld_grosserbrauner",
+     "consumerproducts_coffeemaker_program_coffeeworld_kaapi",
+     "consumerproducts_coffeemaker_program_coffeeworld_kleinerbrauner",
+     "consumerproducts_coffeemaker_program_coffeeworld_koffieverkeerd",
+     "consumerproducts_coffeemaker_program_coffeeworld_redeye",
+     "consumerproducts_coffeemaker_program_coffeeworld_slowbrew",
+     "consumerproducts_coffeemaker_program_coffeeworld_verlaengerter",
+     "consumerproducts_coffeemaker_program_coffeeworld_verlaengerterbraun",
+     "consumerproducts_coffeemaker_program_coffeeworld_wienermelange"
+    ],
+    "device_class": "enum",
+    "friendly_name": "Siemens CoffeeMaker Active Program"
+   }
+  },
+  "switch.siemens_coffeemaker_cup_warmer": {
+   "state": "on",
+   "attributes": {
+    "device_class": "switch",
+    "friendly_name": "Siemens CoffeeMaker Cup warmer"
+   }
+  },
+  "switch.siemens_coffeemaker_child_lock": {
+   "state": "off",
+   "attributes": {
+    "device_class": "switch",
+    "friendly_name": "Siemens CoffeeMaker Child lock"
+   }
+  },
+  "switch.siemens_coffeemaker_multiple_beverages": {
+   "state": "off",
+   "attributes": {
+    "device_class": "switch",
+    "friendly_name": "Siemens CoffeeMaker Multiple Beverages"
+   }
+  },
+  "switch.siemens_coffeemaker_power": {
+   "state": "off",
+   "attributes": {
+    "device_class": "switch",
+    "friendly_name": "Siemens CoffeeMaker Power"
+   }
+  },
+  "select.siemens_coffeemaker_power_state": {
+   "state": "standby",
+   "attributes": {
+    "options": [
+     "standby",
+     "on"
+    ],
+    "friendly_name": "Siemens CoffeeMaker Power state"
+   }
+  },
+  "select.siemens_coffeemaker_selected_program": {
+   "state": "favorite_011",
+   "attributes": {
+    "options": [
+     "favorite_001",
+     "favorite_002",
+     "favorite_003",
+     "favorite_004",
+     "favorite_005",
+     "favorite_006",
+     "favorite_007",
+     "favorite_008",
+     "favorite_009",
+     "favorite_010",
+     "favorite_011",
+     "favorite_012",
+     "favorite_013",
+     "favorite_014",
+     "favorite_015",
+     "favorite_016",
+     "favorite_017",
+     "favorite_018",
+     "favorite_019",
+     "favorite_020",
+     "favorite_021",
+     "favorite_022",
+     "favorite_023",
+     "favorite_024",
+     "favorite_025",
+     "favorite_026",
+     "favorite_027",
+     "favorite_028",
+     "favorite_029",
+     "favorite_030",
+     "favorite_031",
+     "favorite_032",
+     "favorite_033",
+     "favorite_034",
+     "favorite_035",
+     "favorite_036",
+     "favorite_037",
+     "favorite_038",
+     "favorite_039",
+     "favorite_040",
+     "favorite_041",
+     "favorite_042",
+     "favorite_043",
+     "favorite_044",
+     "favorite_045",
+     "favorite_046",
+     "favorite_047",
+     "favorite_048",
+     "favorite_049",
+     "favorite_050",
+     "favorite_051",
+     "favorite_052",
+     "favorite_053",
+     "favorite_054",
+     "favorite_055",
+     "favorite_056",
+     "favorite_057",
+     "favorite_058",
+     "favorite_059",
+     "favorite_060",
+     "favorite_061",
+     "favorite_062",
+     "favorite_063",
+     "favorite_064",
+     "favorite_065",
+     "favorite_066",
+     "favorite_067",
+     "favorite_068",
+     "favorite_069",
+     "favorite_070",
+     "favorite_071",
+     "favorite_072",
+     "favorite_073",
+     "favorite_074",
+     "favorite_075",
+     "favorite_076",
+     "favorite_077",
+     "favorite_078",
+     "favorite_079",
+     "favorite_080",
+     "favorite_081",
+     "favorite_082",
+     "favorite_083",
+     "favorite_084",
+     "favorite_085",
+     "favorite_086",
+     "favorite_087",
+     "favorite_088",
+     "favorite_089",
+     "favorite_090",
+     "favorite_091",
+     "favorite_092",
+     "favorite_093",
+     "favorite_094",
+     "favorite_095",
+     "favorite_096",
+     "favorite_097",
+     "favorite_098",
+     "favorite_099",
+     "favorite_100",
+     "consumerproducts_coffeemaker_program_beverage_caffegrande",
+     "consumerproducts_coffeemaker_program_beverage_caffelatte",
+     "consumerproducts_coffeemaker_program_beverage_cappuccino",
+     "consumerproducts_coffeemaker_program_beverage_coffee",
+     "consumerproducts_coffeemaker_program_beverage_coffeepot",
+     "consumerproducts_coffeemaker_program_beverage_espresso",
+     "consumerproducts_coffeemaker_program_beverage_espressodoppio",
+     "consumerproducts_coffeemaker_program_beverage_espressomacchiato",
+     "consumerproducts_coffeemaker_program_beverage_hotwater",
+     "consumerproducts_coffeemaker_program_beverage_lattemacchiato",
+     "consumerproducts_coffeemaker_program_beverage_milkfroth",
+     "consumerproducts_coffeemaker_program_beverage_ristretto",
+     "consumerproducts_coffeemaker_program_beverage_warmmilk",
+     "consumerproducts_coffeemaker_program_beverage_xlcoffee",
+     "consumerproducts_coffeemaker_program_cleaningmodes_applianceoffrinsing",
+     "consumerproducts_coffeemaker_program_cleaningmodes_applianceonrinsing",
+     "consumerproducts_coffeemaker_program_cleaningmodes_calcnclean",
+     "consumerproducts_coffeemaker_program_cleaningmodes_clean",
+     "consumerproducts_coffeemaker_program_cleaningmodes_cleanbrewingunitmanually",
+     "consumerproducts_coffeemaker_program_cleaningmodes_cleanbrewingunitmanuallydetailed",
+     "consumerproducts_coffeemaker_program_cleaningmodes_cleanoutletmanually",
+     "consumerproducts_coffeemaker_program_cleaningmodes_descale",
+     "consumerproducts_coffeemaker_program_cleaningmodes_frostprotection",
+     "consumerproducts_coffeemaker_program_cleaningmodes_removewaterfilter",
+     "consumerproducts_coffeemaker_program_cleaningmodes_replacewaterfilter",
+     "consumerproducts_coffeemaker_program_cleaningmodes_rinsemilksystem",
+     "consumerproducts_coffeemaker_program_cleaningmodes_rinsewaterfilter",
+     "consumerproducts_coffeemaker_program_cleaningmodes_specialrinsing",
+     "consumerproducts_coffeemaker_program_coffeeworld_americano",
+     "consumerproducts_coffeemaker_program_coffeeworld_blackeye",
+     "consumerproducts_coffeemaker_program_coffeeworld_cafeaulait",
+     "consumerproducts_coffeemaker_program_coffeeworld_cafeconleche",
+     "consumerproducts_coffeemaker_program_coffeeworld_cafecortado",
+     "consumerproducts_coffeemaker_program_coffeeworld_coldbrew",
+     "consumerproducts_coffeemaker_program_coffeeworld_coldbrewmacchiato",
+     "consumerproducts_coffeemaker_program_coffeeworld_cortado",
+     "consumerproducts_coffeemaker_program_coffeeworld_deadeye",
+     "consumerproducts_coffeemaker_program_coffeeworld_doppio",
+     "consumerproducts_coffeemaker_program_coffeeworld_flatwhite",
+     "consumerproducts_coffeemaker_program_coffeeworld_galao",
+     "consumerproducts_coffeemaker_program_coffeeworld_garoto",
+     "consumerproducts_coffeemaker_program_coffeeworld_grosserbrauner",
+     "consumerproducts_coffeemaker_program_coffeeworld_kaapi",
+     "consumerproducts_coffeemaker_program_coffeeworld_kleinerbrauner",
+     "consumerproducts_coffeemaker_program_coffeeworld_koffieverkeerd",
+     "consumerproducts_coffeemaker_program_coffeeworld_redeye",
+     "consumerproducts_coffeemaker_program_coffeeworld_slowbrew",
+     "consumerproducts_coffeemaker_program_coffeeworld_verlaengerter",
+     "consumerproducts_coffeemaker_program_coffeeworld_verlaengerterbraun",
+     "consumerproducts_coffeemaker_program_coffeeworld_wienermelange"
+    ],
+    "friendly_name": "Siemens CoffeeMaker Selected Program"
+   }
+  },
+  "button.siemens_coffeemaker_start": {
+   "state": "unknown",
+   "attributes": {
+    "friendly_name": "Siemens CoffeeMaker Start"
+   }
+  },
+  "button.siemens_coffeemaker_resume": {
+   "state": "unavailable",
+   "attributes": {
+    "friendly_name": "Siemens CoffeeMaker Resume"
+   }
+  },
+  "button.siemens_coffeemaker_pause": {
+   "state": "unavailable",
+   "attributes": {
+    "friendly_name": "Siemens CoffeeMaker Pause"
+   }
+  },
+  "button.siemens_coffeemaker_abort": {
+   "state": "unavailable",
+   "attributes": {
+    "friendly_name": "Siemens CoffeeMaker Abort"
+   }
+  },
+  "number.siemens_coffeemaker_fill_quantity": {
+   "state": "180",
+   "attributes": {
+    "min": 120.0,
+    "max": 180.0,
+    "step": 20.0,
+    "mode": "box",
+    "unit_of_measurement": "mL",
+    "device_class": "volume",
+    "friendly_name": "Siemens CoffeeMaker Fill quantity"
+   }
+  }
+ },
+ "devices": {
+  "demo01": {
+   "name": "Siemens Dishwasher",
+   "name_by_user": null,
+   "manufacturer": "Siemens",
+   "model": "Dishwasher",
+   "model_id": null,
+   "sw_version": null,
+   "hw_version": null,
+   "serial_number": null
+  },
+  "demo02": {
+   "name": "Siemens CoffeeMaker",
+   "name_by_user": null,
+   "manufacturer": "Siemens",
+   "model": "CoffeeMaker",
+   "model_id": null,
+   "sw_version": null,
+   "hw_version": null,
+   "serial_number": null
+  }
+ },
+ "entities": {
+  "binary_sensor.siemens_dishwasher_door": {
+   "device_id": "demo01",
+   "platform": "homeconnect_ws"
+  },
+  "binary_sensor.siemens_dishwasher_connection": {
+   "device_id": "demo01",
+   "platform": "homeconnect_ws"
+  },
+  "binary_sensor.siemens_dishwasher_program_aborted": {
+   "device_id": "demo01",
+   "platform": "homeconnect_ws"
+  },
+  "binary_sensor.siemens_dishwasher_interior_illumination": {
+   "device_id": "demo01",
+   "platform": "homeconnect_ws"
+  },
+  "binary_sensor.siemens_dishwasher_remote_start_allowed": {
+   "device_id": "demo01",
+   "platform": "homeconnect_ws"
+  },
+  "sensor.siemens_dishwasher_start_in": {
+   "device_id": "demo01",
+   "platform": "homeconnect_ws"
+  },
+  "sensor.siemens_dishwasher_program_phase": {
+   "device_id": "demo01",
+   "platform": "homeconnect_ws"
+  },
+  "sensor.siemens_dishwasher_rinse_aid": {
+   "device_id": "demo01",
+   "platform": "homeconnect_ws"
+  },
+  "sensor.siemens_dishwasher_active_program": {
+   "device_id": "demo01",
+   "platform": "homeconnect_ws"
+  },
+  "sensor.siemens_dishwasher_power_state": {
+   "device_id": "demo01",
+   "platform": "homeconnect_ws"
+  },
+  "sensor.siemens_dishwasher_salt": {
+   "device_id": "demo01",
+   "platform": "homeconnect_ws"
+  },
+  "sensor.siemens_dishwasher_program_progress": {
+   "device_id": "demo01",
+   "platform": "homeconnect_ws"
+  },
+  "sensor.siemens_dishwasher_remaining_program_time": {
+   "device_id": "demo01",
+   "platform": "homeconnect_ws"
+  },
+  "sensor.siemens_dishwasher_water_forecast": {
+   "device_id": "demo01",
+   "platform": "homeconnect_ws"
+  },
+  "sensor.siemens_dishwasher_energy_forecast": {
+   "device_id": "demo01",
+   "platform": "homeconnect_ws"
+  },
+  "sensor.siemens_dishwasher_operation_state": {
+   "device_id": "demo01",
+   "platform": "homeconnect_ws"
+  },
+  "switch.siemens_dishwasher_intensiv_zone": {
+   "device_id": "demo01",
+   "platform": "homeconnect_ws"
+  },
+  "switch.siemens_dishwasher_brilliance_dry": {
+   "device_id": "demo01",
+   "platform": "homeconnect_ws"
+  },
+  "switch.siemens_dishwasher_hygiene_plus": {
+   "device_id": "demo01",
+   "platform": "homeconnect_ws"
+  },
+  "switch.siemens_dishwasher_power": {
+   "device_id": "demo01",
+   "platform": "homeconnect_ws"
+  },
+  "switch.siemens_dishwasher_variospeedplus": {
+   "device_id": "demo01",
+   "platform": "homeconnect_ws"
+  },
+  "switch.siemens_dishwasher_silence_on_demand": {
+   "device_id": "demo01",
+   "platform": "homeconnect_ws"
+  },
+  "select.siemens_dishwasher_selected_program": {
+   "device_id": "demo01",
+   "platform": "homeconnect_ws"
+  },
+  "button.siemens_dishwasher_start": {
+   "device_id": "demo01",
+   "platform": "homeconnect_ws"
+  },
+  "button.siemens_dishwasher_abort": {
+   "device_id": "demo01",
+   "platform": "homeconnect_ws"
+  },
+  "binary_sensor.siemens_coffeemaker_interior_illumination": {
+   "device_id": "demo02",
+   "platform": "homeconnect_ws"
+  },
+  "binary_sensor.siemens_coffeemaker_connection": {
+   "device_id": "demo02",
+   "platform": "homeconnect_ws"
+  },
+  "binary_sensor.siemens_coffeemaker_bean_container_empty": {
+   "device_id": "demo02",
+   "platform": "homeconnect_ws"
+  },
+  "binary_sensor.siemens_coffeemaker_remote_start_allowed": {
+   "device_id": "demo02",
+   "platform": "homeconnect_ws"
+  },
+  "sensor.siemens_coffeemaker_program_progress": {
+   "device_id": "demo02",
+   "platform": "homeconnect_ws"
+  },
+  "sensor.siemens_coffeemaker_estimated_total_program_time": {
+   "device_id": "demo02",
+   "platform": "homeconnect_ws"
+  },
+  "sensor.siemens_coffeemaker_water_tank": {
+   "device_id": "demo02",
+   "platform": "homeconnect_ws"
+  },
+  "sensor.siemens_coffeemaker_power_state": {
+   "device_id": "demo02",
+   "platform": "homeconnect_ws"
+  },
+  "sensor.siemens_coffeemaker_operation_state": {
+   "device_id": "demo02",
+   "platform": "homeconnect_ws"
+  },
+  "sensor.siemens_coffeemaker_drip_tray": {
+   "device_id": "demo02",
+   "platform": "homeconnect_ws"
+  },
+  "sensor.siemens_coffeemaker_active_program": {
+   "device_id": "demo02",
+   "platform": "homeconnect_ws"
+  },
+  "switch.siemens_coffeemaker_child_lock": {
+   "device_id": "demo02",
+   "platform": "homeconnect_ws"
+  },
+  "switch.siemens_coffeemaker_power": {
+   "device_id": "demo02",
+   "platform": "homeconnect_ws"
+  },
+  "switch.siemens_coffeemaker_multiple_beverages": {
+   "device_id": "demo02",
+   "platform": "homeconnect_ws"
+  },
+  "select.siemens_coffeemaker_selected_program": {
+   "device_id": "demo02",
+   "platform": "homeconnect_ws"
+  },
+  "select.siemens_coffeemaker_power_state": {
+   "device_id": "demo02",
+   "platform": "homeconnect_ws"
+  },
+  "button.siemens_coffeemaker_start": {
+   "device_id": "demo02",
+   "platform": "homeconnect_ws"
+  },
+  "button.siemens_coffeemaker_abort": {
+   "device_id": "demo02",
+   "platform": "homeconnect_ws"
+  },
+  "number.siemens_coffeemaker_fill_quantity": {
+   "device_id": "demo02",
+   "platform": "homeconnect_ws"
+  },
+  "binary_sensor.siemens_dishwasher_machinecare_and_filter": {
+   "device_id": "demo01",
+   "platform": "homeconnect_ws"
+  },
+  "binary_sensor.siemens_dishwasher_smart_filter_cleaning": {
+   "device_id": "demo01",
+   "platform": "homeconnect_ws"
+  },
+  "binary_sensor.siemens_dishwasher_program_finished": {
+   "device_id": "demo01",
+   "platform": "homeconnect_ws"
+  },
+  "binary_sensor.siemens_dishwasher_machine_care": {
+   "device_id": "demo01",
+   "platform": "homeconnect_ws"
+  },
+  "binary_sensor.siemens_dishwasher_water_heater_calcified": {
+   "device_id": "demo01",
+   "platform": "homeconnect_ws"
+  },
+  "binary_sensor.siemens_coffeemaker_program_finished": {
+   "device_id": "demo02",
+   "platform": "homeconnect_ws"
+  },
+  "switch.siemens_coffeemaker_cup_warmer": {
+   "device_id": "demo02",
+   "platform": "homeconnect_ws"
+  },
+  "button.siemens_coffeemaker_resume": {
+   "device_id": "demo02",
+   "platform": "homeconnect_ws"
+  },
+  "button.siemens_coffeemaker_pause": {
+   "device_id": "demo02",
+   "platform": "homeconnect_ws"
+  },
+  "binary_sensor.siemens_dishwasher_hygiene_plus_active": {
+   "device_id": "demo01",
+   "platform": "homeconnect_ws"
+  },
+  "binary_sensor.siemens_dishwasher_intensive_zone_active": {
+   "device_id": "demo01",
+   "platform": "homeconnect_ws"
+  },
+  "sensor.siemens_dishwasher_machinecare_remaining_runs": {
+   "device_id": "demo01",
+   "platform": "homeconnect_ws"
+  }
+ },
+ "card_config": {
+  "devices": [
+   {
+    "type": "coffeemaker",
+    "prefix": "siemens_coffeemaker"
+   },
+   {
+    "type": "dishwasher",
+    "prefix": "siemens_dishwasher"
+   }
+  ]
+ }
+}

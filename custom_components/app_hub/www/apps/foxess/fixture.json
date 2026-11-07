@@ -1,0 +1,505 @@
+{
+ "states": {
+  "number.foxess_modbus_max_soc": {
+   "entity_id": "number.foxess_modbus_max_soc",
+   "state": "100",
+   "attributes": {
+    "unit_of_measurement": "%",
+    "friendly_name": "FoxESS - Modbus (Foxess - Modbus) Max SoC (Foxess - Modbus)",
+    "device_class": "battery",
+    "min": 10,
+    "max": 100,
+    "step": 1
+   }
+  },
+  "number.foxess_modbus_min_soc": {
+   "entity_id": "number.foxess_modbus_min_soc",
+   "state": "10",
+   "attributes": {
+    "unit_of_measurement": "%",
+    "friendly_name": "FoxESS - Modbus (Foxess - Modbus) Min SoC (Foxess - Modbus)",
+    "device_class": "battery",
+    "min": 10,
+    "max": 100,
+    "step": 1
+   }
+  },
+  "number.foxess_modbus_min_soc_on_grid": {
+   "entity_id": "number.foxess_modbus_min_soc_on_grid",
+   "state": "10",
+   "attributes": {
+    "unit_of_measurement": "%",
+    "friendly_name": "FoxESS - Modbus (Foxess - Modbus) Min SoC (On Grid) (Foxess - Modbus)",
+    "device_class": "battery",
+    "min": 10,
+    "max": 100,
+    "step": 1
+   }
+  },
+  "select.foxess_modbus_work_mode": {
+   "entity_id": "select.foxess_modbus_work_mode",
+   "state": "Self Use",
+   "attributes": {
+    "friendly_name": "FoxESS - Modbus (Foxess - Modbus) Work Mode (Foxess - Modbus)",
+    "options": [
+     "Self Use",
+     "Feed-in First",
+     "Back-up",
+     "Peak Shaving",
+     "Force Charge",
+     "Force Discharge"
+    ]
+   }
+  },
+  "sensor.battery_soc_foxess_modbus": {
+   "entity_id": "sensor.battery_soc_foxess_modbus",
+   "state": "100",
+   "attributes": {
+    "unit_of_measurement": "%",
+    "friendly_name": "Battery SoC (Foxess - Modbus)",
+    "device_class": "battery",
+    "state_class": "measurement"
+   }
+  },
+  "sensor.battery_soh_foxess_modbus": {
+   "entity_id": "sensor.battery_soh_foxess_modbus",
+   "state": "92",
+   "attributes": {
+    "unit_of_measurement": "%",
+    "friendly_name": "Battery SoH (Foxess - Modbus)",
+    "device_class": "battery",
+    "state_class": "measurement"
+   }
+  },
+  "sensor.battery_temperature_foxess_modbus": {
+   "entity_id": "sensor.battery_temperature_foxess_modbus",
+   "state": "38.3",
+   "attributes": {
+    "unit_of_measurement": "°C",
+    "friendly_name": "Battery Temperature (Foxess - Modbus)",
+    "device_class": "temperature",
+    "state_class": "measurement"
+   }
+  },
+  "sensor.energy_price_now": {
+   "entity_id": "sensor.energy_price_now",
+   "state": "1.11",
+   "attributes": {
+    "unit_of_measurement": "zł/kWh",
+    "friendly_name": "Energia stawka teraz",
+    "state_class": "measurement"
+   }
+  },
+  "sensor.eps_power_foxess_modbus": {
+   "entity_id": "sensor.eps_power_foxess_modbus",
+   "state": "0.188",
+   "attributes": {
+    "unit_of_measurement": "kW",
+    "friendly_name": "EPS Power (Foxess - Modbus)",
+    "device_class": "power",
+    "state_class": "measurement"
+   }
+  },
+  "sensor.foxess_bms_kwh": {
+   "entity_id": "sensor.foxess_bms_kwh",
+   "state": "20.0",
+   "attributes": {
+    "unit_of_measurement": "kWh",
+    "friendly_name": "FoxESS BMS kWh",
+    "device_class": "energy",
+    "state_class": "measurement"
+   }
+  },
+  "sensor.foxess_invbatpower": {
+   "entity_id": "sensor.foxess_invbatpower",
+   "state": "2.12",
+   "attributes": {
+    "unit_of_measurement": "kW",
+    "friendly_name": "FoxESS InvBatPower",
+    "device_class": "power",
+    "state_class": "measurement"
+   }
+  },
+  "sensor.foxess_modbus_bat_current": {
+   "entity_id": "sensor.foxess_modbus_bat_current",
+   "state": "5.4",
+   "attributes": {
+    "unit_of_measurement": "A",
+    "friendly_name": "FoxESS - Modbus (Foxess - Modbus) Battery Current (Foxess - Modbus)",
+    "device_class": "current",
+    "state_class": "measurement"
+   }
+  },
+  "sensor.foxess_modbus_battery_charge_today": {
+   "entity_id": "sensor.foxess_modbus_battery_charge_today",
+   "state": "22.4",
+   "attributes": {
+    "unit_of_measurement": "kWh",
+    "friendly_name": "FoxESS - Modbus (Foxess - Modbus) Battery Charge Today (Foxess - Modbus)",
+    "device_class": "energy",
+    "state_class": "total_increasing"
+   }
+  },
+  "sensor.foxess_modbus_battery_charge_total": {
+   "entity_id": "sensor.foxess_modbus_battery_charge_total",
+   "state": "10909.4",
+   "attributes": {
+    "unit_of_measurement": "kWh",
+    "friendly_name": "FoxESS - Modbus (Foxess - Modbus) Battery Charge Total (Foxess - Modbus)",
+    "device_class": "energy",
+    "state_class": "total"
+   }
+  },
+  "sensor.foxess_modbus_battery_discharge_today": {
+   "entity_id": "sensor.foxess_modbus_battery_discharge_today",
+   "state": "7.4",
+   "attributes": {
+    "unit_of_measurement": "kWh",
+    "friendly_name": "FoxESS - Modbus (Foxess - Modbus) Battery Discharge Today (Foxess - Modbus)",
+    "device_class": "energy",
+    "state_class": "total_increasing"
+   }
+  },
+  "sensor.foxess_modbus_battery_discharge_total": {
+   "entity_id": "sensor.foxess_modbus_battery_discharge_total",
+   "state": "10210.8",
+   "attributes": {
+    "unit_of_measurement": "kWh",
+    "friendly_name": "FoxESS - Modbus (Foxess - Modbus) Battery Discharge Total (Foxess - Modbus)",
+    "device_class": "energy",
+    "state_class": "total"
+   }
+  },
+  "sensor.foxess_modbus_batvolt": {
+   "entity_id": "sensor.foxess_modbus_batvolt",
+   "state": "396.6",
+   "attributes": {
+    "unit_of_measurement": "V",
+    "friendly_name": "FoxESS - Modbus (Foxess - Modbus) Battery Voltage (Foxess - Modbus)",
+    "device_class": "voltage",
+    "state_class": "measurement"
+   }
+  },
+  "sensor.foxess_modbus_feed_in_energy_today": {
+   "entity_id": "sensor.foxess_modbus_feed_in_energy_today",
+   "state": "0.0",
+   "attributes": {
+    "unit_of_measurement": "kWh",
+    "friendly_name": "FoxESS - Modbus (Foxess - Modbus) Feed-in Today (Foxess - Modbus)",
+    "device_class": "energy",
+    "state_class": "total_increasing"
+   }
+  },
+  "sensor.foxess_modbus_feed_in_energy_total": {
+   "entity_id": "sensor.foxess_modbus_feed_in_energy_total",
+   "state": "3.0251",
+   "attributes": {
+    "unit_of_measurement": "MWh",
+    "friendly_name": "FoxESS - Modbus (Foxess - Modbus) Feed-in Total (Foxess - Modbus)",
+    "device_class": "energy",
+    "state_class": "total"
+   }
+  },
+  "sensor.foxess_modbus_grid_consumption_energy_today": {
+   "entity_id": "sensor.foxess_modbus_grid_consumption_energy_today",
+   "state": "37.7",
+   "attributes": {
+    "unit_of_measurement": "kWh",
+    "friendly_name": "FoxESS - Modbus (Foxess - Modbus) Grid Consumption Today (Foxess - Modbus)",
+    "device_class": "energy",
+    "state_class": "total_increasing"
+   }
+  },
+  "sensor.foxess_modbus_grid_consumption_energy_total": {
+   "entity_id": "sensor.foxess_modbus_grid_consumption_energy_total",
+   "state": "18.5036",
+   "attributes": {
+    "unit_of_measurement": "MWh",
+    "friendly_name": "FoxESS - Modbus (Foxess - Modbus) Grid Consumption Total (Foxess - Modbus)",
+    "device_class": "energy",
+    "state_class": "total"
+   }
+  },
+  "sensor.foxess_modbus_grid_voltage_r": {
+   "entity_id": "sensor.foxess_modbus_grid_voltage_r",
+   "state": "242.1",
+   "attributes": {
+    "unit_of_measurement": "V",
+    "friendly_name": "FoxESS - Modbus (Foxess - Modbus) Grid Voltage R (Foxess - Modbus)",
+    "device_class": "voltage",
+    "state_class": "measurement"
+   }
+  },
+  "sensor.foxess_modbus_inv_current_r": {
+   "entity_id": "sensor.foxess_modbus_inv_current_r",
+   "state": "3.8",
+   "attributes": {
+    "unit_of_measurement": "A",
+    "friendly_name": "FoxESS - Modbus (Foxess - Modbus) Inverter Current R (Foxess - Modbus)",
+    "device_class": "current",
+    "state_class": "measurement"
+   }
+  },
+  "sensor.foxess_modbus_inv_current_s": {
+   "entity_id": "sensor.foxess_modbus_inv_current_s",
+   "state": "3.7",
+   "attributes": {
+    "unit_of_measurement": "A",
+    "friendly_name": "FoxESS - Modbus (Foxess - Modbus) Inverter Current S (Foxess - Modbus)",
+    "device_class": "current",
+    "state_class": "measurement"
+   }
+  },
+  "sensor.foxess_modbus_inv_current_t": {
+   "entity_id": "sensor.foxess_modbus_inv_current_t",
+   "state": "3.5",
+   "attributes": {
+    "unit_of_measurement": "A",
+    "friendly_name": "FoxESS - Modbus (Foxess - Modbus) Inverter Current T (Foxess - Modbus)",
+    "device_class": "current",
+    "state_class": "measurement"
+   }
+  },
+  "sensor.foxess_modbus_inv_power_r": {
+   "entity_id": "sensor.foxess_modbus_inv_power_r",
+   "state": "0.896",
+   "attributes": {
+    "unit_of_measurement": "kW",
+    "friendly_name": "FoxESS - Modbus (Foxess - Modbus) Inverter Power R (Foxess - Modbus)",
+    "device_class": "power",
+    "state_class": "measurement"
+   }
+  },
+  "sensor.foxess_modbus_inv_power_s": {
+   "entity_id": "sensor.foxess_modbus_inv_power_s",
+   "state": "0.884",
+   "attributes": {
+    "unit_of_measurement": "kW",
+    "friendly_name": "FoxESS - Modbus (Foxess - Modbus) Inverter Power S (Foxess - Modbus)",
+    "device_class": "power",
+    "state_class": "measurement"
+   }
+  },
+  "sensor.foxess_modbus_inv_power_t": {
+   "entity_id": "sensor.foxess_modbus_inv_power_t",
+   "state": "0.829",
+   "attributes": {
+    "unit_of_measurement": "kW",
+    "friendly_name": "FoxESS - Modbus (Foxess - Modbus) Inverter Power T (Foxess - Modbus)",
+    "device_class": "power",
+    "state_class": "measurement"
+   }
+  },
+  "sensor.foxess_modbus_inverter_fault_code": {
+   "entity_id": "sensor.foxess_modbus_inverter_fault_code",
+   "state": "None",
+   "attributes": {
+    "friendly_name": "FoxESS - Modbus (Foxess - Modbus) Inverter Fault Code (Foxess - Modbus)"
+   }
+  },
+  "sensor.foxess_modbus_inverter_state": {
+   "entity_id": "sensor.foxess_modbus_inverter_state",
+   "state": "on-line",
+   "attributes": {
+    "friendly_name": "Inverter State (Foxess - Modbus)"
+   }
+  },
+  "sensor.foxess_modbus_load_energy_today": {
+   "entity_id": "sensor.foxess_modbus_load_energy_today",
+   "state": "31.6",
+   "attributes": {
+    "unit_of_measurement": "kWh",
+    "friendly_name": "FoxESS - Modbus (Foxess - Modbus) Load Energy Today (Foxess - Modbus)",
+    "device_class": "energy",
+    "state_class": "total_increasing"
+   }
+  },
+  "sensor.foxess_modbus_load_power_total": {
+   "entity_id": "sensor.foxess_modbus_load_power_total",
+   "state": "33.3592",
+   "attributes": {
+    "unit_of_measurement": "MWh",
+    "friendly_name": "FoxESS - Modbus (Foxess - Modbus) Load Energy Total (Foxess - Modbus)",
+    "device_class": "energy",
+    "state_class": "total"
+   }
+  },
+  "sensor.foxess_modbus_pv1_current": {
+   "entity_id": "sensor.foxess_modbus_pv1_current",
+   "state": "1.2",
+   "attributes": {
+    "unit_of_measurement": "A",
+    "friendly_name": "FoxESS - Modbus (Foxess - Modbus) PV1 Current (Foxess - Modbus)",
+    "device_class": "current",
+    "state_class": "measurement"
+   }
+  },
+  "sensor.foxess_modbus_pv1_power": {
+   "entity_id": "sensor.foxess_modbus_pv1_power",
+   "state": "0.556",
+   "attributes": {
+    "unit_of_measurement": "kW",
+    "friendly_name": "FoxESS - Modbus (Foxess - Modbus) PV1 Power (Foxess - Modbus)",
+    "device_class": "power",
+    "state_class": "measurement"
+   }
+  },
+  "sensor.foxess_modbus_pv1_voltage": {
+   "entity_id": "sensor.foxess_modbus_pv1_voltage",
+   "state": "455.8",
+   "attributes": {
+    "unit_of_measurement": "V",
+    "friendly_name": "FoxESS - Modbus (Foxess - Modbus) PV1 Voltage (Foxess - Modbus)",
+    "device_class": "voltage",
+    "state_class": "measurement"
+   }
+  },
+  "sensor.foxess_modbus_solar_energy_today": {
+   "entity_id": "sensor.foxess_modbus_solar_energy_today",
+   "state": "11.8",
+   "attributes": {
+    "unit_of_measurement": "kWh",
+    "friendly_name": "FoxESS - Modbus (Foxess - Modbus) Solar Generation Today (Foxess - Modbus)",
+    "device_class": "energy",
+    "state_class": "total_increasing"
+   }
+  },
+  "sensor.foxess_modbus_solar_energy_total": {
+   "entity_id": "sensor.foxess_modbus_solar_energy_total",
+   "state": "18.5689",
+   "attributes": {
+    "unit_of_measurement": "MWh",
+    "friendly_name": "FoxESS - Modbus (Foxess - Modbus) Solar Generation Total (Foxess - Modbus)",
+    "device_class": "energy",
+    "state_class": "total"
+   }
+  },
+  "sensor.foxess_modbus_total_yield_today": {
+   "entity_id": "sensor.foxess_modbus_total_yield_today",
+   "state": "13.7",
+   "attributes": {
+    "unit_of_measurement": "kWh",
+    "friendly_name": "FoxESS - Modbus (Foxess - Modbus) Yield Today (Foxess - Modbus)",
+    "device_class": "energy",
+    "state_class": "total_increasing"
+   }
+  },
+  "sensor.foxess_modbus_total_yield_total": {
+   "entity_id": "sensor.foxess_modbus_total_yield_total",
+   "state": "21.0404",
+   "attributes": {
+    "unit_of_measurement": "MWh",
+    "friendly_name": "FoxESS - Modbus (Foxess - Modbus) Yield Total (Foxess - Modbus)",
+    "device_class": "energy",
+    "state_class": "total"
+   }
+  },
+  "sensor.foxess_pv_power_sum": {
+   "entity_id": "sensor.foxess_pv_power_sum",
+   "state": "0.556",
+   "attributes": {
+    "unit_of_measurement": "kW",
+    "friendly_name": "FoxESS PV Power Sum",
+    "device_class": "power",
+    "state_class": "measurement"
+   }
+  },
+  "sensor.foxess_soc_kwh": {
+   "entity_id": "sensor.foxess_soc_kwh",
+   "state": "20.0",
+   "attributes": {
+    "unit_of_measurement": "kWh",
+    "friendly_name": "FoxESS SoC kWh",
+    "device_class": "energy",
+    "state_class": "measurement"
+   }
+  },
+  "sensor.grid_export_power_foxess_modbus": {
+   "entity_id": "sensor.grid_export_power_foxess_modbus",
+   "state": "0.0",
+   "attributes": {
+    "unit_of_measurement": "kW",
+    "friendly_name": "Grid Export Power (Foxess - Modbus)",
+    "device_class": "power",
+    "state_class": "measurement"
+   }
+  },
+  "sensor.grid_import_power_foxess_modbus": {
+   "entity_id": "sensor.grid_import_power_foxess_modbus",
+   "state": "0.006",
+   "attributes": {
+    "unit_of_measurement": "kW",
+    "friendly_name": "Grid Import Power (Foxess - Modbus)",
+    "device_class": "power",
+    "state_class": "measurement"
+   }
+  },
+  "sensor.grid_power_foxess_modbus": {
+   "entity_id": "sensor.grid_power_foxess_modbus",
+   "state": "-0.006",
+   "attributes": {
+    "unit_of_measurement": "kW",
+    "friendly_name": "Grid Power (Foxess - Modbus)",
+    "device_class": "power",
+    "state_class": "measurement"
+   }
+  },
+  "sensor.house_load_power": {
+   "entity_id": "sensor.house_load_power",
+   "state": "2.838",
+   "attributes": {
+    "unit_of_measurement": "kW",
+    "friendly_name": "House Load Power (Foxess - Calculated)",
+    "device_class": "power",
+    "state_class": "measurement"
+   }
+  },
+  "sensor.load_power_foxess_modbus": {
+   "entity_id": "sensor.load_power_foxess_modbus",
+   "state": "2.693",
+   "attributes": {
+    "unit_of_measurement": "kW",
+    "friendly_name": "Load Power (Foxess - Modbus)",
+    "device_class": "power",
+    "state_class": "measurement"
+   }
+  },
+  "sun.sun": {
+   "entity_id": "sun.sun",
+   "state": "above_horizon",
+   "attributes": {
+    "friendly_name": "Sun"
+   }
+  },
+  "switch.inverter_logger_internet": {
+   "entity_id": "switch.inverter_logger_internet",
+   "state": "on",
+   "attributes": {
+    "friendly_name": "UniFi Network Phase10: FoxESS Logger Block Internet",
+    "device_class": "switch"
+   }
+  },
+  "weather.home": {
+   "entity_id": "weather.home",
+   "state": "cloudy",
+   "attributes": {
+    "friendly_name": "Pogoda",
+    "temperature": 9.0
+   }
+  }
+ },
+ "entities": {},
+ "devices": {},
+ "card_config": {
+  "entities": {},
+  "inverter_sn": "INVERTER-SN",
+  "battery_sn": "BATTERY-SN",
+  "logger": {
+   "sn": "LOGGER-SN",
+   "model": "L3",
+   "network": "LAN",
+   "version": "3.18"
+  },
+  "revenue_since": "09.10.2024"
+ }
+}

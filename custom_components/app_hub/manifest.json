@@ -1,0 +1,21 @@
+{
+  "domain": "app_hub",
+  "name": "App Hub",
+  "codeowners": [
+    "@jrx-code"
+  ],
+  "config_flow": true,
+  "dependencies": [
+    "frontend",
+    "http",
+    "panel_custom",
+    "lovelace"
+  ],
+  "documentation": "https://github.com/jrx-code/ha-app-hub",
+  "integration_type": "service",
+  "iot_class": "calculated",
+  "issue_tracker": "https://github.com/jrx-code/ha-app-hub/issues",
+  "requirements": [],
+  "single_config_entry": true,
+  "version": "0.5.0"
+}

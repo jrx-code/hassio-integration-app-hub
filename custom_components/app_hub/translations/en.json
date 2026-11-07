@@ -1,0 +1,106 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "App Hub",
+        "description": "Dashboards that replace manufacturer apps. The card and the dashboard strategy are registered automatically; the sidebar entry opens the launcher full screen.",
+        "data": {
+          "sidebar": "Show in the sidebar",
+          "sidebar_title": "Sidebar title",
+          "sidebar_icon": "Sidebar icon",
+          "theme": "Palette",
+          "dry_run": "Log service calls instead of sending them",
+          "apps": "Per-app configuration (JSON)"
+        },
+        "data_description": {
+          "theme": "ha follows your Home Assistant theme, app uses the producer palette",
+          "apps": "Optional. One block per app, the same shape the card takes in YAML."
+        }
+      }
+    },
+    "error": {
+      "invalid_json": "This is not valid JSON",
+      "not_an_object": "The top level has to be an object keyed by app id"
+    },
+    "abort": {
+      "single_instance_allowed": "App Hub is already set up"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "App Hub",
+        "menu_options": {
+          "hub": "Hub settings",
+          "apps": "Set up an app",
+          "advanced": "Advanced: edit the JSON"
+        }
+      },
+      "hub": {
+        "title": "App Hub",
+        "data": {
+          "sidebar": "Show in the sidebar",
+          "sidebar_title": "Sidebar title",
+          "sidebar_icon": "Sidebar icon",
+          "theme": "Palette",
+          "dry_run": "Log service calls instead of sending them"
+        },
+        "data_description": {
+          "theme": "ha follows your Home Assistant theme, app uses the producer palette"
+        }
+      },
+      "apps": {
+        "title": "Set up an app",
+        "description": "Pick the app to point at your devices.",
+        "data": {
+          "app": "App"
+        }
+      },
+      "app": {
+        "title": "{app}",
+        "description": "{found} device(s) found. Pick the ones this app should show; the rest of the fields are optional and keep the app's defaults when left alone.",
+        "data": {
+          "alarm_days": "Alarm days",
+          "battery_discharge_positive": "Battery discharge positive",
+          "battery_model": "Battery model",
+          "battery_sn": "Battery sn",
+          "buy_price": "Buy price",
+          "co2_factor": "Co2 factor",
+          "currency": "Currency",
+          "deadband": "Deadband",
+          "devices": "Devices",
+          "entities": "Entities",
+          "grid_export_positive": "Grid export positive",
+          "history_days": "Days of watering history",
+          "inverter_model": "Inverter model",
+          "inverter_sn": "Inverter sn",
+          "logger": "Logger",
+          "oil_factor": "Oil factor",
+          "pv_capacity_kw": "Pv capacity kw",
+          "quick_settings_action": "Quick settings action",
+          "revenue_price": "Revenue price",
+          "revenue_since": "Revenue since",
+          "sell_price": "Sell price",
+          "soc_hours": "Soc hours",
+          "stale_seconds": "Stale seconds",
+          "tree_factor": "Tree factor",
+          "user_name": "User name"
+        }
+      },
+      "advanced": {
+        "title": "Per-app configuration (JSON)",
+        "description": "Everything the forms cover, plus the fields they do not: an entity map, a device row with extra keys. One object keyed by app id.",
+        "data": {
+          "apps": "Per-app configuration (JSON)"
+        },
+        "data_description": {
+          "apps": "Optional. One block per app, the same shape the card takes in YAML."
+        }
+      }
+    },
+    "error": {
+      "invalid_json": "This is not valid JSON",
+      "not_an_object": "The top level has to be an object keyed by app id"
+    }
+  }
+}

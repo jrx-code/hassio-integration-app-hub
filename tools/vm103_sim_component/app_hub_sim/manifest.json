@@ -1,0 +1,13 @@
+{
+  "domain": "app_hub_sim",
+  "name": "App Hub simulated states (test instance only)",
+  "codeowners": [
+    "@jrx-code"
+  ],
+  "documentation": "https://github.com/jrx-code/ha-app-hub",
+  "integration_type": "service",
+  "iot_class": "calculated",
+  "issue_tracker": "https://github.com/jrx-code/ha-app-hub/issues",
+  "requirements": [],
+  "version": "1.0.0"
+}
