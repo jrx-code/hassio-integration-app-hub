@@ -39,7 +39,7 @@ and adds the sidebar entry. Why an integration and not a plugin or an add-on is 
 ### HACS
 
 1. HACS, search for **App Hub**, download. Until it is in the default store: three-dot menu,
-   **Custom repositories**, `https://github.com/jrx-code/ha-app-hub`, type **Integration**.
+   **Custom repositories**, `https://github.com/jrx-code/hassio-integration-app-hub`, type **Integration**.
 2. Restart Home Assistant.
 3. Settings, Devices and services, **Add integration**, **App Hub**.
 

@@ -4,10 +4,10 @@
   "codeowners": [
     "@jrx-code"
   ],
-  "documentation": "https://github.com/jrx-code/ha-app-hub",
+  "documentation": "https://github.com/jrx-code/hassio-integration-app-hub",
   "integration_type": "service",
   "iot_class": "calculated",
-  "issue_tracker": "https://github.com/jrx-code/ha-app-hub/issues",
+  "issue_tracker": "https://github.com/jrx-code/hassio-integration-app-hub/issues",
   "requirements": [],
   "version": "1.0.0"
 }

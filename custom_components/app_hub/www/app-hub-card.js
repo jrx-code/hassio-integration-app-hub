@@ -648,7 +648,7 @@ window.customCards.push({
   name: "App Hub",
   description: `Dashboards that replace manufacturer apps, ${VERSION} (core ${CORE_VERSION})`,
   preview: true,
-  documentationURL: "https://github.com/jrx-code/ha-app-hub",
+  documentationURL: "https://github.com/jrx-code/hassio-integration-app-hub",
 });
 
 console.info(`%c APP-HUB %c ${VERSION} `, "color:#fff;background:#4a82e8;border-radius:3px 0 0 3px", "color:#4a82e8;background:#eceef2;border-radius:0 3px 3px 0");

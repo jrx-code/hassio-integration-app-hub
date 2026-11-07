@@ -11,11 +11,11 @@
     "panel_custom",
     "lovelace"
   ],
-  "documentation": "https://github.com/jrx-code/ha-app-hub",
+  "documentation": "https://github.com/jrx-code/hassio-integration-app-hub",
   "integration_type": "service",
   "iot_class": "calculated",
-  "issue_tracker": "https://github.com/jrx-code/ha-app-hub/issues",
+  "issue_tracker": "https://github.com/jrx-code/hassio-integration-app-hub/issues",
   "requirements": [],
   "single_config_entry": true,
-  "version": "0.5.0"
+  "version": "0.5.1"
 }

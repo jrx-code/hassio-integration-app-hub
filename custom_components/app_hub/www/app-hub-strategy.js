@@ -155,7 +155,7 @@ export function register(deps) {
       strategyType: "dashboard",
       name: "App Hub",
       description: "Dashboard z widokiem na kazda zainstalowana aplikacje-zamiennik.",
-      documentationURL: "https://github.com/jrx-code/ha-app-hub",
+      documentationURL: "https://github.com/jrx-code/hassio-integration-app-hub",
     });
   }
 }

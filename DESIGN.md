@@ -166,7 +166,7 @@ Mitigation carried in the repository:
    what proves or breaks the contract.
 3. `tools/new_app.py`, `docs/APP-CONTRACT.md` and `docs/CAPTURE.md` finished, which is the point where
    adding an app no longer needs the person who wrote the core.
-4. Publication: GitHub `jrx-code/ha-app-hub`, mirrored from Forgejo, then the pull request to
+4. Publication: GitHub `jrx-code/hassio-integration-app-hub`, mirrored from Forgejo, then the pull request to
    `hacs/default`.
 5. **Dashboard strategy.** `ll-strategy-dashboard-app-hub` in the same bundle, so a user who has
    downloaded the card gets a generated dashboard from Settings, Dashboards, Add, without writing a

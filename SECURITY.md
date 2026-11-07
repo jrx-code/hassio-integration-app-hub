@@ -29,7 +29,7 @@ write to the address below, and it will be removed and the history rewritten.
 
 ## Reporting a vulnerability
 
-Open a [security advisory](https://github.com/jrx-code/ha-app-hub/security/advisories/new), or an
+Open a [security advisory](https://github.com/jrx-code/hassio-integration-app-hub/security/advisories/new), or an
 issue if the problem is not sensitive. Please include the Home Assistant version, the App Hub
 version and what you did.
 
