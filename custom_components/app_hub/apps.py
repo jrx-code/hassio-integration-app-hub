@@ -36,7 +36,7 @@ def load_manifests(root: Path = WWW_APPS) -> dict[str, dict]:
     index = _read(root / "index.json") or {}
     out: dict[str, dict] = {}
     for app_id in index.get("apps") or []:
-        manifest = _read(root / str(app_id) / "manifest.json")
+        manifest = _read(root / str(app_id) / "app.json")
         if isinstance(manifest, dict) and manifest.get("id"):
             out[manifest["id"]] = manifest
     return out

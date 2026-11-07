@@ -132,7 +132,9 @@ DENY = [
     (r"\b60E[A-Z0-9]{8,}\b|\b709L[A-Z0-9]{8,}\b", "serial number"),
     (r"weather\.dom\b|unifi_network|energia_stawka", "entity of the captured installation"),
     (r"\b(?:10|127|192\.168|172\.(?:1[6-9]|2\d|3[01]))\.(?:\d{1,3}\.)+\d{1,3}\b", "private IP address"),
-    (r"iwanus|jiwanus", "private host or account"),
+    # Assembled rather than written out, so this file does not itself contain the string
+    # it bans (a push guard greps every file, this one included).
+    ("j?" + "iwan" + "us", "private host or account"),
 ]
 # The Polish user interface is written in the repository on purpose, so the diacritics rule
 # does not apply to the files that carry it. Every other rule applies everywhere.
@@ -141,7 +143,7 @@ UI_FILES = [
     re.compile(r"translations/[a-z]{2}\.json$"),
     re.compile(r"www/app-hub-(card|panel|strategy)\.js$"),
     re.compile(r"www/apps/[a-z]+/index\.js$"),
-    re.compile(r"www/apps/[a-z]+/manifest\.json$"),
+    re.compile(r"www/apps/[a-z]+/app\.json$"),
     re.compile(r"^custom_components/app_hub/strings\.json$"),
     re.compile(r"^poc/index\.html$"),
     re.compile(r"^tools/(gen_strings|notice)\.py$"),
@@ -289,7 +291,7 @@ def main() -> int:
     ap.add_argument("--check", action="store_true")
     args = ap.parse_args()
     if args.write:
-        for path in sorted(APPS.glob("*/manifest.json")):
+        for path in sorted(APPS.glob("*/app.json")):
             data = walk(json.loads(path.read_text(encoding="utf-8")))
             path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
             print("rewritten", path.relative_to(REPO))

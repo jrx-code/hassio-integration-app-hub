@@ -15,7 +15,7 @@ const core = await import(new URL("core/index.js", root));
 const file = argv[2];
 if (!file) { console.error("usage: node tools/chart_check.mjs <stats.json>"); exit(2); }
 const stats = JSON.parse(readFileSync(file, "utf8"));
-const manifest = JSON.parse(readFileSync(new URL("apps/foxess/manifest.json", root), "utf8"));
+const manifest = JSON.parse(readFileSync(new URL("apps/foxess/app.json", root), "utf8"));
 const locales = { pl: JSON.parse(readFileSync(new URL("apps/foxess/locales/pl.json", root), "utf8")) };
 const mod = (await import(new URL("apps/foxess/index.js", root))).default;
 

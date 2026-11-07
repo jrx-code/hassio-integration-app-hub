@@ -1,9 +1,14 @@
 # App module contract
 
-An app is a directory under `custom_components/app_hub/www/apps/<id>/`. The hub reads `manifest.json` eagerly for every app and
+An app is a directory under `custom_components/app_hub/www/apps/<id>/`. The hub reads `app.json` eagerly for every app and
 imports `index.js` only when that app is opened.
 
-## manifest.json
+## app.json
+
+The app's manifest is named `app.json`, not `manifest.json`: the HACS default-store checks walk
+`custom_components/` and expect exactly one `*manifest.json` in the whole integration, so a second
+one inside the bundle fails the submission with "No manifest".
+
 
 ```json
 {

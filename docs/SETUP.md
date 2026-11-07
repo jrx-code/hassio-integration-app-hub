@@ -27,7 +27,7 @@ for every app and would still not cover them".
 
 ## 2. Why that is no longer true
 
-Every app already declares its configuration shape in `manifest.json`, because the card validates
+Every app already declares its configuration shape in `app.json`, because the card validates
 against it (`config.devices.fields`, `config.options`, `config.devices.anchor`,
 `requires[].integration`, `requires[].probe`). Across the three shipped apps the field vocabulary is
 closed, with eight types and 35 declared fields:
@@ -100,7 +100,7 @@ what the producer app does that Home Assistant does not. The repository carries 
 form (`.github/ISSUE_TEMPLATE/app-request.yml`), so the fields are enforced by GitHub rather than by
 a paragraph of prose, and the hub only has to build the URL.
 
-**Tier 2, build it locally.** `tools/new_app.py` scaffolds `manifest.json`, `index.js`, locales and a
+**Tier 2, build it locally.** `tools/new_app.py` scaffolds `app.json`, `index.js`, locales and a
 fixture. The missing half is where a local app lives on a running instance: today the app list is
 `www/apps/index.json` inside the integration, so an app added by hand is deleted by the next HACS
 update. The fix is a second source: `/config/app_hub_apps/<id>/`, served next to the bundle and

@@ -81,7 +81,7 @@ working unchanged in substance:
   views of the `aplikacje-app` dashboard do today, so migrating production is a change of `type:`
   and nothing else.
 
-The hub reads every `apps/*/manifest.json` at startup. It never imports an app module until that app
+The hub reads every `apps/*/app.json` at startup. It never imports an app module until that app
 is opened. From the manifests alone it builds:
 
 - the launcher, with the apps sorted and grouped

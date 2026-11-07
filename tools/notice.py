@@ -25,7 +25,7 @@ def table():
         ids = json.load(f)["apps"]
     rows = []
     for app_id in ids:
-        with open(os.path.join(APPS, app_id, "manifest.json")) as f:
+        with open(os.path.join(APPS, app_id, "app.json")) as f:
             m = json.load(f)
         rows.append(f"  {app_id:<14}{m.get('replaces', ''):<24}{m.get('trademark_owner', '')}".rstrip())
     return "\n".join(rows)

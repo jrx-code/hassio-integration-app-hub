@@ -32,9 +32,9 @@ def test_the_shipped_manifests_load() -> None:
 def test_an_unreadable_manifest_costs_only_its_own_app(tmp_path: Path) -> None:
     (tmp_path / "index.json").write_text(json.dumps({"apps": ["good", "broken", "absent"]}))
     (tmp_path / "good").mkdir()
-    (tmp_path / "good" / "manifest.json").write_text(json.dumps({"id": "good", "name": "Good"}))
+    (tmp_path / "good" / "app.json").write_text(json.dumps({"id": "good", "name": "Good"}))
     (tmp_path / "broken").mkdir()
-    (tmp_path / "broken" / "manifest.json").write_text("{ not json")
+    (tmp_path / "broken" / "app.json").write_text("{ not json")
     assert set(load_manifests(tmp_path)) == {"good"}
 
 

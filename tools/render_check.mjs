@@ -18,7 +18,7 @@ const only = argv.includes("--screen") ? argv[argv.indexOf("--screen") + 1] : nu
 const dump = argv.includes("--dump");
 
 const read = (p) => JSON.parse(readFileSync(new URL(p, root), "utf8"));
-const manifest = read(`apps/${app}/manifest.json`);
+const manifest = read(`apps/${app}/app.json`);
 const fixture = read(`apps/${app}/fixture.json`);
 const locales = {};
 for (const lang of manifest.locales || []) {

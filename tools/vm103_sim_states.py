@@ -89,7 +89,7 @@ def test_token():
 def wanted_ids():
     """Every entity id the three app modules read."""
     ids = set()
-    path = os.path.join(HERE, "custom_components/app_hub/www/apps/foxess/manifest.json")
+    path = os.path.join(HERE, "custom_components/app_hub/www/apps/foxess/app.json")
     with open(path) as fh:
         manifest = json.load(fh)
     for value in (manifest["config"]["options"]["entities"]["default"] or {}).values():

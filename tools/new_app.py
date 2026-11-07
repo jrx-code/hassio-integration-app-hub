@@ -119,7 +119,7 @@ def main():
         manifest["requires"] = [{"integration": args.integration, "hint": ""}]
     if args.anchor:
         manifest["config"]["devices"]["anchor"] = args.anchor
-    with open(os.path.join(target, "manifest.json"), "w") as f:
+    with open(os.path.join(target, "app.json"), "w") as f:
         json.dump(manifest, f, indent=2, ensure_ascii=False)
         f.write("\n")
 

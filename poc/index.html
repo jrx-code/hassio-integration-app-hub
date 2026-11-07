@@ -67,7 +67,7 @@ const ALL_COMPONENTS = await (async () => {
     const index = await fetch(`${DIST}apps/index.json`).then((r) => r.json());
     const out = ["lovelace"];
     for (const id of index.apps || []) {
-      const m = await fetch(`${DIST}apps/${id}/manifest.json`).then((r) => r.json());
+      const m = await fetch(`${DIST}apps/${id}/app.json`).then((r) => r.json());
       for (const req of m.requires || []) if (req.integration) out.push(req.integration);
     }
     return out;
@@ -122,7 +122,7 @@ async function build() {
     cfg.app = state.app;
     // The fixture carries the card config it was captured with, the same one
     // tools/render_check.mjs renders against; the manifest default is the fallback.
-    const manifest = await fetch(`${DIST}apps/${state.app}/manifest.json`).then((r) => r.json());
+    const manifest = await fetch(`${DIST}apps/${state.app}/app.json`).then((r) => r.json());
     Object.assign(cfg, fixture.card_config || {});
     if (!cfg.devices && manifest.config?.devices?.default) {
       cfg.devices = manifest.config.devices.default;

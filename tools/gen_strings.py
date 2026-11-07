@@ -32,7 +32,7 @@ def labels() -> dict[str, dict[str, str]]:
     out: dict[str, dict[str, str]] = {k: dict(v) for k, v in FIXED.items()}
     index = json.loads((APPS / "index.json").read_text(encoding="utf-8"))
     for app_id in index.get("apps", []):
-        manifest = json.loads((APPS / app_id / "manifest.json").read_text(encoding="utf-8"))
+        manifest = json.loads((APPS / app_id / "app.json").read_text(encoding="utf-8"))
         options = (manifest.get("config") or {}).get("options") or {}
         for name, spec in options.items():
             if name in HUB_WIDE or not isinstance(spec, dict):

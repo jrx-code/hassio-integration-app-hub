@@ -42,7 +42,7 @@ async function registry() {
   await Promise.all(
     (index.apps || []).map(async (id) => {
       try {
-        apps[id] = await fetch(asset(`apps/${id}/manifest.json`)).then((r) => r.json());
+        apps[id] = await fetch(asset(`apps/${id}/app.json`)).then((r) => r.json());
       } catch (e) {
         console.warn("[app-hub] manifest unreadable", id, e);
       }
