@@ -33,7 +33,7 @@ still arriving with the install.
 ```
 ha-app-hub/
   hacs.json                 render_readme, minimum Home Assistant version
-  brand/icon.png icon@2x.png  the hub's own mark, required by HACS for an integration
+  custom_components/app_hub/brand/icon.png icon@2x.png   the hub's own mark, where HACS looks
   NOTICE                    trademark and imagery disclaimer, generated from the manifests
   custom_components/app_hub/
     manifest.json           domain app_hub, single_config_entry, no requirements
@@ -297,7 +297,7 @@ can do everything a plugin can and the three things it cannot:
   palette, dry run and the per-app configuration, which `panel_custom` hands to the panel element
   as `panel.config` so the frontend needs no admin-only read of the entry.
 
-The cost is a Python package plus `brand/icon.png` (the HACS requirement for the integration
+The cost is a Python package plus `custom_components/app_hub/brand/icon.png` (where HACS looks for the integration
 category) and a Home Assistant restart on install. The card did not change: the panel is a host
 that builds the same `app-hub-card`, so both entry points run the same code.
 
