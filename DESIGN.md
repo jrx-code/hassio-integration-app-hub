@@ -231,6 +231,14 @@ automation, notifications. Version 1 replaces the screens. The next layer:
 - **Icons**: the producer icon per app, from the app's `img/icon.svg`, with the core's own vector set
   as the fallback when an app declares `artwork: optional` or the file is absent. One mechanism, not
   two code paths.
+- **No `categories` in the manifest**: the HACS action warns about it, and the warning stays. The
+  published list (contributors.home-assistant.io/core/integrations/categories) describes what an
+  integration brings into Home Assistant: hubs and protocols bring devices, helpers create entities,
+  other ecosystems export devices to Alexa or Apple Home, the rest name a device class. This
+  integration brings no devices, creates no entities and exports nothing; it serves a frontend. The
+  check passes as `integration_categories completed`, it is a warning and not an error, and
+  categories are optional for custom integrations, so a value picked to silence it would only
+  mislead someone browsing that category.
 
 ## Settled while building phase 1
 
