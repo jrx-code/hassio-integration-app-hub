@@ -8,7 +8,7 @@ export const CORE_VERSION = "0.2.1";
 
 /* ---------- text ---------- */
 export const esc = (s) =>
-  String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 
 export const slug = (s) => String(s ?? "").toLowerCase().replace(/[\s-]+/g, "_");
 

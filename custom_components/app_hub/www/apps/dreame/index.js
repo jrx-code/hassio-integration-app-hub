@@ -241,7 +241,7 @@ function row(ctx, d, r) {
   }
   if (dom === "number") {
     return `<div class="row col ${off ? "dis" : ""}"><div class="rt">${esc(title)} <output>${esc(st.state)}${esc(st.attributes.unit_of_measurement ? " " + st.attributes.unit_of_measurement : "")}</output></div>` +
-      `<input type="range" data-num="${id}" min="${st.attributes.min ?? 0}" max="${st.attributes.max ?? 100}" step="${st.attributes.step ?? 1}" value="${esc(st.state)}"></div>`;
+      `<input type="range" data-num="${id}" min="${esc(st.attributes.min ?? 0)}" max="${esc(st.attributes.max ?? 100)}" step="${esc(st.attributes.step ?? 1)}" value="${esc(st.state)}"></div>`;
   }
   if (dom === "time") {
     return `<div class="row"><div class="rt">${esc(title)}</div><input type="time" data-time="${id}" value="${esc(String(st.state).slice(0, 5))}"></div>`;
@@ -269,7 +269,7 @@ function mapHtml(ctx, d, v, tab) {
       return { r, x0: Math.min(p[0], q[0]), y0: Math.min(p[1], q[1]), w: Math.abs(q[0] - p[0]), h: Math.abs(q[1] - p[1]) };
     }).sort((m, n) => n.w * n.h - m.w * m.h);   // small rooms last, so they win a tap where boxes overlap
     over = boxes.map(({ r, x0, y0, w, h }) =>
-      `<div class="rbox ${sel.has(r.id) ? "on" : ""}" data-a="room" data-r="${r.id}" style="left:${(x0 / sz[0]) * 100}%;top:${(y0 / sz[1]) * 100}%;width:${(w / sz[0]) * 100}%;height:${(h / sz[1]) * 100}%">` +
+      `<div class="rbox ${sel.has(r.id) ? "on" : ""}" data-a="room" data-r="${esc(r.id)}" style="left:${(x0 / sz[0]) * 100}%;top:${(y0 / sz[1]) * 100}%;width:${(w / sz[0]) * 100}%;height:${(h / sz[1]) * 100}%">` +
       `${sel.has(r.id) ? `<b>${[...sel].indexOf(r.id) + 1}</b>` : ""}</div>`).join("");
   }
   if (sz && tab === "zone") {
@@ -280,7 +280,7 @@ function mapHtml(ctx, d, v, tab) {
   const chips = tab === "room"
     ? `<div class="chips">${v.rooms.map((r) => {
         const on = (s.sel[d.entity] || []).includes(r.id);
-        return `<span class="${on ? "on" : ""}" data-a="room" data-r="${r.id}">${r.order ? `<b>${r.order}</b>` : ""}${esc(r.name)}</span>`;
+        return `<span class="${on ? "on" : ""}" data-a="room" data-r="${esc(r.id)}">${r.order ? `<b>${r.order}</b>` : ""}${esc(r.name)}</span>`;
       }).join("")}</div>`
     : "";
   const warn = tab === "zone" && !cal ? `<div class="mapwarn">${esc(ctx.t("ui.no_calibration"))}</div>` : "";

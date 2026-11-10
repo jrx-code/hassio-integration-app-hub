@@ -139,7 +139,7 @@ function hero(ctx, dev, s) {
   const back = ctx.chrome.back
     ? "<span></span>"
     : `<button class="ib light" data-a="back" aria-label="${ctx.esc(ctx.t("core.back"))}">${ctx.svg("back")}</button>`;
-  return `<div class="hero" style="background-image:url('${devImg(ctx, dev)}')">${back}` +
+  return `<div class="hero" style="background-image:url('${ctx.esc(devImg(ctx, dev))}')">${back}` +
     `<div class="ht2"><div class="hn">${ctx.esc(devName(ctx, dev))}</div><div class="chip">${ctx.esc(s.label)}</div></div></div>`;
 }
 
@@ -216,7 +216,7 @@ function coffee(ctx, dev) {
   const opts = ctx.st(sid)?.attributes.options || [];
   const bev = opts.filter((o) => /_(beverage|coffeeworld)_/.test(o));
   const grid = bev.map((o) =>
-    `<button class="bev ${o === sel ? "sel" : ""}" data-a="sel" data-e="${sid}" data-v="${o}">` +
+    `<button class="bev ${o === sel ? "sel" : ""}" data-a="sel" data-e="${sid}" data-v="${ctx.esc(o)}">` +
     `${ctx.svg(/milk|latte|cappu|macch|flat|cortado|leche|lait|melange|brauner/.test(o) ? "wave" : "cup")}` +
     `<span>${ctx.esc(cmName(o))}</span></button>`).join("");
   const fq = ctx.e(dev, "number.fill_quantity");
@@ -298,7 +298,7 @@ function cmControl(ctx, dev, s) {
     }).join("");
   return `<div class="scroll">${ctx.ui.bar(devName(ctx, dev))}<div class="pad">${notesHtml(ctx, dev, s)}` +
     `<div class="prow"><span>${ctx.esc(ctx.t("hc.drink"))}</span><b>${ctx.svg("cup")}${ctx.esc(cmName(sel) || "--")}</b></div>` +
-    `${fqs && fqs.state !== "unavailable" ? `<div class="srow"><span>${ctx.esc(ctx.t("hc.amount_ml"))}</span><input type="number" data-num="${fq}" value="${ctx.esc(fqs.state)}" min="${fqs.attributes.min}" max="${fqs.attributes.max}" step="${fqs.attributes.step}"></div>` : ""}` +
+    `${fqs && fqs.state !== "unavailable" ? `<div class="srow"><span>${ctx.esc(ctx.t("hc.amount_ml"))}</span><input type="number" data-num="${fq}" value="${ctx.esc(fqs.state)}" min="${ctx.esc(fqs.attributes.min)}" max="${ctx.esc(fqs.attributes.max)}" step="${ctx.esc(fqs.attributes.step)}"></div>` : ""}` +
     `${ctl}${ctx.e(dev, "switch.multiple_beverages") ? ctx.ui.toggle(ctx.e(dev, "switch.multiple_beverages"), ctx.t("hc.cm.multiple"), ctx.is(dev, "switch.multiple_beverages")) : ""}</div></div>` +
     `<div class="dock"><button class="start" data-a="start">${ctx.svg("play")}${ctx.esc(ctx.t("hc.start"))}</button></div>`;
 }
@@ -331,7 +331,7 @@ function care(ctx, dev) {
     const opts = ctx.st(sid)?.attributes.options || [];
     rows += `<h2>${ctx.esc(ctx.t("hc.cleaning_programs"))}</h2>` +
       clean.map((k) => opts.find((o) => o.endsWith("cleaningmodes_" + k))).filter(Boolean)
-        .map((o) => `<button class="lrow" data-a="opt" data-e="${sid}" data-v="${o}"><span>${ctx.esc(cmName(o))}</span>${ctx.svg("chev", "chev")}</button>`).join("");
+        .map((o) => `<button class="lrow" data-a="opt" data-e="${sid}" data-v="${ctx.esc(o)}"><span>${ctx.esc(cmName(o))}</span>${ctx.svg("chev", "chev")}</button>`).join("");
   } else {
     const runs = ctx.v(dev, "sensor.machinecare_remaining_runs");
     const lvl = (k) => {
@@ -375,7 +375,7 @@ function settings(ctx, dev) {
     const st = ctx.st(e);
     const name = (st.attributes.friendly_name || e).replace(/^.*?(Siemens )?(Dishwasher|CoffeeMaker) /i, "");
     if (e.startsWith("switch.")) return ctx.ui.toggle(e, name, st.state === "on");
-    if (e.startsWith("number.")) return `<div class="srow"><span>${ctx.esc(name)}</span><input type="number" data-num="${e}" value="${ctx.esc(st.state)}" min="${st.attributes.min}" max="${st.attributes.max}" step="${st.attributes.step}"></div>`;
+    if (e.startsWith("number.")) return `<div class="srow"><span>${ctx.esc(name)}</span><input type="number" data-num="${e}" value="${ctx.esc(st.state)}" min="${ctx.esc(st.attributes.min)}" max="${ctx.esc(st.attributes.max)}" step="${ctx.esc(st.attributes.step)}"></div>`;
     return `<div class="srow col"><span>${ctx.esc(name)}</span>${ctx.ui.seg(e, st.attributes.options, st.state, optLabel)}</div>`;
   }).join("");
   return `<div class="scroll">${ctx.ui.bar(ctx.t("hc.screen.set"))}<div class="pad"><h2>${ctx.esc(ctx.t("hc.general"))}</h2>` +

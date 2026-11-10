@@ -94,14 +94,15 @@ const CORE_STRINGS = {
     setup: {
       intro: "Wybierz, jak zapisać dashboardy. Dostępnych aplikacji: {n}.",
       views_title: "Jeden dashboard, apki jako widoki",
-      views_body: "Ten dashboard dostaje strategię App Hub. Widoki powstają przy każdym otwarciu, nic nie jest zapisywane, a nowa apka pojawia się sama.",
+      views_body: "Tworzy nowy dashboard App Hub ze strategią. Widoki powstają przy każdym otwarciu, a nowa apka pojawia się sama. Istniejące dashboardy nie są zmieniane.",
       dash_title: "Osobny dashboard na apkę",
-      dash_body: "Każda apka dostaje własny wpis w pasku bocznym i własny adres. Zapisuje wpisy dashboardów w konfiguracji Home Assistant.",
+      dash_body: "Każda apka dostaje własny, nowy wpis w pasku bocznym i własny adres. Istniejące dashboardy app-* zostają bez zmian.",
       apps_title: "Wskaż urządzenia aplikacjom",
       apps_body: "Otwiera ustawienia integracji: aplikacja po aplikacji, z listą znalezionych urządzeń do zaznaczenia. Bez pisania JSON-a.",
       admin_only: "Tylko administrator może zapisywać dashboardy.",
-      done_views: "Dashboard przestawiony na strategię App Hub",
-      done_dashboards: "Utworzono lub zaktualizowano {n} dashboardów",
+      done_views: "Utworzono dashboard App Hub",
+      exists_views: "Dashboard App Hub już istnieje, nie zmieniono go",
+      done_dashboards: "Utworzono {n} dashboardów, pominięto istniejące: {skipped}",
     },
   },
   en: {
@@ -109,14 +110,15 @@ const CORE_STRINGS = {
     setup: {
       intro: "Choose how the dashboards are saved. Available apps: {n}.",
       views_title: "One dashboard, apps as views",
-      views_body: "This dashboard gets the App Hub strategy. Views are generated on every open, nothing is stored, and a new app shows up by itself.",
+      views_body: "Creates a new App Hub dashboard with the strategy. Views are generated on every open and a new app shows up by itself. Existing dashboards are never changed.",
       dash_title: "One dashboard per app",
-      dash_body: "Each app gets its own sidebar entry and its own URL. This writes dashboard entries into the Home Assistant configuration.",
+      dash_body: "Each app gets its own new sidebar entry and URL. Existing app-* dashboards are left as they are.",
       apps_title: "Point the apps at your devices",
       apps_body: "Opens the integration options: one app at a time, with the devices found in this instance to pick from. No JSON.",
       admin_only: "Only an administrator can save dashboards.",
-      done_views: "Dashboard switched to the App Hub strategy",
-      done_dashboards: "Created or updated {n} dashboards",
+      done_views: "App Hub dashboard created",
+      exists_views: "The App Hub dashboard already exists, left unchanged",
+      done_dashboards: "Created {n} dashboards, skipped existing: {skipped}",
     },
   },
 };
@@ -494,9 +496,11 @@ class AppHubCard extends HTMLElement {
   }
 
   /* ---------- how the dashboards are saved ---------- */
-  // Two shapes, the user's choice:
-  //   views      one dashboard, one view per app, written as a strategy so nothing is stored
-  //   dashboards one dashboard per app, each its own sidebar entry and URL
+  // Two shapes, the user's choice. Both only ever write to a dashboard this call created itself:
+  // an existing dashboard (the current one, a user's own, or one made by an earlier run) is
+  // never saved over.
+  //   views      a new "app-hub" dashboard, one view per app, written as a strategy
+  //   dashboards one new dashboard per app, each its own sidebar entry and URL
   async _provision(kind) {
     const hass = this._hass;
     if (!hass?.callWS) return this._toast("brak połączenia");
@@ -504,28 +508,38 @@ class AppHubCard extends HTMLElement {
     const reg = this._reg;
     const ids = reg.order.filter((id) => reg.apps[id] && this._available(reg.apps[id]).ok);
     try {
+      const existing = await hass.callWS({ type: "lovelace/dashboards/list" });
+      const taken = new Set(existing.map((d) => d.url_path));
       if (kind === "views") {
-        const path = window.location.pathname.split("/")[1] || null;
+        const url_path = "app-hub";
+        if (taken.has(url_path)) return this._toast(this._t("setup.exists_views"));
+        await hass.callWS({
+          type: "lovelace/dashboards/create",
+          title: "App Hub",
+          url_path,
+          icon: "mdi:apps",
+          show_in_sidebar: true,
+        });
         await hass.callWS({
           type: "lovelace/config/save",
-          url_path: path,
+          url_path,
           config: { strategy: { type: "custom:app-hub", kiosk: !!this._cfg.hide_header } },
         });
         this._toast(this._t("setup.done_views"));
       } else {
-        const existing = await hass.callWS({ type: "lovelace/dashboards/list" });
+        let created = 0;
+        const skipped = [];
         for (const id of ids) {
           const m = reg.apps[id];
           const url_path = `app-${id}`;
-          if (!existing.some((d) => d.url_path === url_path)) {
-            await hass.callWS({
-              type: "lovelace/dashboards/create",
-              title: m.name,
-              url_path,
-              icon: m.view_icon || "mdi:application",
-              show_in_sidebar: true,
-            });
-          }
+          if (taken.has(url_path)) { skipped.push(url_path); continue; }
+          await hass.callWS({
+            type: "lovelace/dashboards/create",
+            title: m.name,
+            url_path,
+            icon: m.view_icon || "mdi:application",
+            show_in_sidebar: true,
+          });
           await hass.callWS({
             type: "lovelace/config/save",
             url_path,
@@ -537,8 +551,9 @@ class AppHubCard extends HTMLElement {
               }],
             },
           });
+          created += 1;
         }
-        this._toast(this._t("setup.done_dashboards", { n: ids.length }));
+        this._toast(this._t("setup.done_dashboards", { n: created, skipped: skipped.length ? skipped.join(", ") : "-" }));
       }
     } catch (e) {
       console.error("[app-hub] provision failed", e);
