@@ -108,7 +108,7 @@ function loadOptions(ctx, waybill, force = false) {
 
 function statusCls(row) {
   const s = String(row?.status || "").toLowerCase();
-  // "W doręczeniu" (out for delivery) is still on the way; only a finished delivery is green.
+  // "W doreczeniu" (out for delivery) is still on the way; only a finished delivery is green.
   if (/doręczon|odebran|wydan/.test(s)) return "ok";
   if (/zwrot|anul|odmow/.test(s)) return "bad";
   if (/odbioru|punkcie|automacie/.test(s)) return "ready";

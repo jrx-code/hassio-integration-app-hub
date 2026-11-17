@@ -20,7 +20,7 @@ const ws = [];
 let failNext = false;
 const responses = {
   dpd_parcel_options: { waybill: W, operations: ["change_date", "redirect", "change_address", "refuse"], dates: ["2026-11-16", "2026-11-17"], redirect: { point_types: [], services: [] }, pin: { pin: "482913", expires: "2026-11-20T23:59:00Z" }, pin_hidden: false },
-  dpd_points: { points: [{ id: "PL81900", name: "Automat DPD Pickup", kind: "LOCKER", address: "Szczecińska 19, 72004, Tanowo", hint: "Przy sklepie", pinpad: true, send: true }, { id: "PL10001", name: "Kiosk Demo", kind: "SHOP", address: "ul. Demo 1, 00-001, Warszawa", hint: null, pinpad: false }] },
+  dpd_points: { points: [{ id: "PL81900", name: "Automat DPD Pickup", kind: "LOCKER", address: "Testowa 19, 00001, Warszawa", hint: "Przy sklepie", pinpad: true, send: true }, { id: "PL10001", name: "Kiosk Demo", kind: "SHOP", address: "ul. Demo 1, 00-001, Warszawa", hint: null, pinpad: false }] },
   dpd_parcel_action: { done: true },
 };
 const toasts = [];
@@ -48,11 +48,11 @@ function expect(label, html, ...needles) {
   else console.log(`ok   ${label}`);
 }
 
-expect("start lists both active parcels", mod.screens.start(ctx), "Sklep Demo", "W doręczeniu", "W drodze (2)", "Dostarczone (2)");
+expect("start lists both active parcels", mod.screens.start(ctx), "Sklep Demo", "W doreczeniu", "W drodze (2)", "Dostarczone (2)");
 mod.actions.tab(ctx, { v: "delivered" });
 expect("delivered tab", mod.screens.start(ctx), "Odebrana w punkcie", "Allegro Demo");
 mod.screens.parcel(ctx, { i: 0, w: W }); await flush(); await flush();
-expect("parcel with options", mod.screens.parcel(ctx, { i: 0, w: W }), "482913", "Zmień termin doręczenia", "Przekieruj do punktu Pickup", "Odmów przyjęcia", "Przyjęta w oddziale", "Jan K.");
+expect("parcel with options", mod.screens.parcel(ctx, { i: 0, w: W }), "482913", "Zmień termin doręczenia", "Przekieruj do punktu Pickup", "Odmów przyjęcia", "Przyjeta w oddziale", "Jan K.");
 mod.actions.op(ctx, { op: "change_date", i: "0", w: W });
 expect("op opens date sheet", JSON.stringify(sheetState), '"date"');
 mod.actions.pickdate(ctx, { v: "2026-11-17" });
@@ -67,15 +67,15 @@ mod.screens.points(ctx, { i: 0, w: W }); await flush(); await flush();
 const ptsCall = ws.filter((c) => c.service === "dpd_points").pop();
 expect("points searched at delivery GPS", JSON.stringify(ptsCall), '"latitude":52.2297', '"longitude":21.0122');
 expect("points list", mod.screens.points(ctx, { i: 0, w: W }), "Automat DPD Pickup", "klawiatura PIN", "Kiosk Demo");
-expect("redirect sheet", mod.sheets.redirect(ctx, { i: "0", w: W, p: "PL81900", n: "Automat DPD Pickup", addr: "Tanowo" }), "Przekieruj paczkę tutaj", "prawdziwą przesyłkę");
+expect("redirect sheet", mod.sheets.redirect(ctx, { i: "0", w: W, p: "PL81900", n: "Automat DPD Pickup", addr: "Warszawa" }), "Przekieruj paczkę tutaj", "prawdziwą przesyłkę");
 await mod.actions.run(ctx, { op: "redirect", i: "0", w: W, p: "PL81900" }); await flush();
 expect("redirect call and back", JSON.stringify(ws.filter((c) => c.service === "dpd_parcel_action").pop()) + ` backs=${backs}`, '"point_id":"PL81900"', "backs=1");
-ctx.state.addr = { address: "Szczecińska 19" };
+ctx.state.addr = { address: "Testowa 19" };
 await mod.actions.run(ctx, { op: "change_address", i: "0", w: W });
 expect("address needs all fields", toasts.join("|"), "Uzupełnij ulicę");
-ctx.state.addr = { address: "Szczecińska 19", city: "Tanowo", postal_code: "72-004" };
+ctx.state.addr = { address: "Testowa 19", city: "Warszawa", postal_code: "00-001" };
 await mod.actions.run(ctx, { op: "change_address", i: "0", w: W }); await flush();
-expect("address call", JSON.stringify(ws.filter((c) => c.service === "dpd_parcel_action").pop()), '"postal_code":"72-004"', '"city":"Tanowo"');
+expect("address call", JSON.stringify(ws.filter((c) => c.service === "dpd_parcel_action").pop()), '"postal_code":"00-001"', '"city":"Warszawa"');
 mod.actions.pickreason(ctx, { v: "damaged" });
 expect("refuse sheet", mod.sheets.refuse(ctx, { i: "0", w: W }), "Paczka jest uszkodzona", "Odmów przyjęcia paczki", "nie da się cofnąć");
 failNext = true;

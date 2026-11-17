@@ -25,11 +25,11 @@ const answer = (d) => {
       parcel: { shipmentNumber: N1, parcelSize: "B", mobileCollectPossible: true, operations: { collect: true, canShareParcel: true }, eventLog: [{ name: "Nadana", date: "2026-11-14T10:00:00Z" }, { name: "Gotowa do odbioru", date: "2026-11-15T09:30:00Z" }] },
       parcel_friends: { friends: [{ uuid: "f1", name: "Ala" }, { uuid: "f2", name: "Marek" }] },
       friends: { friends: [{ uuid: "f1", name: "Ala" }] },
-      points: { points: [{ name: "TAN01M", addressDetails: { street: "Szczecińska", buildingNumber: "19", city: "Tanowo" }, location247: true, status: "Operating" }] },
+      points: { points: [{ name: "WAW01M", addressDetails: { street: "Testowa", buildingNumber: "19", city: "Warszawa" }, location247: true, status: "Operating" }] },
       return_tickets: { tickets: [{ uuid: "t1", rma: "RMA1", organizationName: "Sklep Demo", status: "Accepted", returnCode: "445566", shipmentNumber: "620000000000000000000005", parcelSize: "A" }] },
       returnable: { parcels: [{ shipmentNumber: "620000000000000000000005", organization: { uuid: "o1", name: "Sklep Demo" } }] },
       return_reasons: { returnReasons: [{ uuid: "r1", name: "Nie pasuje" }] },
-      notifications: { notifications: [{ id: "n1", title: "Paczka czeka", content: "TAN01M", date: "2026-11-15T09:30:00Z", read: false }] },
+      notifications: { notifications: [{ id: "n1", title: "Paczka czeka", content: "WAW01M", date: "2026-11-15T09:30:00Z", read: false }] },
     })[d.service_data.what] };
   }
   if (d.service === "inpost_locker") {
@@ -123,14 +123,14 @@ await mod.actions.friendnow(ctx, { mode: "remove", u: "f1" }); await flush();
 expect("friend remove call", call("inpost_action"), '"action":"friend_remove"', '"uuid":"f1"');
 expect("friend remove sheet warns", mod.sheets.friend(ctx, { mode: "remove", u: "f1", n: "Ala" }), "Usunięcie znajomego Ala");
 
-mod.screens.points(ctx, {}); ctx.state.psearch = { text: "Tanowo" };
+mod.screens.points(ctx, {}); ctx.state.psearch = { text: "Warszawa" };
 mod.screens.points(ctx, {}); await flush();
-expect("points by text", mod.screens.points(ctx, {}), "TAN01M", "Szczecińska 19 Tanowo", "Całodobowy");
+expect("points by text", mod.screens.points(ctx, {}), "WAW01M", "Testowa 19 Warszawa", "Całodobowy");
 mod.actions.pnear(ctx); mod.screens.points(ctx, {}); await flush();
 expect("points near home use the configured home position", call("inpost_query"), '"latitude":53.4', '"max_distance":3000');
 expect("picking a point for sending", mod.screens.points(ctx, { pick: "send" }), 'data-a="pickpoint"');
-mod.actions.pickpoint(ctx, { n: "TAN01M", pick: "send" });
-expect("point lands in the send form", mod.screens.send(ctx), "Paczkomat: TAN01M");
+mod.actions.pickpoint(ctx, { n: "WAW01M", pick: "send" });
+expect("point lands in the send form", mod.screens.send(ctx), "Paczkomat: WAW01M");
 
 mod.screens.returns(ctx, {}); await flush();
 expect("returns screen", mod.screens.returns(ctx, {}), "Sklep Demo", "445566", "Paczki do zwrotu");
@@ -143,9 +143,9 @@ await mod.actions.lockerOpen(ctx, { flow: "return", w: "620000000000000000000005
 await mod.actions.lkOpen(ctx, { flow: "return", w: "620000000000000000000005", i: "0" }); await flush();
 expect("return open carries the size", call("inpost_locker"), '"flow":"return"', '"parcel_size":"B"');
 
-ctx.state.send = { point: "TAN01M", size: "A", receiver_first_name: "A", receiver_last_name: "B", receiver_email: "a@example.com", receiver_phone: "500600700", sender_first_name: "C", sender_last_name: "D", sender_email: "c@example.com", sender_street: "Ulica", sender_building: "1", sender_post_code: "72-004", sender_city: "Tanowo" };
+ctx.state.send = { point: "WAW01M", size: "A", receiver_first_name: "A", receiver_last_name: "B", receiver_email: "a@example.com", receiver_phone: "500600700", sender_first_name: "C", sender_last_name: "D", sender_email: "c@example.com", sender_street: "Ulica", sender_building: "1", sender_post_code: "00-001", sender_city: "Warszawa" };
 await mod.actions.sendnow(ctx); await flush();
-expect("label call", call("inpost_action"), '"action":"send_parcel"', '"delivery_point":"TAN01M"', '"confirm":true', '"sender_post_code":"72-004"');
+expect("label call", call("inpost_action"), '"action":"send_parcel"', '"delivery_point":"WAW01M"', '"confirm":true', '"sender_post_code":"00-001"');
 expect("label result shown", mod.screens.send(ctx), "620000000000000000000099");
 ctx.state.send.receiver_email = "";
 const n0 = ws.length;

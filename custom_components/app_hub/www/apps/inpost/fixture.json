@@ -11,8 +11,8 @@
             "numer": "620000000000000000000001",
             "nadawca": "Sklep Demo",
             "kod_odbioru": "123456",
-            "paczkomat": "TAN01M",
-            "adres": "Szczecińska 19 Tanowo",
+            "paczkomat": "WAW01M",
+            "adres": "Testowa 19 Warszawa",
             "termin_odbioru": "2026-11-20T23:59:00Z",
             "status": "Gotowa do odbioru",
             "qr": "QR",
@@ -27,7 +27,7 @@
           },
           {
             "numer": "620000000000000000000002",
-            "nadawca": "Księgarnia Demo",
+            "nadawca": "Ksiegarnia Demo",
             "kod_odbioru": "654321",
             "paczkomat": "SZC05N",
             "adres": "ul. Demo 5 Szczecin",
@@ -50,7 +50,7 @@
           {
             "numer": "620000000000000000000003",
             "nadawca": "Sklep Online Demo",
-            "paczkomat": "TAN01M",
+            "paczkomat": "WAW01M",
             "status": "W drodze",
             "tytul_zdarzenia": "Paczka w sortowni",
             "opis_zdarzenia": null
@@ -75,7 +75,7 @@
             "numer": "620000000000000000000005",
             "nadawca": "Sklep Demo",
             "status": "Odebrana",
-            "paczkomat": "TAN01M"
+            "paczkomat": "WAW01M"
           }
         ]
       }
@@ -83,7 +83,7 @@
     "sensor.inpost_demo_udostepnione": {
       "state": "1",
       "attributes": {
-        "friendly_name": "InPost Demo Udostępnione",
+        "friendly_name": "InPost Demo Udostepnione",
         "udostepnione": [
           {
             "numer": "620000000000000000000006",
@@ -91,7 +91,7 @@
             "status": "Gotowa do odbioru",
             "od": "Marek",
             "kod_odbioru": "111222",
-            "paczkomat": "TAN01M",
+            "paczkomat": "WAW01M",
             "podglad": false
           }
         ],

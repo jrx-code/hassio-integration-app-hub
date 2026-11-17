@@ -147,6 +147,7 @@ UI_FILES = [
     re.compile(r"^custom_components/app_hub/strings\.json$"),
     re.compile(r"^poc/index\.html$"),
     re.compile(r"^tools/(gen_strings|notice)\.py$"),
+    re.compile(r"^tools/[a-z]+_flow_check\.mjs$"),  # assert the Polish UI text the apps render
 ]
 SELF = re.compile(r"^tools/anonymise_fixtures\.py$")
 

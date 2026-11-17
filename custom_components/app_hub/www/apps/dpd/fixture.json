@@ -11,9 +11,9 @@
           {
             "numer": "0000001430580S",
             "nadawca": "Sklep Demo",
-            "status": "W doręczeniu",
+            "status": "W doreczeniu",
             "aktualizacja": "2026-11-15T08:12:00Z",
-            "adres_nadawcy": "ul. Przykładowa 1, 00-001, Warszawa",
+            "adres_nadawcy": "ul. Przykladowa 1, 00-001, Warszawa",
             "gps_doreczenia": {
               "lat": "52.2297",
               "lon": "21.0122"
@@ -21,11 +21,11 @@
             "kurier": "Jan K.",
             "historia": [
               {
-                "status": "W doręczeniu",
+                "status": "W doreczeniu",
                 "data": "2026-11-15T08:12:00Z"
               },
               {
-                "status": "Przyjęta w oddziale",
+                "status": "Przyjeta w oddziale",
                 "data": "2026-11-15T03:40:00Z"
               },
               {
@@ -43,7 +43,7 @@
             "nadawca": "",
             "status": "Utworzona",
             "aktualizacja": "2026-11-15T13:11:05Z",
-            "adres_nadawcy": "ul. Testowa 2, 30-001, Kraków",
+            "adres_nadawcy": "ul. Testowa 2, 30-001, Krakow",
             "gps_doreczenia": "{\"lat\":\"52.2300\",\"lon\":\"21.0100\"}",
             "kurier": "null",
             "historia": [
@@ -58,7 +58,7 @@
           {
             "numer": "0000001430111S",
             "nadawca": "Sklep Demo",
-            "status": "Doręczona",
+            "status": "Doreczona",
             "aktualizacja": "2026-11-10T12:00:00Z"
           },
           {
@@ -82,7 +82,7 @@
       "name": "DPD — Demo",
       "name_by_user": null,
       "manufacturer": "DPD",
-      "model": "Przesyłki",
+      "model": "Przesylki",
       "sw_version": null
     }
   },
