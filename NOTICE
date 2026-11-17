@@ -14,9 +14,11 @@ issue and it will be removed or replaced.
 
 Trademark owners of the app modules currently in this repository:
 
+  dpd           DPD Mobile 2.10.18      DPD Polska
   dreame        Dreamehome 2.6.6.3      Dreame Innovation Technology (Suzhou) Co., Ltd.
   foxess        FoxCloud 2.0 (v2.2.28)  Fox ESS Co., Ltd.
   homeconnect   Home Connect (Siemens)  BSH Hausgeräte GmbH
+  inpost        InPost Mobile 4.23.1    InPost S.A.
   linktap       LinkTap 2.10.0          LinkTap
 
 This list is generated from the `trademark_owner` field of each app manifest

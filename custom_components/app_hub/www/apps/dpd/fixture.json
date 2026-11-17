@@ -1,0 +1,99 @@
+{
+  "states": {
+    "sensor.przesylki_dpd_demo_w_drodze": {
+      "state": "2",
+      "attributes": {
+        "friendly_name": "DPD — Demo W drodze",
+        "unit_of_measurement": "szt.",
+        "active_count": 2,
+        "delivered_count": 2,
+        "w_drodze": [
+          {
+            "numer": "0000001430580S",
+            "nadawca": "Sklep Demo",
+            "status": "W doreczeniu",
+            "aktualizacja": "2026-11-15T08:12:00Z",
+            "adres_nadawcy": "ul. Przykladowa 1, 00-001, Warszawa",
+            "gps_doreczenia": {
+              "lat": "52.2297",
+              "lon": "21.0122"
+            },
+            "kurier": "Jan K.",
+            "historia": [
+              {
+                "status": "W doreczeniu",
+                "data": "2026-11-15T08:12:00Z"
+              },
+              {
+                "status": "Przyjeta w oddziale",
+                "data": "2026-11-15T03:40:00Z"
+              },
+              {
+                "status": "W drodze",
+                "data": "2026-11-14T19:05:00Z"
+              },
+              {
+                "status": "Nadana",
+                "data": "2026-11-14T15:30:00Z"
+              }
+            ]
+          },
+          {
+            "numer": "00000014302137",
+            "nadawca": "",
+            "status": "Utworzona",
+            "aktualizacja": "2026-11-15T13:11:05Z",
+            "adres_nadawcy": "ul. Testowa 2, 30-001, Krakow",
+            "gps_doreczenia": "{\"lat\":\"52.2300\",\"lon\":\"21.0100\"}",
+            "kurier": "null",
+            "historia": [
+              {
+                "status": "Utworzona",
+                "data": "2026-11-15T13:11:05Z"
+              }
+            ]
+          }
+        ],
+        "dostarczone": [
+          {
+            "numer": "0000001430111S",
+            "nadawca": "Sklep Demo",
+            "status": "Doreczona",
+            "aktualizacja": "2026-11-10T12:00:00Z"
+          },
+          {
+            "numer": "0000001430222S",
+            "nadawca": "Allegro Demo",
+            "status": "Odebrana w punkcie",
+            "aktualizacja": "2026-11-03T17:20:00Z"
+          }
+        ]
+      }
+    }
+  },
+  "entities": {
+    "sensor.przesylki_dpd_demo_w_drodze": {
+      "device_id": "demo_dpd",
+      "platform": "shipment_tracking"
+    }
+  },
+  "devices": {
+    "demo_dpd": {
+      "name": "DPD — Demo",
+      "name_by_user": null,
+      "manufacturer": "DPD",
+      "model": "Przesylki",
+      "sw_version": null
+    }
+  },
+  "card_config": {
+    "devices": [
+      {
+        "entity": "sensor.przesylki_dpd_demo_w_drodze"
+      }
+    ]
+  },
+  "components": [
+    "shipment_tracking"
+  ]
+}

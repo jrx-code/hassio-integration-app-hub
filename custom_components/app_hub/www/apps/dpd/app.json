@@ -1,0 +1,83 @@
+{
+  "id": "dpd",
+  "name": "DPD",
+  "replaces": "DPD Mobile 2.10.18",
+  "trademark_owner": "DPD Polska",
+  "version": "0.1.0",
+  "icon": "img/icon.svg",
+  "artwork": "optional",
+  "requires": [
+    {
+      "integration": "shipment_tracking",
+      "hint": "jrx-code/hassio-integration-shipment-tracking, konto DPD (logowanie SMS)",
+      "probe": "devices.0.entity"
+    }
+  ],
+  "palette": {
+    "primary-background-color": "#f4f4f4",
+    "card-background-color": "#ffffff",
+    "primary-text-color": "#414042",
+    "secondary-text-color": "#808285",
+    "divider-color": "#e6e6e6",
+    "primary-color": "#dc0032",
+    "error-color": "#dc0032",
+    "warning-color": "#f2a900",
+    "success-color": "#509e2f"
+  },
+  "config": {
+    "devices": {
+      "shape": "objects",
+      "fields": {
+        "entity": {
+          "type": "entity",
+          "domains": [
+            "sensor"
+          ],
+          "required": true
+        },
+        "name": {
+          "type": "text",
+          "required": false
+        }
+      }
+    },
+    "options": {
+      "theme": {
+        "type": "select",
+        "options": [
+          "ha",
+          "app"
+        ],
+        "default": "ha"
+      },
+      "dry_run": {
+        "type": "boolean",
+        "default": false
+      }
+    }
+  },
+  "screens": [
+    "start",
+    "parcel",
+    "points",
+    "info"
+  ],
+  "sheets": [
+    "date",
+    "redirect",
+    "address",
+    "refuse"
+  ],
+  "locales": [
+    "pl",
+    "en"
+  ],
+  "fallback_locale": "pl",
+  "blueprints": [],
+  "not_covered": [
+    "otwieranie skrytki automatu DPD Pickup: aplikacja DPD robi to przez Bluetooth, stojąc przy automacie (SDK Swipbox), a serwer nie ma zdalnego otwierania; tu jest kod do wpisania na klawiaturze automatu",
+    "nadawanie paczek: zamówienie, wycena i płatność BLIK lub przelewem (DPD Salesbar), jeszcze nie przeniesione",
+    "ocena doręczenia, napiwek dla kuriera i udostępnianie paczki innym osobom",
+    "powiadomienia push z aplikacji DPD: zastępują je zmiany stanu w Home Assistant"
+  ]
+}

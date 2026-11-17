@@ -179,7 +179,7 @@ async def test_options_app_step_lists_the_shipped_apps(
     assert form["step_id"] == "apps"
     selector = next(iter(form["data_schema"].schema.values()))
     values = {o["value"] for o in selector.config["options"]}
-    assert values == {"homeconnect", "dreame", "foxess", "linktap"}
+    assert values == {"homeconnect", "dreame", "foxess", "linktap", "dpd", "inpost"}
 
 
 async def test_options_app_form_writes_devices_without_json(

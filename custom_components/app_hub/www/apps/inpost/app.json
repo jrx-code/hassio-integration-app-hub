@@ -1,0 +1,96 @@
+{
+  "id": "inpost",
+  "name": "InPost",
+  "replaces": "InPost Mobile 4.23.1",
+  "trademark_owner": "InPost S.A.",
+  "version": "0.1.0",
+  "icon": "img/icon.svg",
+  "artwork": "optional",
+  "requires": [
+    {
+      "integration": "shipment_tracking",
+      "hint": "jrx-code/hassio-integration-shipment-tracking 2.15 lub nowszy, konto InPost (logowanie OAuth)",
+      "probe": "devices.0.entity"
+    }
+  ],
+  "palette": {
+    "primary-background-color": "#f5f5f5",
+    "card-background-color": "#ffffff",
+    "primary-text-color": "#1f1f1f",
+    "secondary-text-color": "#6b6b6b",
+    "divider-color": "#e6e6e6",
+    "primary-color": "#ffc20e",
+    "error-color": "#d22b2b",
+    "warning-color": "#f2a900",
+    "success-color": "#2e8b57",
+    "text-primary-color": "#1f1f1f"
+  },
+  "config": {
+    "devices": {
+      "shape": "objects",
+      "fields": {
+        "entity": {
+          "type": "entity",
+          "domains": [
+            "sensor"
+          ],
+          "required": true
+        },
+        "name": {
+          "type": "text",
+          "required": false
+        },
+        "account": {
+          "type": "text",
+          "required": false
+        }
+      }
+    },
+    "options": {
+      "theme": {
+        "type": "select",
+        "options": [
+          "ha",
+          "app"
+        ],
+        "default": "ha"
+      },
+      "dry_run": {
+        "type": "boolean",
+        "default": false
+      }
+    }
+  },
+  "screens": [
+    "start",
+    "parcel",
+    "locker",
+    "points",
+    "friends",
+    "returns",
+    "send",
+    "notifications",
+    "info"
+  ],
+  "sheets": [
+    "track",
+    "share",
+    "friend",
+    "return",
+    "label"
+  ],
+  "locales": [
+    "pl",
+    "en"
+  ],
+  "fallback_locale": "pl",
+  "blueprints": [],
+  "not_covered": [
+    "przedłużenie czasu odbioru (expand avizo): wymaga płatności przez bramkę InPost, nie zwykłego wywołania",
+    "płatne nadanie paczki i płatny zwrot: ta sama bramka płatności (BLIK, karta)",
+    "paczki za pobraniem, koszyk, kupony, subskrypcje InPost Plus, program lojalnościowy: zakupy, nie obsługa paczek",
+    "otwieranie skrytki przez Bluetooth i NFC: aplikacja InPost robi to stojąc przy paczkomacie; tu skrytka otwiera się przez serwer po potwierdzeniu i z Twoją lokalizacją",
+    "rejestracja, profil, dane firmy, wylogowanie i powiadomienia push z aplikacji InPost: zastępują je konfiguracja integracji i zmiany stanu w Home Assistant",
+    "asystent AI i voicebot aplikacji InPost"
+  ]
+}

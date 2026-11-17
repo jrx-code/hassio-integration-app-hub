@@ -1,0 +1,145 @@
+{
+  "states": {
+    "sensor.inpost_demo_do_odbioru": {
+      "state": "2",
+      "attributes": {
+        "friendly_name": "InPost Demo Do odbioru",
+        "do_odbioru_count": 2,
+        "w_drodze_count": 2,
+        "do_odbioru": [
+          {
+            "numer": "620000000000000000000001",
+            "nadawca": "Sklep Demo",
+            "kod_odbioru": "123456",
+            "paczkomat": "WAW01M",
+            "adres": "Testowa 19 Warszawa",
+            "termin_odbioru": "2026-11-20T23:59:00Z",
+            "status": "Gotowa do odbioru",
+            "qr": "QR",
+            "qr_url": "data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 21 21'%3E%3Crect width='21' height='21' fill='white'/%3E%3Cpath d='M1 1h7v7H1zM13 1h7v7h-7zM1 13h7v7H1zM10 10h3v3h-3zM15 15h5v5h-5z' fill='black'/%3E%3C/svg%3E",
+            "multiskrytka": null,
+            "paczki": null,
+            "wlasciciel": "OWN",
+            "udostepniona_do": [],
+            "mozna_udostepnic": true,
+            "tytul_zdarzenia": "Paczka czeka w paczkomacie",
+            "opis_zdarzenia": null
+          },
+          {
+            "numer": "620000000000000000000002",
+            "nadawca": "Ksiegarnia Demo",
+            "kod_odbioru": "654321",
+            "paczkomat": "SZC05N",
+            "adres": "ul. Demo 5 Szczecin",
+            "termin_odbioru": "2026-11-19T23:59:00Z",
+            "status": "Gotowa do odbioru",
+            "qr": "QR",
+            "qr_url": "data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 21 21'%3E%3Crect width='21' height='21' fill='white'/%3E%3Cpath d='M1 1h7v7H1zM13 1h7v7h-7zM1 13h7v7H1zM10 10h3v3h-3zM15 15h5v5h-5z' fill='black'/%3E%3C/svg%3E",
+            "multiskrytka": null,
+            "paczki": null,
+            "wlasciciel": "OWN",
+            "udostepniona_do": [
+              "Ala"
+            ],
+            "mozna_udostepnic": true,
+            "tytul_zdarzenia": null,
+            "opis_zdarzenia": null
+          }
+        ],
+        "w_drodze": [
+          {
+            "numer": "620000000000000000000003",
+            "nadawca": "Sklep Online Demo",
+            "paczkomat": "WAW01M",
+            "status": "W drodze",
+            "tytul_zdarzenia": "Paczka w sortowni",
+            "opis_zdarzenia": null
+          },
+          {
+            "numer": "620000000000000000000004",
+            "nadawca": "Demo Allegro",
+            "paczkomat": "SZC05N",
+            "status": "Nadana",
+            "tytul_zdarzenia": null,
+            "opis_zdarzenia": null
+          }
+        ]
+      }
+    },
+    "sensor.inpost_demo_archiwum": {
+      "state": "1",
+      "attributes": {
+        "friendly_name": "InPost Demo Archiwum",
+        "archiwum": [
+          {
+            "numer": "620000000000000000000005",
+            "nadawca": "Sklep Demo",
+            "status": "Odebrana",
+            "paczkomat": "WAW01M"
+          }
+        ]
+      }
+    },
+    "sensor.inpost_demo_udostepnione": {
+      "state": "1",
+      "attributes": {
+        "friendly_name": "InPost Demo Udostepnione",
+        "udostepnione": [
+          {
+            "numer": "620000000000000000000006",
+            "nadawca": "Sklep Znajomego",
+            "status": "Gotowa do odbioru",
+            "od": "Marek",
+            "kod_odbioru": "111222",
+            "paczkomat": "WAW01M",
+            "podglad": false
+          }
+        ],
+        "moje_udostepnione": []
+      }
+    },
+    "person.demo": {
+      "state": "not_home",
+      "attributes": {
+        "friendly_name": "Demo",
+        "user_id": "demo-user",
+        "latitude": 53.4,
+        "longitude": 14.5,
+        "gps_accuracy": 15
+      }
+    }
+  },
+  "entities": {
+    "sensor.inpost_demo_do_odbioru": {
+      "device_id": "demo_inpost",
+      "platform": "shipment_tracking"
+    },
+    "sensor.inpost_demo_archiwum": {
+      "device_id": "demo_inpost",
+      "platform": "shipment_tracking"
+    },
+    "sensor.inpost_demo_udostepnione": {
+      "device_id": "demo_inpost",
+      "platform": "shipment_tracking"
+    }
+  },
+  "devices": {
+    "demo_inpost": {
+      "name": "InPost — Demo",
+      "name_by_user": null,
+      "manufacturer": "InPost",
+      "model": "Paczkomaty",
+      "sw_version": null
+    }
+  },
+  "card_config": {
+    "devices": [
+      {
+        "entity": "sensor.inpost_demo_do_odbioru"
+      }
+    ]
+  },
+  "components": [
+    "shipment_tracking"
+  ]
+}

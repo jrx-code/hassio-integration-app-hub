@@ -166,6 +166,7 @@ export default {
 | `ctx.e(dev, key)` | entity id for a manifest `entities` key on a device, or undefined |
 | `ctx.st(id)`, `ctx.v(dev, key)`, `ctx.is(dev, key)` | state object, state string, boolean |
 | `ctx.call(domain, service, data)` | service call, honours `dry_run` |
+| `ctx.ws(type, data = {})` | websocket result promise; in `dry_run`, Hue Studio reads pass through and supported writes force server-side preview; other commands reject before sending, except the read-only `shipment_tracking` services `inpost_query`, `dpd_points` and `dpd_parcel_options` through `call_service` |
 | `ctx.more(id)` | open the more-info dialog |
 | `ctx.go(screen, params)`, `ctx.back()` | navigation |
 | `ctx.sheet(name, params)`, `ctx.closeSheet()`, `ctx.sheetOpen` | the bottom sheet, drawn by the hub over the screen |
@@ -184,7 +185,7 @@ export default {
 
 0. No second back control. When `ctx.chrome.back` is true the hub bar owns it, so a hero or a custom
    bar must not draw its own; `ctx.ui.bar` already defaults to that.
-1. No direct `hass.callService`. Every call goes through `ctx.call`, or `dry_run` is a lie.
+1. No direct `hass.callService` or `hass.callWS` for app commands. Use `ctx.call` or `ctx.ws` so `dry_run` is honoured. `ctx.ws` owns the `type` and strips caller-supplied `id`. In preview mode it rejects commands without a known preview contract, including Zigbee discovery and scene restore. An explicit `dry_run: true` is also passed through in normal mode.
 2. No CSS variable definitions for the producer palette. The manifest owns the palette.
 3. No hardcoded user-visible strings. Every one goes through `ctx.t`.
 4. No absolute asset paths. Every asset goes through `ctx.img`.

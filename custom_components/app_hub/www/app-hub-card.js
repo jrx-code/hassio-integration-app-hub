@@ -305,6 +305,7 @@ class AppHubCard extends HTMLElement {
       attr: (dev, key, a) => card._hass?.states[resolveEntity(card._hass, dev, key)]?.attributes?.[a],
       entities: (dev) => deviceEntities(card._hass, dev),
       call: (domain, service, data) => card._call(domain, service, data),
+      ws: (type, data = {}) => card._ws(type, data),
       more: (id) => card.dispatchEvent(new CustomEvent("hass-more-info", { detail: { entityId: id }, bubbles: true, composed: true })),
       go: (screen, params = {}) => card._go(screen, params),
       back: () => card._back(),
@@ -331,6 +332,28 @@ class AppHubCard extends HTMLElement {
       return;
     }
     return this._hass.callService(domain, service, data);
+  }
+
+  _ws(type, data = {}) {
+    if (!this._hass?.callWS) return Promise.reject(new Error("Home Assistant websocket unavailable"));
+    // An unknown command may write and may not implement dry_run. In preview mode it
+    // must stay local; callers can still opt into reads through the explicit allowlist.
+    const reads = new Set(["hue_studio/bridges", "hue_studio/state", "hue_studio/scene_get",
+      "hue_studio/scene_history", "hue_studio/zigbee_status"]);
+    const writes = new Set(["scene_create", "scene_copy", "scene_edit", "scene_rename", "scene_delete",
+      "light_gradient", "set_lights", "device_room", "light_zones", "smart_scene_action",
+      "smart_scene_edit", "motion_cfg", "powerup"].map((name) => `hue_studio/${name}`));
+    const dry = !!((this._appCfg || this._cfg).dry_run);
+    // Service calls that only read (they return data, change nothing) stay allowed in preview.
+    const readService = type === "call_service" && data.domain === "shipment_tracking"
+      && ["inpost_query", "dpd_points", "dpd_parcel_options"].includes(data.service);
+    if (dry && !reads.has(type) && !writes.has(type) && !readService) {
+      return Promise.reject(new Error(`Websocket command has no dry_run contract: ${type}`));
+    }
+    const payload = { ...data, type };
+    delete payload.id;
+    if (dry && writes.has(type)) payload.dry_run = true;
+    return this._hass.callWS(payload);
   }
 
   _toast(text) {
