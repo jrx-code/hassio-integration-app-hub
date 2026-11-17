@@ -1,8 +1,10 @@
 {
   "apps": [
+    "dpd",
     "dreame",
     "foxess",
     "homeconnect",
+    "inpost",
     "linktap"
   ]
 }

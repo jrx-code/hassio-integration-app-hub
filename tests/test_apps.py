@@ -20,7 +20,7 @@ from custom_components.app_hub.apps import (
     option_fields,
 )
 
-SHIPPED = {"homeconnect", "dreame", "foxess", "linktap"}
+SHIPPED = {"homeconnect", "dreame", "foxess", "linktap", "dpd", "inpost"}
 
 
 def test_the_shipped_manifests_load() -> None:
